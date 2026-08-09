@@ -68,6 +68,8 @@ function popupHTML(c){
           </div>
         </details>
         <a href="${L.photos}" target="_blank">🖼 Ver fotos del camping</a>
+        ${c.web ? `<a href="${esc(c.web)}" target="_blank">🌐 Web / reservas</a>` : ""}
+        ${c.tel ? `<a href="tel:${esc(c.tel.replace(/\s+/g,""))}">📞 ${esc(c.tel)}</a>` : ""}
         <details class="poi-group">
           <summary>✨ Puntos de interés cerca</summary>
           <div class="poi-links">${poiHTML}</div>

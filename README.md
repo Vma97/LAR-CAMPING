@@ -41,6 +41,7 @@ $js = "window.CAMPINGS = $json;`n"
 | `d` | descripción corta |
 | `t` | tipo de terreno: `playa`, `montana`, `rio`, `ciudad`, `naturaleza` — determina qué enlaces de "puntos de interés cerca" se muestran (importante: no tiene sentido poner `playa` en un camping de interior) |
 | `lat`, `lon` | coordenadas reales |
+| `tel`, `web` | teléfono y web oficial de reservas, si se han encontrado y verificado (cadena vacía `""` si no) |
 
 ## Estado actual
 

@@ -12,7 +12,9 @@
         "d":  "Junto a Barajas. Minimercado zona baile parque infantil parque canino",
         "t":  "naturaleza",
         "lat":  40.4368,
-        "lon":  -3.5844
+        "lon":  -3.5844,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -27,7 +29,9 @@
         "d":  "En Casa de Campo. Restaurante supermercado piscina muy urbano",
         "t":  "ciudad",
         "lat":  40.4234,
-        "lon":  -3.7495
+        "lon":  -3.7495,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -42,7 +46,9 @@
         "d":  "Dos piscinas suites jacuzzi bungalows parada de bus",
         "t":  "naturaleza",
         "lat":  40.3567,
-        "lon":  -3.9017
+        "lon":  -3.9017,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -57,7 +63,9 @@
         "d":  "Junto a jardines y palacio entretenimiento adultos animacion ninos",
         "t":  "naturaleza",
         "lat":  40.0311,
-        "lon":  -3.6039
+        "lon":  -3.6039,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -72,7 +80,9 @@
         "d":  "Tres piscinas una climatizada tobogan grande bungalows",
         "t":  "naturaleza",
         "lat":  40.5925,
-        "lon":  -4.1477
+        "lon":  -4.1477,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -87,7 +97,9 @@
         "d":  "Parcelas piscina parque aventuras tirolina restaurante",
         "t":  "naturaleza",
         "lat":  40.6786,
-        "lon":  -4.1497
+        "lon":  -4.1497,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -102,7 +114,9 @@
         "d":  "Cerca sierra de la Cabrera ambiente tranquilo familiar",
         "t":  "montana",
         "lat":  40.8858,
-        "lon":  -3.6167
+        "lon":  -3.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -117,7 +131,9 @@
         "d":  "Bosques y montanas piscina area recreativa rutas btt",
         "t":  "montana",
         "lat":  40.7597,
-        "lon":  -3.7833
+        "lon":  -3.7833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -132,7 +148,9 @@
         "d":  "Junto al Tormes piscina naturaleza embalse cerca",
         "t":  "rio",
         "lat":  40.3667,
-        "lon":  -4.3958
+        "lon":  -4.3958,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -147,7 +165,9 @@
         "d":  "Especializado deportes de aventura barranquismo escalada",
         "t":  "montana",
         "lat":  40.9,
-        "lon":  -3.6
+        "lon":  -3.6,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -162,7 +182,9 @@
         "d":  "Bungalows pueblo con encanto entorno rural",
         "t":  "naturaleza",
         "lat":  40.9333,
-        "lon":  -3.6167
+        "lon":  -3.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -177,7 +199,9 @@
         "d":  "Senderismo y aventura entorno montanoso",
         "t":  "montana",
         "lat":  40.3667,
-        "lon":  -3.3333
+        "lon":  -3.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -192,7 +216,9 @@
         "d":  "Cerca pico de la Miel naturaleza tranquila",
         "t":  "montana",
         "lat":  40.8667,
-        "lon":  -3.6833
+        "lon":  -3.6833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -207,7 +233,9 @@
         "d":  "Cabanas teepee dobles bano privado cocina comun pareja",
         "t":  "naturaleza",
         "lat":  40.2667,
-        "lon":  -5.0
+        "lon":  -5.0,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -222,7 +250,9 @@
         "d":  "Entorno rural sierra de Francia piscina naturaleza",
         "t":  "montana",
         "lat":  40.4167,
-        "lon":  -5.9667
+        "lon":  -5.9667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -237,7 +267,9 @@
         "d":  "A los pies de Gredos senderismo escalada clima fresco",
         "t":  "montana",
         "lat":  40.3333,
-        "lon":  -5.15
+        "lon":  -5.15,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -252,7 +284,9 @@
         "d":  "Cerca acueducto piscina bungalows familia",
         "t":  "naturaleza",
         "lat":  40.9429,
-        "lon":  -4.1088
+        "lon":  -4.1088,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -267,7 +301,9 @@
         "d":  "Sierra de Ayllon naturaleza tranquila pinares",
         "t":  "montana",
         "lat":  41.2833,
-        "lon":  -3.4667
+        "lon":  -3.4667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -282,7 +318,9 @@
         "d":  "Junto al Tormes cerca casco historico",
         "t":  "ciudad",
         "lat":  40.9701,
-        "lon":  -5.6635
+        "lon":  -5.6635,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -297,7 +335,9 @@
         "d":  "Ribera del Duero zona de bodegas",
         "t":  "naturaleza",
         "lat":  41.6706,
-        "lon":  -3.6889
+        "lon":  -3.6889,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -312,7 +352,9 @@
         "d":  "Cerca catedral bien comunicado con la ciudad",
         "t":  "ciudad",
         "lat":  42.3439,
-        "lon":  -3.6969
+        "lon":  -3.6969,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -327,7 +369,9 @@
         "d":  "Junto al lago glaciar mas grande de la peninsula",
         "t":  "rio",
         "lat":  42.1167,
-        "lon":  -6.7
+        "lon":  -6.7,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -342,7 +386,9 @@
         "d":  "Pinares de Urbion cerca laguna Negra",
         "t":  "rio",
         "lat":  41.9667,
-        "lon":  -2.8833
+        "lon":  -2.8833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -357,7 +403,9 @@
         "d":  "Bien comunicado con la capital leonesa",
         "t":  "ciudad",
         "lat":  42.5987,
-        "lon":  -5.5671
+        "lon":  -5.5671,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -372,7 +420,9 @@
         "d":  "Vistas al Alcazar piscina zona verde junto al rio",
         "t":  "rio",
         "lat":  39.8628,
-        "lon":  -4.0273
+        "lon":  -4.0273,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -387,7 +437,9 @@
         "d":  "Junto al paraje karstico piscina senderismo naturaleza",
         "t":  "naturaleza",
         "lat":  40.1333,
-        "lon":  -1.9333
+        "lon":  -1.9333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -402,7 +454,9 @@
         "d":  "Cerca del nacimiento del rio Mundo cascadas piscina",
         "t":  "rio",
         "lat":  38.5,
-        "lon":  -2.45
+        "lon":  -2.45,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -417,7 +471,9 @@
         "d":  "Tirolinas rutas 4x4 entorno pinar",
         "t":  "naturaleza",
         "lat":  40.2,
-        "lon":  -2.0
+        "lon":  -2.0,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -432,7 +488,9 @@
         "d":  "Junto al embalse pueblo medieval sobre penasco",
         "t":  "rio",
         "lat":  39.5667,
-        "lon":  -2.15
+        "lon":  -2.15,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -447,7 +505,9 @@
         "d":  "Casco historico manchego corral de comedias cerca",
         "t":  "ciudad",
         "lat":  38.8667,
-        "lon":  -3.7
+        "lon":  -3.7,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -462,7 +522,9 @@
         "d":  "Parque natural lagunas encadenadas piscina natural cerca",
         "t":  "rio",
         "lat":  38.95,
-        "lon":  -2.85
+        "lon":  -2.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -477,7 +539,9 @@
         "d":  "Molinos de viento ruta del Quijote",
         "t":  "naturaleza",
         "lat":  39.4667,
-        "lon":  -3.6167
+        "lon":  -3.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -492,7 +556,9 @@
         "d":  "Cerca del Henares bien comunicado con Madrid",
         "t":  "naturaleza",
         "lat":  40.6333,
-        "lon":  -3.1667
+        "lon":  -3.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -507,7 +573,9 @@
         "d":  "Ciudad medieval catedral y castillo",
         "t":  "ciudad",
         "lat":  41.05,
-        "lon":  -2.65
+        "lon":  -2.65,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -522,7 +590,9 @@
         "d":  "Cerca casco historico piscina parcelas amplias",
         "t":  "ciudad",
         "lat":  39.4753,
-        "lon":  -6.3724
+        "lon":  -6.3724,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -537,7 +607,9 @@
         "d":  "Naturista familiar piscina zonas verdes bien comunicado",
         "t":  "naturaleza",
         "lat":  39.4753,
-        "lon":  -6.3724
+        "lon":  -6.3724,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -552,7 +624,9 @@
         "d":  "Junto al Guadiana ruinas romanas cercanas piscina",
         "t":  "naturaleza",
         "lat":  38.9161,
-        "lon":  -6.3437
+        "lon":  -6.3437,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -567,7 +641,9 @@
         "d":  "Observacion de aves buitres rutas naturaleza",
         "t":  "naturaleza",
         "lat":  39.8167,
-        "lon":  -5.9333
+        "lon":  -5.9333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -582,7 +658,9 @@
         "d":  "Valle del Jerte cerca zona de pantanos piscina natural",
         "t":  "montana",
         "lat":  40.0667,
-        "lon":  -5.6833
+        "lon":  -5.6833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -597,7 +675,9 @@
         "d":  "Frontera con Portugal cerca del rio Guadiana",
         "t":  "rio",
         "lat":  38.8794,
-        "lon":  -6.9707
+        "lon":  -6.9707,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -612,7 +692,9 @@
         "d":  "Monasterio Patrimonio Humanidad entorno serrano",
         "t":  "rio",
         "lat":  39.45,
-        "lon":  -5.3167
+        "lon":  -5.3167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -627,7 +709,9 @@
         "d":  "Famoso por floracion del cerezo rio con piscinas naturales",
         "t":  "rio",
         "lat":  40.2,
-        "lon":  -5.75
+        "lon":  -5.75,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -642,7 +726,9 @@
         "d":  "Casco historico cerca ruta de la Plata",
         "t":  "ciudad",
         "lat":  38.4167,
-        "lon":  -6.4167
+        "lon":  -6.4167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -657,7 +743,9 @@
         "d":  "Ciudad amurallada junto al rio Alagon",
         "t":  "rio",
         "lat":  39.9833,
-        "lon":  -6.5333
+        "lon":  -6.5333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -672,7 +760,9 @@
         "d":  "Canon del rio Vero barranquismo escalada piscina",
         "t":  "rio",
         "lat":  42.1667,
-        "lon":  -0.0167
+        "lon":  -0.0167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -687,7 +777,9 @@
         "d":  "Puerta al Parque Nacional de Ordesa senderismo alta montana",
         "t":  "montana",
         "lat":  42.6167,
-        "lon":  -0.1167
+        "lon":  -0.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -702,7 +794,9 @@
         "d":  "Naturaleza tranquila punto de paso hacia Levante",
         "t":  "naturaleza",
         "lat":  40.3456,
-        "lon":  -1.1065
+        "lon":  -1.1065,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -717,7 +811,9 @@
         "d":  "Junto al Ebro urbano bien comunicado",
         "t":  "ciudad",
         "lat":  41.6488,
-        "lon":  -0.8891
+        "lon":  -0.8891,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -732,7 +828,9 @@
         "d":  "Pirineo aragones alta montana escalada esqui de fondo",
         "t":  "montana",
         "lat":  42.6,
-        "lon":  0.5167
+        "lon":  0.5167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -747,7 +845,9 @@
         "d":  "Montana turolense tranquilo estrellas dark sky",
         "t":  "montana",
         "lat":  40.15,
-        "lon":  -0.85
+        "lon":  -0.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -762,7 +862,9 @@
         "d":  "Pirineo occidental ciudadela cerca camino de Santiago",
         "t":  "montana",
         "lat":  42.5667,
-        "lon":  -0.55
+        "lon":  -0.55,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -777,7 +879,9 @@
         "d":  "Pueblo medieval casco rojizo entorno serrano",
         "t":  "naturaleza",
         "lat":  40.4083,
-        "lon":  -1.4419
+        "lon":  -1.4419,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -792,7 +896,9 @@
         "d":  "Pueblo medieval cuna de Fernando el Catolico",
         "t":  "naturaleza",
         "lat":  42.5,
-        "lon":  -1.2167
+        "lon":  -1.2167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -807,7 +913,9 @@
         "d":  "Pirineo cerca Formigal esqui y senderismo",
         "t":  "montana",
         "lat":  42.7667,
-        "lon":  -0.3333
+        "lon":  -0.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -822,7 +930,9 @@
         "d":  "Junto al parque natural del Monasterio de Piedra cascadas",
         "t":  "rio",
         "lat":  41.2,
-        "lon":  -1.75
+        "lon":  -1.75,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -837,7 +947,9 @@
         "d":  "Junto al puerto deportivo piscinas parcelas amplias",
         "t":  "naturaleza",
         "lat":  38.9167,
-        "lon":  -0.1167
+        "lon":  -0.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -852,7 +964,9 @@
         "d":  "Playa cerca del centro piscina animacion todo el ano",
         "t":  "playa",
         "lat":  38.5411,
-        "lon":  -0.1225
+        "lon":  -0.1225,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -867,7 +981,9 @@
         "d":  "Cerca playa de Levante piscinas parque acuatico bungalows",
         "t":  "playa",
         "lat":  38.5411,
-        "lon":  -0.1225
+        "lon":  -0.1225,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -882,7 +998,9 @@
         "d":  "Resort moderno lago artificial spa bungalows lujo",
         "t":  "rio",
         "lat":  38.15,
-        "lon":  -0.7833
+        "lon":  -0.7833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -897,7 +1015,9 @@
         "d":  "Piscinas toboganes bungalows todo incluido familiar",
         "t":  "naturaleza",
         "lat":  38.0956,
-        "lon":  -0.6511
+        "lon":  -0.6511,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -912,7 +1032,9 @@
         "d":  "Junto a playas de Elche pinar frondoso amplio",
         "t":  "playa",
         "lat":  38.15,
-        "lon":  -0.6667
+        "lon":  -0.6667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -927,7 +1049,9 @@
         "d":  "Cala tranquila entorno natural buceo cercano",
         "t":  "playa",
         "lat":  38.7897,
-        "lon":  0.1667
+        "lon":  0.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -942,7 +1066,9 @@
         "d":  "Bajo el Penon de Ifach piscina playa cercana",
         "t":  "playa",
         "lat":  38.6447,
-        "lon":  0.0447
+        "lon":  0.0447,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -957,7 +1083,9 @@
         "d":  "Primera linea playa protegida tres piscinas abierto todo el ano",
         "t":  "playa",
         "lat":  40.3597,
-        "lon":  0.4
+        "lon":  0.4,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -972,7 +1100,9 @@
         "d":  "A pie de playa tamano medio tranquilo",
         "t":  "playa",
         "lat":  40.2333,
-        "lon":  0.25
+        "lon":  0.25,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -987,7 +1117,9 @@
         "d":  "Playa ancha arena blanca amplias parcelas",
         "t":  "playa",
         "lat":  38.9167,
-        "lon":  -0.1167
+        "lon":  -0.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1002,7 +1134,9 @@
         "d":  "Top valorado costa blanca apto ninos piscina",
         "t":  "playa",
         "lat":  38.15,
-        "lon":  -0.65
+        "lon":  -0.65,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1017,7 +1151,9 @@
         "d":  "Junto a la Albufera y dunas pinar",
         "t":  "playa",
         "lat":  39.35,
-        "lon":  -0.3333
+        "lon":  -0.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1032,7 +1168,9 @@
         "d":  "Costa Calida recomendado ciclismo apto mayores",
         "t":  "playa",
         "lat":  37.8667,
-        "lon":  -0.7667
+        "lon":  -0.7667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1047,7 +1185,9 @@
         "d":  "Area autocaravanas servicios completos bien valorado",
         "t":  "naturaleza",
         "lat":  37.9833,
-        "lon":  -1.1
+        "lon":  -1.1,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1062,7 +1202,9 @@
         "d":  "Bien comunicado con la capital",
         "t":  "ciudad",
         "lat":  37.9922,
-        "lon":  -1.1307
+        "lon":  -1.1307,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1077,7 +1219,9 @@
         "d":  "Playas del mediterraneo aguas tranquilas",
         "t":  "playa",
         "lat":  37.5978,
-        "lon":  -1.3153
+        "lon":  -1.3153,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1092,7 +1236,9 @@
         "d":  "Costa Calida calas y castillo de San Juan",
         "t":  "playa",
         "lat":  37.4058,
-        "lon":  -1.5828
+        "lon":  -1.5828,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1107,7 +1253,9 @@
         "d":  "Puerto historico buceo pecios romanos cerca",
         "t":  "naturaleza",
         "lat":  37.6,
-        "lon":  -0.9833
+        "lon":  -0.9833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1122,7 +1270,9 @@
         "d":  "Dunas virgenes calas protegidas naturaleza",
         "t":  "playa",
         "lat":  37.6167,
-        "lon":  -0.7167
+        "lon":  -0.7167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1137,7 +1287,9 @@
         "d":  "Faro emblematico buceo Islas Hormigas",
         "t":  "playa",
         "lat":  37.6333,
-        "lon":  -0.7
+        "lon":  -0.7,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1152,7 +1304,9 @@
         "d":  "Castillo y casco historico cerca sierra",
         "t":  "montana",
         "lat":  37.6708,
-        "lon":  -1.7017
+        "lon":  -1.7017,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1167,7 +1321,9 @@
         "d":  "Zona vinicola entorno rural tranquilo",
         "t":  "naturaleza",
         "lat":  38.05,
-        "lon":  -1.6667
+        "lon":  -1.6667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1182,7 +1338,9 @@
         "d":  "Tiendas equipadas listas playa cerca",
         "t":  "playa",
         "lat":  41.0667,
-        "lon":  1.05
+        "lon":  1.05,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1197,7 +1355,9 @@
         "d":  "Naturaleza humedales observacion aves kayak",
         "t":  "naturaleza",
         "lat":  40.7167,
-        "lon":  0.7333
+        "lon":  0.7333,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1212,7 +1372,9 @@
         "d":  "Costa Dorada piscinas cerca Port Aventura",
         "t":  "playa",
         "lat":  41.0761,
-        "lon":  1.1394
+        "lon":  1.1394,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1227,7 +1389,9 @@
         "d":  "Dos piscinas adultos y ninos zona verde",
         "t":  "naturaleza",
         "lat":  42.25,
-        "lon":  3.15
+        "lon":  3.15,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1242,7 +1406,9 @@
         "d":  "Junto a cala salvaje cerca Cap de Creus",
         "t":  "playa",
         "lat":  42.25,
-        "lon":  3.2167
+        "lon":  3.2167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1257,7 +1423,9 @@
         "d":  "Extremo Cap de Creus vistas mar y montana",
         "t":  "playa",
         "lat":  42.3333,
-        "lon":  3.2
+        "lon":  3.2,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1272,7 +1440,9 @@
         "d":  "Puerta a Costa Brava piscina playa cercana",
         "t":  "playa",
         "lat":  41.6743,
-        "lon":  2.7921
+        "lon":  2.7921,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1287,7 +1457,9 @@
         "d":  "Resort premium piscinas parque acuatico grande",
         "t":  "naturaleza",
         "lat":  41.9667,
-        "lon":  3.1667
+        "lon":  3.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1302,7 +1474,9 @@
         "d":  "Bien comunicado con la ciudad playa cerca",
         "t":  "playa",
         "lat":  41.2241,
-        "lon":  1.7252
+        "lon":  1.7252,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1317,7 +1491,9 @@
         "d":  "Playa amplia tiendas equipadas",
         "t":  "playa",
         "lat":  41.0833,
-        "lon":  1.15
+        "lon":  1.15,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1332,7 +1508,9 @@
         "d":  "Ambiente animado playa urbana cercana",
         "t":  "playa",
         "lat":  41.2379,
-        "lon":  1.8057
+        "lon":  1.8057,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1347,7 +1525,9 @@
         "d":  "Prepirineo catalan cerca Cadi Moixero",
         "t":  "montana",
         "lat":  42.1,
-        "lon":  1.85
+        "lon":  1.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1362,7 +1542,9 @@
         "d":  "Geoparque Flysch escenario Juego de Tronos",
         "t":  "rio",
         "lat":  43.2967,
-        "lon":  -2.2597
+        "lon":  -2.2597,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1377,7 +1559,9 @@
         "d":  "Sobre la ciudad vistas bahia de la Concha",
         "t":  "ciudad",
         "lat":  43.3183,
-        "lon":  -2.0175
+        "lon":  -2.0175,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1392,7 +1576,9 @@
         "d":  "Junto a la ria surf en Mundaka cerca",
         "t":  "playa",
         "lat":  43.4083,
-        "lon":  -2.6983
+        "lon":  -2.6983,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1407,7 +1593,9 @@
         "d":  "Costa vasca acantilados playa salvaje",
         "t":  "playa",
         "lat":  43.45,
-        "lon":  -2.6333
+        "lon":  -2.6333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1422,7 +1610,9 @@
         "d":  "Bien comunicado con la ciudad y el metro",
         "t":  "ciudad",
         "lat":  43.263,
-        "lon":  -2.935
+        "lon":  -2.935,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1437,7 +1627,9 @@
         "d":  "Junto a la ria y playa apto surf",
         "t":  "playa",
         "lat":  43.2833,
-        "lon":  -2.1333
+        "lon":  -2.1333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1452,7 +1644,9 @@
         "d":  "Cerca de los Sabinares del Rio Ebro",
         "t":  "rio",
         "lat":  42.8467,
-        "lon":  -2.6716
+        "lon":  -2.6716,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1467,7 +1661,9 @@
         "d":  "Playas de surf acantilados flysch",
         "t":  "playa",
         "lat":  43.3833,
-        "lon":  -2.9833
+        "lon":  -2.9833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1482,7 +1678,9 @@
         "d":  "Costa vasca cerca ruta del flysch",
         "t":  "playa",
         "lat":  43.2833,
-        "lon":  -2.35
+        "lon":  -2.35,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1497,7 +1695,9 @@
         "d":  "Entorno rural montanoso tranquilo",
         "t":  "montana",
         "lat":  42.8333,
-        "lon":  -2.5
+        "lon":  -2.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1512,7 +1712,9 @@
         "d":  "Sierra y hayedo entorno de montana tranquilo",
         "t":  "montana",
         "lat":  42.85,
-        "lon":  -2.05
+        "lon":  -2.05,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1527,7 +1729,9 @@
         "d":  "Junto al rio Arga cerca del Camino de Santiago",
         "t":  "rio",
         "lat":  42.6333,
-        "lon":  -1.85
+        "lon":  -1.85,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1542,7 +1746,9 @@
         "d":  "Bien comunicado casco historico y sanfermines",
         "t":  "ciudad",
         "lat":  42.8125,
-        "lon":  -1.6458
+        "lon":  -1.6458,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1557,7 +1763,9 @@
         "d":  "Pirineo navarro quesos DOP naturaleza",
         "t":  "montana",
         "lat":  42.85,
-        "lon":  -1.0333
+        "lon":  -1.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1572,7 +1780,9 @@
         "d":  "Pirineo navarro bosques hayedos",
         "t":  "montana",
         "lat":  42.9167,
-        "lon":  -1.0833
+        "lon":  -1.0833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1587,7 +1797,9 @@
         "d":  "Paisaje desertico unico rutas 4x4 y btt",
         "t":  "naturaleza",
         "lat":  42.2,
-        "lon":  -1.4333
+        "lon":  -1.4333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1602,7 +1814,9 @@
         "d":  "Pirineo atlantico caserios y bosques",
         "t":  "montana",
         "lat":  43.15,
-        "lon":  -1.5
+        "lon":  -1.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1617,7 +1831,9 @@
         "d":  "Ribera navarra huerta y verduras",
         "t":  "naturaleza",
         "lat":  42.0667,
-        "lon":  -1.6
+        "lon":  -1.6,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1632,7 +1848,9 @@
         "d":  "Etapa clave del Camino de Santiago",
         "t":  "naturaleza",
         "lat":  42.6706,
-        "lon":  -2.0325
+        "lon":  -2.0325,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1647,7 +1865,9 @@
         "d":  "Pirineo humedo bosques atlanticos",
         "t":  "montana",
         "lat":  43.0667,
-        "lon":  -1.9167
+        "lon":  -1.9167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1662,7 +1882,9 @@
         "d":  "Sierra de la Demanda cerca estacion de esqui",
         "t":  "montana",
         "lat":  42.3333,
-        "lon":  -3.0
+        "lon":  -3.0,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1677,7 +1899,9 @@
         "d":  "Capital del Rioja zona de bodegas",
         "t":  "rio",
         "lat":  42.5764,
-        "lon":  -2.845
+        "lon":  -2.845,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1692,7 +1916,9 @@
         "d":  "Bien comunicado camino de Santiago",
         "t":  "naturaleza",
         "lat":  42.4627,
-        "lon":  -2.445
+        "lon":  -2.445,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1707,7 +1933,9 @@
         "d":  "Monasterios Patrimonio Humanidad entorno tranquilo",
         "t":  "rio",
         "lat":  42.3167,
-        "lon":  -2.85
+        "lon":  -2.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1722,7 +1950,9 @@
         "d":  "Etapa del Camino de Santiago junto al rio Najerilla",
         "t":  "rio",
         "lat":  42.4167,
-        "lon":  -2.7333
+        "lon":  -2.7333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1737,7 +1967,9 @@
         "d":  "Aguas termales valle del Cidacos",
         "t":  "montana",
         "lat":  42.2333,
-        "lon":  -2.2333
+        "lon":  -2.2333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1752,7 +1984,9 @@
         "d":  "Sierra riojana bosques y naturaleza",
         "t":  "montana",
         "lat":  42.2667,
-        "lon":  -2.6333
+        "lon":  -2.6333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1767,7 +2001,9 @@
         "d":  "Huerta riojana bien comunicado",
         "t":  "rio",
         "lat":  42.3025,
-        "lon":  -1.9653
+        "lon":  -1.9653,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1782,7 +2018,9 @@
         "d":  "Zona de icnitas de dinosaurios naturaleza",
         "t":  "rio",
         "lat":  42.1667,
-        "lon":  -2.2667
+        "lon":  -2.2667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1797,7 +2035,9 @@
         "d":  "Frontera con Aragon entorno rural",
         "t":  "naturaleza",
         "lat":  42.0167,
-        "lon":  -1.9667
+        "lon":  -1.9667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1812,7 +2052,9 @@
         "d":  "Junto a la ria de Tina Mayor piscina actividades canoning",
         "t":  "playa",
         "lat":  43.35,
-        "lon":  -4.55
+        "lon":  -4.55,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1827,7 +2069,9 @@
         "d":  "Mejor camping playa 2017 FECC animacion infantil",
         "t":  "playa",
         "lat":  43.3833,
-        "lon":  -4.3
+        "lon":  -4.3,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1842,7 +2086,9 @@
         "d":  "Acceso a seis playas lavanderia supermercado",
         "t":  "playa",
         "lat":  43.4833,
-        "lon":  -3.55
+        "lon":  -3.55,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1857,7 +2103,9 @@
         "d":  "A 4 km de playa 35 de Santander piscina vistas",
         "t":  "playa",
         "lat":  43.45,
-        "lon":  -3.6
+        "lon":  -3.6,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1872,7 +2120,9 @@
         "d":  "Parque natural playa extensa dunas",
         "t":  "playa",
         "lat":  43.3833,
-        "lon":  -4.2833
+        "lon":  -4.2833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1887,7 +2137,9 @@
         "d":  "A 1.5 km playa de Somo top surf y kitesurf",
         "t":  "playa",
         "lat":  43.4667,
-        "lon":  -3.75
+        "lon":  -3.75,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1902,7 +2154,9 @@
         "d":  "Casco historico cerca cuevas de Altamira",
         "t":  "ciudad",
         "lat":  43.3897,
-        "lon":  -4.1092
+        "lon":  -4.1092,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1917,7 +2171,9 @@
         "d":  "Valle interior naturaleza tranquila rio cercano",
         "t":  "montana",
         "lat":  43.25,
-        "lon":  -4.2833
+        "lon":  -4.2833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1932,7 +2188,9 @@
         "d":  "Costa occidental cantabra playas tranquilas",
         "t":  "playa",
         "lat":  43.4,
-        "lon":  -4.15
+        "lon":  -4.15,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1947,7 +2205,9 @@
         "d":  "Picos de Europa desfiladero senderismo",
         "t":  "montana",
         "lat":  43.15,
-        "lon":  -4.6167
+        "lon":  -4.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1962,7 +2222,9 @@
         "d":  "Playas urbanas surf y paseo maritimo",
         "t":  "playa",
         "lat":  43.4333,
-        "lon":  -4.0333
+        "lon":  -4.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -1977,7 +2239,9 @@
         "d":  "Costa oriental asturiana calas y acantilados",
         "t":  "playa",
         "lat":  43.4167,
-        "lon":  -4.75
+        "lon":  -4.75,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -1992,7 +2256,9 @@
         "d":  "Playa al lado cerca museo jurasico",
         "t":  "playa",
         "lat":  43.4833,
-        "lon":  -5.2667
+        "lon":  -5.2667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2007,7 +2273,9 @@
         "d":  "Puerta a Picos de Europa rutas Covadonga cercanas",
         "t":  "montana",
         "lat":  43.35,
-        "lon":  -5.1333
+        "lon":  -5.1333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2022,7 +2290,9 @@
         "d":  "Familiar cerca mar y montana descenso del Sella",
         "t":  "playa",
         "lat":  43.4667,
-        "lon":  -5.05
+        "lon":  -5.05,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2037,7 +2307,9 @@
         "d":  "Primera linea de playa abierto en verano diario",
         "t":  "playa",
         "lat":  43.5667,
-        "lon":  -5.9667
+        "lon":  -5.9667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2052,7 +2324,9 @@
         "d":  "Playa extensa entre Asturias y Cantabria",
         "t":  "playa",
         "lat":  43.4,
-        "lon":  -4.5333
+        "lon":  -4.5333,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2067,7 +2341,9 @@
         "d":  "Bien comunicado con la ciudad playa San Lorenzo cerca",
         "t":  "playa",
         "lat":  43.5322,
-        "lon":  -5.6611
+        "lon":  -5.6611,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2082,7 +2358,9 @@
         "d":  "Pueblo marinero de colores pesquero",
         "t":  "playa",
         "lat":  43.5639,
-        "lon":  -6.1439
+        "lon":  -6.1439,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2097,7 +2375,9 @@
         "d":  "Osos pardos brañas y lagos glaciares",
         "t":  "rio",
         "lat":  43.0833,
-        "lon":  -6.25
+        "lon":  -6.25,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2112,7 +2392,9 @@
         "d":  "Capital asturiana bien comunicada",
         "t":  "playa",
         "lat":  43.3619,
-        "lon":  -5.8494
+        "lon":  -5.8494,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2127,7 +2409,9 @@
         "d":  "Extremo occidental fin de la tierra faro y acantilados",
         "t":  "playa",
         "lat":  42.9053,
-        "lon":  -9.2653
+        "lon":  -9.2653,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2142,7 +2426,9 @@
         "d":  "Primera linea Atlantico acceso a cala bungalows",
         "t":  "playa",
         "lat":  42.05,
-        "lon":  -8.85
+        "lon":  -8.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2157,7 +2443,9 @@
         "d":  "Cerca casco historico Baiona playa amplia piscinas",
         "t":  "playa",
         "lat":  42.1167,
-        "lon":  -8.85
+        "lon":  -8.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2172,7 +2460,9 @@
         "d":  "Playa extensa supermercado restaurante piscina tobogan",
         "t":  "playa",
         "lat":  42.1167,
-        "lon":  -8.75
+        "lon":  -8.75,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2187,7 +2477,9 @@
         "d":  "A las faldas del monte A Curota trekking rutas a caballo",
         "t":  "naturaleza",
         "lat":  42.5667,
-        "lon":  -8.9833
+        "lon":  -8.9833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2202,7 +2494,9 @@
         "d":  "Primera categoria 167 parcelas 25 bungalows junto al mar",
         "t":  "playa",
         "lat":  42.7,
-        "lon":  -9.0
+        "lon":  -9.0,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2217,7 +2511,9 @@
         "d":  "Jardin botanico museo al aire libre familiar",
         "t":  "naturaleza",
         "lat":  43.35,
-        "lon":  -8.3
+        "lon":  -8.3,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2232,7 +2528,9 @@
         "d":  "Estuario del Mino vistas a Portugal llano y con sombra",
         "t":  "rio",
         "lat":  41.9,
-        "lon":  -8.8667
+        "lon":  -8.8667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2247,7 +2545,9 @@
         "d":  "Playa blanca aguas cristalinas piscinas toboganes",
         "t":  "playa",
         "lat":  42.4,
-        "lon":  -8.8333
+        "lon":  -8.8333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2262,7 +2562,9 @@
         "d":  "En el Camino de Santiago parada de peregrinos",
         "t":  "naturaleza",
         "lat":  42.9,
-        "lon":  -8.3667
+        "lon":  -8.3667,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2277,7 +2579,9 @@
         "d":  "Costa norte de Lugo acantilados playas salvajes",
         "t":  "playa",
         "lat":  43.5333,
-        "lon":  -7.0333
+        "lon":  -7.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2292,7 +2596,9 @@
         "d":  "Punto clave del Camino Frances entorno verde",
         "t":  "naturaleza",
         "lat":  42.7833,
-        "lon":  -7.4167
+        "lon":  -7.4167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2307,7 +2613,9 @@
         "d":  "Punto mas al norte de la peninsula faro y acantilados",
         "t":  "playa",
         "lat":  43.7883,
-        "lon":  -7.6867
+        "lon":  -7.6867,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2322,7 +2630,9 @@
         "d":  "Cerca del extremo norte rias altas tranquilo",
         "t":  "playa",
         "lat":  43.6833,
-        "lon":  -7.85
+        "lon":  -7.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2337,7 +2647,9 @@
         "d":  "Urbano bien comunicado con el centro historico",
         "t":  "ciudad",
         "lat":  37.3891,
-        "lon":  -5.9845
+        "lon":  -5.9845,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2352,7 +2664,9 @@
         "d":  "Piscina parcelas amplias cerca capital",
         "t":  "ciudad",
         "lat":  37.2833,
-        "lon":  -5.9167
+        "lon":  -5.9167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2367,7 +2681,9 @@
         "d":  "Junto al rio Guadalquivir cerca mezquita catedral",
         "t":  "rio",
         "lat":  37.8882,
-        "lon":  -4.7794
+        "lon":  -4.7794,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2382,7 +2698,9 @@
         "d":  "Sierra pueblo blanco parque natural senderismo",
         "t":  "montana",
         "lat":  36.7667,
-        "lon":  -5.35
+        "lon":  -5.35,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2397,7 +2715,9 @@
         "d":  "Playa de surf famosa ambiente relajado",
         "t":  "playa",
         "lat":  36.2,
-        "lon":  -6.05
+        "lon":  -6.05,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2412,7 +2732,9 @@
         "d":  "Playa virgen faro de Trafalgar cerca",
         "t":  "playa",
         "lat":  36.1833,
-        "lon":  -6.0333
+        "lon":  -6.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2427,7 +2749,9 @@
         "d":  "Kitesurf capital de Europa vientos de levante",
         "t":  "playa",
         "lat":  36.0128,
-        "lon":  -5.6
+        "lon":  -5.6,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2442,7 +2766,9 @@
         "d":  "Vistas a Africa punto mas al sur peninsular",
         "t":  "naturaleza",
         "lat":  36.0333,
-        "lon":  -5.65
+        "lon":  -5.65,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2457,7 +2783,9 @@
         "d":  "Junto al embalse pueblo blanco emblematico",
         "t":  "rio",
         "lat":  36.75,
-        "lon":  -5.8
+        "lon":  -5.8,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2472,7 +2800,9 @@
         "d":  "Playas extensas ambiente surfero",
         "t":  "playa",
         "lat":  36.2833,
-        "lon":  -6.0833
+        "lon":  -6.0833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2487,7 +2817,9 @@
         "d":  "Costa del Sol piscina cerca playa",
         "t":  "playa",
         "lat":  36.6202,
-        "lon":  -4.4998
+        "lon":  -4.4998,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2502,7 +2834,9 @@
         "d":  "Costa del Sol occidental clima suave todo el ano",
         "t":  "playa",
         "lat":  36.4275,
-        "lon":  -5.1447
+        "lon":  -5.1447,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2517,7 +2851,9 @@
         "d":  "Montana y nieve cercania a la costa tropical",
         "t":  "montana",
         "lat":  37.1167,
-        "lon":  -3.5
+        "lon":  -3.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2532,7 +2868,9 @@
         "d":  "Costa tropical clima subtropical piscina",
         "t":  "playa",
         "lat":  36.7444,
-        "lon":  -3.5183
+        "lon":  -3.5183,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2547,7 +2885,9 @@
         "d":  "Playas de arena fina invernaderos alrededor",
         "t":  "playa",
         "lat":  36.7667,
-        "lon":  -2.6167
+        "lon":  -2.6167,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2562,7 +2902,9 @@
         "d":  "Parque natural volcanico calas virgenes",
         "t":  "playa",
         "lat":  36.85,
-        "lon":  -2.05
+        "lon":  -2.05,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2577,7 +2919,9 @@
         "d":  "Junto al Parque Nacional de Donana caballos",
         "t":  "naturaleza",
         "lat":  37.1333,
-        "lon":  -6.4833
+        "lon":  -6.4833,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2592,7 +2936,9 @@
         "d":  "Playa y marisma parque nacional observacion aves",
         "t":  "playa",
         "lat":  36.9833,
-        "lon":  -6.55
+        "lon":  -6.55,
+        "tel":  "+34 955 252 440",
+        "web":  "https://www.kampaoh.com/"
     },
     {
         "pais":  "España",
@@ -2607,7 +2953,9 @@
         "d":  "Frontera con Portugal desembocadura Guadiana",
         "t":  "naturaleza",
         "lat":  37.2131,
-        "lon":  -7.4064
+        "lon":  -7.4064,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2622,7 +2970,9 @@
         "d":  "Cerca bahia de Porto Covo e Ilha do Pessegueiro",
         "t":  "playa",
         "lat":  37.85,
-        "lon":  -8.7967
+        "lon":  -8.7967,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2637,7 +2987,9 @@
         "d":  "Peninsula de surf cerca de Baleal y Berlengas",
         "t":  "playa",
         "lat":  39.3558,
-        "lon":  -9.3811
+        "lon":  -9.3811,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2652,7 +3004,9 @@
         "d":  "Junto a la laguna de Obidos tiendas y cabanas de lujo",
         "t":  "rio",
         "lat":  39.4167,
-        "lon":  -9.2167
+        "lon":  -9.2167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2667,7 +3021,9 @@
         "d":  "Municipal bien comunicado cerca desembocadura Mondego",
         "t":  "playa",
         "lat":  40.1521,
-        "lon":  -8.8624
+        "lon":  -8.8624,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2682,7 +3038,9 @@
         "d":  "Borde del parque natural playas fluviales senderismo",
         "t":  "montana",
         "lat":  40.4,
-        "lon":  -7.5333
+        "lon":  -7.5333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2697,7 +3055,9 @@
         "d":  "Valle tranquilo 30 min de Serra da Estrela sauna finlandesa",
         "t":  "montana",
         "lat":  40.3667,
-        "lon":  -8.0333
+        "lon":  -8.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2712,7 +3072,9 @@
         "d":  "Parque Nacional Peneda Geres piscina y jardin",
         "t":  "montana",
         "lat":  41.75,
-        "lon":  -8.1667
+        "lon":  -8.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2727,7 +3089,9 @@
         "d":  "Cerca de las termas de Geres y del embalse de Canicada",
         "t":  "rio",
         "lat":  41.7167,
-        "lon":  -8.2
+        "lon":  -8.2,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2742,7 +3106,9 @@
         "d":  "Vistas al canon del Duero internacional frontera con Zamora",
         "t":  "rio",
         "lat":  41.4986,
-        "lon":  -6.2733
+        "lon":  -6.2733,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -2757,7 +3123,9 @@
         "d":  "16 km de Porto frente a playa de pueblo pesquero",
         "t":  "playa",
         "lat":  41.2667,
-        "lon":  -8.7167
+        "lon":  -8.7167,
+        "tel":  "+351 229 270 571",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -2772,7 +3140,9 @@
         "d":  "Parque Natural do Alvao cascadas y aldeas de piedra",
         "t":  "montana",
         "lat":  41.5667,
-        "lon":  -7.8
+        "lon":  -7.8,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2787,7 +3157,9 @@
         "d":  "Vistas a Islas Medes bungalows piscinas deportes acuaticos",
         "t":  "playa",
         "lat":  42.0511,
-        "lon":  3.2081
+        "lon":  3.2081,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2802,7 +3174,9 @@
         "d":  "Playa propia discotecas piscinas parcelas amplias",
         "t":  "playa",
         "lat":  42.1889,
-        "lon":  3.1147
+        "lon":  3.1147,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2817,7 +3191,9 @@
         "d":  "Spa sauna acceso directo a la playa admite perros",
         "t":  "playa",
         "lat":  42.187,
-        "lon":  3.113
+        "lon":  3.113,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2832,7 +3208,9 @@
         "d":  "Cuatro piscinas toboganes mobile homes playa cerca",
         "t":  "playa",
         "lat":  42.191,
-        "lon":  3.116
+        "lon":  3.116,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2847,7 +3225,9 @@
         "d":  "Piscinas amplias zona verde bungalows tiendas safari",
         "t":  "playa",
         "lat":  41.8167,
-        "lon":  3.0667
+        "lon":  3.0667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2862,7 +3242,9 @@
         "d":  "Buceo actividades infantiles tiendas de lujo piscinas",
         "t":  "playa",
         "lat":  41.8611,
-        "lon":  3.0733
+        "lon":  3.0733,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2877,7 +3259,9 @@
         "d":  "Vistas mar y montana bungalows mobile homes",
         "t":  "playa",
         "lat":  41.858,
-        "lon":  3.07
+        "lon":  3.07,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2892,7 +3276,9 @@
         "d":  "455 parcelas escuela de surf orilla de playa",
         "t":  "playa",
         "lat":  42.2625,
-        "lon":  3.1766
+        "lon":  3.1766,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2907,7 +3293,9 @@
         "d":  "Gimnasio con vistas apartamentos admite mascotas",
         "t":  "playa",
         "lat":  42.25,
-        "lon":  3.1167
+        "lon":  3.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2922,7 +3310,9 @@
         "d":  "Arboleda piscina gimnasio supermercado alquiler bicicletas",
         "t":  "playa",
         "lat":  41.8944,
-        "lon":  3.1994
+        "lon":  3.1994,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2937,7 +3327,9 @@
         "d":  "Acceso con embarcaciones lodges minigolf humedales",
         "t":  "naturaleza",
         "lat":  42.2167,
-        "lon":  3.1167
+        "lon":  3.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2952,7 +3344,9 @@
         "d":  "Prepirineo leridano entorno rural tranquilo",
         "t":  "montana",
         "lat":  41.9942,
-        "lon":  1.5169
+        "lon":  1.5169,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2967,7 +3361,9 @@
         "d":  "Prepirineo catalan bosques senderismo familiar",
         "t":  "montana",
         "lat":  42.1058,
-        "lon":  1.8464
+        "lon":  1.8464,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2982,7 +3378,9 @@
         "d":  "Valle del Ter pueblo con encanto entorno pirenaico",
         "t":  "montana",
         "lat":  42.3153,
-        "lon":  2.3644
+        "lon":  2.3644,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -2997,7 +3395,9 @@
         "d":  "Tren cremallera a Nuria valle pirenaico",
         "t":  "montana",
         "lat":  42.3167,
-        "lon":  2.1667
+        "lon":  2.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3012,7 +3412,9 @@
         "d":  "Parque natural Alt Emporda naturaleza tranquila",
         "t":  "naturaleza",
         "lat":  42.3167,
-        "lon":  2.6833
+        "lon":  2.6833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3027,7 +3429,9 @@
         "d":  "Prepirineo leridano naturaleza y senderismo",
         "t":  "montana",
         "lat":  42.2167,
-        "lon":  1.3333
+        "lon":  1.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3042,7 +3446,9 @@
         "d":  "Cerca de Andorra naturaleza pirenaica bien comunicado",
         "t":  "montana",
         "lat":  42.3586,
-        "lon":  1.4611
+        "lon":  1.4611,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3057,7 +3463,9 @@
         "d":  "Bergueda naturaleza tranquila rio cercano",
         "t":  "rio",
         "lat":  42.1167,
-        "lon":  1.9333
+        "lon":  1.9333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3072,7 +3480,9 @@
         "d":  "Alta Cerdanya bosques pirenaicos tranquilo",
         "t":  "montana",
         "lat":  42.2667,
-        "lon":  2.25
+        "lon":  2.25,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3087,7 +3497,9 @@
         "d":  "20 km de Baqueira Beret bungalows de madera",
         "t":  "montana",
         "lat":  42.6667,
-        "lon":  0.85
+        "lon":  0.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3102,7 +3514,9 @@
         "d":  "Val d Aran junto al rio Garona cerca de Baqueira",
         "t":  "rio",
         "lat":  42.6942,
-        "lon":  0.7994
+        "lon":  0.7994,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3117,7 +3531,9 @@
         "d":  "Noguera Pallaresa rafting y descenso de barrancos",
         "t":  "rio",
         "lat":  42.49,
-        "lon":  1.0033
+        "lon":  1.0033,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3132,7 +3548,9 @@
         "d":  "Abierto todo el ano piscina cubierta valle de Tena",
         "t":  "montana",
         "lat":  42.6167,
-        "lon":  -0.2667
+        "lon":  -0.2667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3147,7 +3565,9 @@
         "d":  "Salida del pueblo clasico del pirineo aragones",
         "t":  "montana",
         "lat":  42.601,
-        "lon":  0.52
+        "lon":  0.52,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3162,7 +3582,9 @@
         "d":  "Entrada a Jaca gastronomia parque infantil admite mascotas",
         "t":  "montana",
         "lat":  42.569,
-        "lon":  -0.548
+        "lon":  -0.548,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3177,7 +3599,9 @@
         "d":  "130 parcelas 16 bungalows cafeteria restaurante animacion",
         "t":  "montana",
         "lat":  42.62,
-        "lon":  0.53
+        "lon":  0.53,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3192,7 +3616,9 @@
         "d":  "600m playa do Malhao pinar piscina pistas de tenis 4 estrellas oficial",
         "t":  "playa",
         "lat":  37.779722,
-        "lon":  -8.783333
+        "lon":  -8.783333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3207,7 +3633,9 @@
         "d":  "Pinar cerca centro y desembocadura del rio Mira 3 estrellas oficial",
         "t":  "playa",
         "lat":  37.732428,
-        "lon":  -8.787353
+        "lon":  -8.787353,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3222,7 +3650,9 @@
         "d":  "Peninsula en el embalse de Odivelas piscina canoas y caballos 3 estrellas oficial",
         "t":  "rio",
         "lat":  38.182514,
-        "lon":  -8.103328
+        "lon":  -8.103328,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3237,7 +3667,9 @@
         "d":  "Penhas Douradas playa fluvial mas alta de Europa yurtas y spa 3 estrellas oficial",
         "t":  "montana",
         "lat":  40.4031,
-        "lon":  -7.5894
+        "lon":  -7.5894,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3252,7 +3684,9 @@
         "d":  "Junto al Mondego piscina gimnasio minigolf 4 estrellas oficial",
         "t":  "ciudad",
         "lat":  40.189144,
-        "lon":  -8.399476
+        "lon":  -8.399476,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3267,7 +3701,9 @@
         "d":  "A 400m de la playa pistas deportivas piscina 3 estrellas oficial",
         "t":  "playa",
         "lat":  39.916327,
-        "lon":  -8.949212
+        "lon":  -8.949212,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3282,7 +3718,9 @@
         "d":  "Ria de Aveiro casas listadas playa propia deportes acuaticos",
         "t":  "playa",
         "lat":  40.599512,
-        "lon":  -8.752027
+        "lon":  -8.752027,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3297,7 +3735,9 @@
         "d":  "Huerto de cerezos cerca embalse Castelo de Bode piscina",
         "t":  "rio",
         "lat":  39.70065,
-        "lon":  -8.27815
+        "lon":  -8.27815,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3312,7 +3752,9 @@
         "d":  "Altitud 1420m parque natural Serra da Estrela bungalows restaurante",
         "t":  "montana",
         "lat":  40.2875,
-        "lon":  -7.528547
+        "lon":  -7.528547,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3327,7 +3769,9 @@
         "d":  "Dunas junto a playa do Cabedelo desembocadura rio Lima windsurf 3 estrellas oficial",
         "t":  "playa",
         "lat":  41.677311,
-        "lon":  -8.826485
+        "lon":  -8.826485,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3342,7 +3786,9 @@
         "d":  "Altitud 640m dentro del parque nacional junto a lagunas del rio Homem",
         "t":  "montana",
         "lat":  41.763084,
-        "lon":  -8.190378
+        "lon":  -8.190378,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3357,7 +3803,9 @@
         "d":  "Parque acuatico familiar cerca de Peso da Regua 4 estrellas confirmado prensa",
         "t":  "naturaleza",
         "lat":  41.255813,
-        "lon":  -7.65251
+        "lon":  -7.65251,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3372,7 +3820,9 @@
         "d":  "Vinedos con vistas al Duro y a Lamego pequeno y tranquilo",
         "t":  "montana",
         "lat":  41.09156,
-        "lon":  -7.82117
+        "lon":  -7.82117,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3387,7 +3837,9 @@
         "d":  "Playa de Salgueiros piscina 10 min del centro de Porto",
         "t":  "playa",
         "lat":  41.124542,
-        "lon":  -8.666571
+        "lon":  -8.666571,
+        "tel":  "+351 227 814 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3402,7 +3854,9 @@
         "d":  "Junto a la desembocadura del rio Ave facil acceso al mar",
         "t":  "playa",
         "lat":  41.336068,
-        "lon":  -8.737497
+        "lon":  -8.737497,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3417,7 +3871,9 @@
         "d":  "Piscina climatizada spa gimnasio 216 parcelas mobil homes premium 4 estrellas",
         "t":  "playa",
         "lat":  37.102808,
-        "lon":  -8.730254
+        "lon":  -8.730254,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3432,7 +3888,9 @@
         "d":  "600 parcelas piscinas pinar restaurante cerca Praia da Luz 3 estrellas",
         "t":  "playa",
         "lat":  37.101202,
-        "lon":  -8.718692
+        "lon":  -8.718692,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3447,7 +3905,9 @@
         "d":  "Pinar junto al Cabo de San Vicente fortaleza de Sagres 3 estrellas",
         "t":  "playa",
         "lat":  37.024321,
-        "lon":  -8.946154
+        "lon":  -8.946154,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3462,7 +3922,9 @@
         "d":  "Eco lodges Green Key zona naturista parque natural Sudoeste Alentejano",
         "t":  "playa",
         "lat":  37.072322,
-        "lon":  -8.830069
+        "lon":  -8.830069,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3477,7 +3939,9 @@
         "d":  "100000m2 piscina pistas de tenis spa Costa Vicentina 3 estrellas",
         "t":  "naturaleza",
         "lat":  37.340708,
-        "lon":  -8.813653
+        "lon":  -8.813653,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3492,7 +3956,9 @@
         "d":  "Tres piscinas discoteca 190000m2 gran resort 4 estrellas",
         "t":  "playa",
         "lat":  37.106487,
-        "lon":  -8.253178
+        "lon":  -8.253178,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3507,7 +3973,9 @@
         "d":  "Terrazas con sombra accesible cerca Praia do Alvor 3 estrellas",
         "t":  "playa",
         "lat":  37.134326,
-        "lon":  -8.589624
+        "lon":  -8.589624,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3522,7 +3990,9 @@
         "d":  "Piscinas con toboganes discoteca al aire libre 3 estrellas",
         "t":  "playa",
         "lat":  37.0672,
-        "lon":  -8.0872
+        "lon":  -8.0872,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3537,7 +4007,9 @@
         "d":  "350 parcelas piscinas junto a la Ria Formosa 3 estrellas",
         "t":  "naturaleza",
         "lat":  37.143656,
-        "lon":  -7.600994
+        "lon":  -7.600994,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3552,7 +4024,9 @@
         "d":  "Bell tents cine al aire libre bandera azul solo accesible en barco",
         "t":  "playa",
         "lat":  37.113103,
-        "lon":  -7.622505
+        "lon":  -7.622505,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3567,7 +4041,9 @@
         "d":  "Dos piscinas 1000 parcelas pinar junto a Ria Formosa 3 estrellas",
         "t":  "naturaleza",
         "lat":  37.035973,
-        "lon":  -7.818038
+        "lon":  -7.818038,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3582,7 +4058,9 @@
         "d":  "Isla sin coches acceso solo en barco pie de playa",
         "t":  "playa",
         "lat":  37.02074,
-        "lon":  -7.805073
+        "lon":  -7.805073,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3597,7 +4075,9 @@
         "d":  "Renovado 2024 entre mar y Ria Formosa apto autocaravanas",
         "t":  "playa",
         "lat":  37.047827,
-        "lon":  -7.896944
+        "lon":  -7.896944,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3612,7 +4092,9 @@
         "d":  "Solo adultos piscina de agua salada senderismo junto a embalse",
         "t":  "rio",
         "lat":  37.339621,
-        "lon":  -8.372875
+        "lon":  -8.372875,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3627,7 +4109,9 @@
         "d":  "Pinar junto a las dunas zona iconica de windsurf 3 estrellas",
         "t":  "playa",
         "lat":  38.7217,
-        "lon":  -9.4664
+        "lon":  -9.4664,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3642,7 +4126,9 @@
         "d":  "A 20km de Lisboa piscinas playa a 200m 3 estrellas",
         "t":  "playa",
         "lat":  38.6514,
-        "lon":  -9.2381
+        "lon":  -9.2381,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3657,7 +4143,9 @@
         "d":  "Pinar interior cerca del santuario de Nazare 3 estrellas",
         "t":  "playa",
         "lat":  39.5958,
-        "lon":  -9.0497
+        "lon":  -9.0497,
+        "tel":  "+351 262 561 111",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3672,7 +4160,9 @@
         "d":  "Premio DCC Europe 2004 pie de playa pinar 3 estrellas",
         "t":  "playa",
         "lat":  39.7581,
-        "lon":  -9.02583
+        "lon":  -9.02583,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3687,7 +4177,9 @@
         "d":  "Spa jacuzzi de agua termal piscina climatizada con toboganes 4 estrellas oficial",
         "t":  "playa",
         "lat":  39.5237,
-        "lon":  -9.1241
+        "lon":  -9.1241,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3702,7 +4194,9 @@
         "d":  "Frente a Praia da Empa cerca de Sintra y Lisboa 3 estrellas",
         "t":  "playa",
         "lat":  38.961,
-        "lon":  -9.414
+        "lon":  -9.414,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3717,7 +4211,9 @@
         "d":  "Naturaleza y bosque playa del Meco a 10km 3 estrellas",
         "t":  "naturaleza",
         "lat":  38.4927,
-        "lon":  -9.0927
+        "lon":  -9.0927,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3732,7 +4228,9 @@
         "d":  "Spa dos piscinas de agua salada climatizadas sauna pie de playa",
         "t":  "playa",
         "lat":  39.3694,
-        "lon":  -9.3922
+        "lon":  -9.3922,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -3747,7 +4245,9 @@
         "d":  "Bosque junto a la playa piscina pistas de tenis 3 estrellas",
         "t":  "playa",
         "lat":  40.117744,
-        "lon":  -8.858703
+        "lon":  -8.858703,
+        "tel":  "+351 233 431 492",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3762,7 +4262,9 @@
         "d":  "Pinar Costa de Prata norte cerca de la playa y la ria 3 estrellas",
         "t":  "playa",
         "lat":  40.558225,
-        "lon":  -8.745149
+        "lon":  -8.745149,
+        "tel":  "+351 212 919 730",
+        "web":  "https://www.orbitur.pt/"
     },
     {
         "pais":  "Portugal",
@@ -3777,7 +4279,9 @@
         "d":  "Frente al islote y fortaleza parque natural piscina bungalows 3 estrellas",
         "t":  "playa",
         "lat":  37.842022,
-        "lon":  -8.781081
+        "lon":  -8.781081,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3792,7 +4296,9 @@
         "d":  "Cerca playa de Son Bou solo accesible en barco o avion",
         "t":  "playa",
         "lat":  39.9167,
-        "lon":  4.25
+        "lon":  4.25,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3807,7 +4313,9 @@
         "d":  "Entre Ferreries y Cala Galdana solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  39.9333,
-        "lon":  3.9667
+        "lon":  3.9667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3822,7 +4330,9 @@
         "d":  "Zona dunar 10 min a pie de la playa solo accesible en barco o avion",
         "t":  "playa",
         "lat":  39.7333,
-        "lon":  3.2333
+        "lon":  3.2333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3837,7 +4347,9 @@
         "d":  "A 200m de la playa de San Antonio abierto desde 1961 solo accesible en barco o avion",
         "t":  "playa",
         "lat":  38.98,
-        "lon":  1.305
+        "lon":  1.305,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3852,7 +4364,9 @@
         "d":  "Junto a la cala Bassa aguas cristalinas solo accesible en barco o avion",
         "t":  "playa",
         "lat":  38.97,
-        "lon":  1.22
+        "lon":  1.22,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3867,7 +4381,9 @@
         "d":  "6km de Los Cristianos dos piscinas abierto todo el ano solo accesible en barco o avion",
         "t":  "playa",
         "lat":  28.0167,
-        "lon":  -16.6667
+        "lon":  -16.6667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3882,7 +4398,9 @@
         "d":  "Reserva natural junto a la playa de La Tejita solo accesible en barco o avion",
         "t":  "playa",
         "lat":  28.05,
-        "lon":  -16.5333
+        "lon":  -16.5333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3897,7 +4415,9 @@
         "d":  "Altura entre palmeras y montanas restaurante piscina solo accesible en barco o avion",
         "t":  "montana",
         "lat":  27.9167,
-        "lon":  -15.5333
+        "lon":  -15.5333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3912,7 +4432,9 @@
         "d":  "Acceso directo a la playa suroeste de la isla solo accesible en barco o avion",
         "t":  "playa",
         "lat":  27.8833,
-        "lon":  -15.7833
+        "lon":  -15.7833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3927,7 +4449,9 @@
         "d":  "284 parcelas en el monumento natural de Los Ajaches junto a las playas de Papagayo solo accesible en barco o avion",
         "t":  "playa",
         "lat":  28.845828,
-        "lon":  -13.782152
+        "lon":  -13.782152,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3942,7 +4466,9 @@
         "d":  "Entre Corralejo y Puerto del Rosario solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  28.55,
-        "lon":  -13.85
+        "lon":  -13.85,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3957,7 +4483,9 @@
         "d":  "Altitud 1000m junto a la Ermita de San Antonio gestionado por el Cabildo solo accesible en barco o avion",
         "t":  "montana",
         "lat":  28.7667,
-        "lon":  -17.9167
+        "lon":  -17.9167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3972,7 +4500,9 @@
         "d":  "Dentro del Parque Nacional de Garajonay requiere permiso solo accesible en barco o avion",
         "t":  "montana",
         "lat":  28.1333,
-        "lon":  -17.2333
+        "lon":  -17.2333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -3987,7 +4517,9 @@
         "d":  "Unico camping forestal oficial de la isla altitud 1200m solo accesible en barco o avion",
         "t":  "montana",
         "lat":  27.7333,
-        "lon":  -17.9833
+        "lon":  -17.9833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4002,7 +4534,9 @@
         "d":  "Piscinas naturales de roca volcanica junto a la Ribeira da Janela solo accesible en barco o avion",
         "t":  "playa",
         "lat":  32.8667,
-        "lon":  -17.1667
+        "lon":  -17.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4017,7 +4551,9 @@
         "d":  "Costa norte de Sao Miguel parque de campismo rural solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  37.8167,
-        "lon":  -25.5333
+        "lon":  -25.5333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4032,7 +4568,9 @@
         "d":  "Costa de Terceira zona de bano en rocas volcanicas solo accesible en barco o avion",
         "t":  "playa",
         "lat":  38.6667,
-        "lon":  -27.3333
+        "lon":  -27.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4047,7 +4585,9 @@
         "d":  "En el centro del pueblo de Lajes do Pico avistamiento de cachalotes cerca solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  38.3833,
-        "lon":  -28.25
+        "lon":  -28.25,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4062,7 +4602,9 @@
         "d":  "Playa de arena negra junto al pueblo de Almoxarife solo accesible en barco o avion",
         "t":  "playa",
         "lat":  38.5333,
-        "lon":  -28.6167
+        "lon":  -28.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4077,7 +4619,9 @@
         "d":  "Unica playa de arena dorada de los Azores solo accesible en barco o avion",
         "t":  "playa",
         "lat":  36.9667,
-        "lon":  -25.1333
+        "lon":  -25.1333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4092,7 +4636,9 @@
         "d":  "Isla mas occidental de Europa naturaleza volcanica exuberante solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  39.45,
-        "lon":  -31.1333
+        "lon":  -31.1333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4107,7 +4653,9 @@
         "d":  "Granja organica certificada en Urzelina glamping y naturaleza solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  38.6167,
-        "lon":  -28.0667
+        "lon":  -28.0667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4122,7 +4670,9 @@
         "d":  "Cerca de Santa Cruz da Graciosa isla mas pequena habitada del archipielago solo accesible en barco o avion",
         "t":  "naturaleza",
         "lat":  39.0833,
-        "lon":  -28
+        "lon":  -28,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4137,7 +4687,9 @@
         "d":  "Unico camping de la isla gratuito 15 min a pie de Caleta de Sebo permiso online del Cabildo maximo 7 noches solo accesible en barco",
         "t":  "playa",
         "lat":  29.2333,
-        "lon":  -13.5
+        "lon":  -13.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "Portugal",
@@ -4152,7 +4704,9 @@
         "d":  "Isla dorada del archipielago de Madeira playa de arena fina solo accesible en barco o avion",
         "t":  "playa",
         "lat":  33.0667,
-        "lon":  -16.3333
+        "lon":  -16.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4167,7 +4721,9 @@
         "d":  "Parque Regional Sierra Espuna cabanas de madera piscina rocodromo",
         "t":  "montana",
         "lat":  37.8333,
-        "lon":  -1.5667
+        "lon":  -1.5667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4182,7 +4738,9 @@
         "d":  "Sierra de Espuna cerca piscina zona tranquila",
         "t":  "naturaleza",
         "lat":  37.7667,
-        "lon":  -1.5
+        "lon":  -1.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4197,7 +4755,9 @@
         "d":  "Aguas termales de Fortuna entorno de sierra",
         "t":  "naturaleza",
         "lat":  38.1833,
-        "lon":  -1.1167
+        "lon":  -1.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4212,7 +4772,9 @@
         "d":  "Playas del Mar Menor aguas tranquilas poco profundas",
         "t":  "playa",
         "lat":  37.7439,
-        "lon":  -0.8511
+        "lon":  -0.8511,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4227,7 +4789,9 @@
         "d":  "Rio Segura zona arrocera de Calasparra",
         "t":  "rio",
         "lat":  38.2333,
-        "lon":  -1.7
+        "lon":  -1.7,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4242,7 +4806,9 @@
         "d":  "Valle de Aezkoa 20 min de la Selva de Irati Camino de Santiago",
         "t":  "montana",
         "lat":  42.9833,
-        "lon":  -1.3
+        "lon":  -1.3,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4257,7 +4823,9 @@
         "d":  "300m de Ochagavia entrada a la Selva de Irati",
         "t":  "montana",
         "lat":  42.9167,
-        "lon":  -1.0833
+        "lon":  -1.0833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4272,7 +4840,9 @@
         "d":  "Valle de Sakana entre Urbasa y Aralar bungalows de madera",
         "t":  "naturaleza",
         "lat":  42.9167,
-        "lon":  -2.0333
+        "lon":  -2.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4287,7 +4857,9 @@
         "d":  "Vistas a Urbasa y Aralar entorno eco-friendly",
         "t":  "naturaleza",
         "lat":  42.9,
-        "lon":  -2.0667
+        "lon":  -2.0667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4302,7 +4874,9 @@
         "d":  "Pequeno camping en Esparza puerta de la Selva de Irati",
         "t":  "montana",
         "lat":  42.8833,
-        "lon":  -1.1167
+        "lon":  -1.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4317,7 +4891,9 @@
         "d":  "Costa occidental entre Tapia de Casariego y Navia cerca de Taramundi",
         "t":  "playa",
         "lat":  43.5333,
-        "lon":  -6.7333
+        "lon":  -6.7333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4332,7 +4908,9 @@
         "d":  "Cerca de la frontera con Cantabria entorno rural",
         "t":  "playa",
         "lat":  43.4,
-        "lon":  -4.5167
+        "lon":  -4.5167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4347,7 +4925,9 @@
         "d":  "Referencia en Asturias central desde 1995 10 min de playa de Rodiles",
         "t":  "playa",
         "lat":  43.5,
-        "lon":  -5.4
+        "lon":  -5.4,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4362,7 +4942,9 @@
         "d":  "Parque Natural Sierra Cebollera orillas del rio Iregua",
         "t":  "montana",
         "lat":  42.1667,
-        "lon":  -2.6167
+        "lon":  -2.6167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4377,7 +4959,9 @@
         "d":  "Entorno rural junto al rio Ebro zona de bodegas",
         "t":  "rio",
         "lat":  42.4667,
-        "lon":  -2.5667
+        "lon":  -2.5667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4392,7 +4976,9 @@
         "d":  "Sierra del Segura ambiente familiar sin masificacion",
         "t":  "rio",
         "lat":  38.3667,
-        "lon":  -2.3167
+        "lon":  -2.3167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4407,7 +4993,9 @@
         "d":  "Junto al embalse de Cazalegas cerca de Talavera de la Reina",
         "t":  "rio",
         "lat":  39.9833,
-        "lon":  -4.7333
+        "lon":  -4.7333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4422,7 +5010,9 @@
         "d":  "Jardin botanico junto al Parque Nacional de Cabaneros piscina climatizada",
         "t":  "naturaleza",
         "lat":  39.4167,
-        "lon":  -4.4667
+        "lon":  -4.4667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4437,7 +5027,9 @@
         "d":  "En el centro del Parque Natural Lagunas de Ruidera",
         "t":  "rio",
         "lat":  38.9667,
-        "lon":  -2.8667
+        "lon":  -2.8667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4452,7 +5044,9 @@
         "d":  "Valle del Ambroz cerca de Hervas restaurante piscina",
         "t":  "montana",
         "lat":  40.2667,
-        "lon":  -5.8667
+        "lon":  -5.8667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4467,7 +5061,9 @@
         "d":  "Valle del Ambroz entorno tranquilo bungalows",
         "t":  "montana",
         "lat":  40.1667,
-        "lon":  -5.8667
+        "lon":  -5.8667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4482,7 +5078,9 @@
         "d":  "3km de Plasencia piscinas zona de juegos",
         "t":  "rio",
         "lat":  40.0333,
-        "lon":  -6.1
+        "lon":  -6.1,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4497,7 +5095,9 @@
         "d":  "Geoparque Villuercas 2km de Guadalupe",
         "t":  "montana",
         "lat":  39.4333,
-        "lon":  -5.3333
+        "lon":  -5.3333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4512,7 +5112,9 @@
         "d":  "En altura sobre Talaimendi vistas panoramicas estacion autocaravanas",
         "t":  "playa",
         "lat":  43.2833,
-        "lon":  -2.1667
+        "lon":  -2.1667,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4527,7 +5129,9 @@
         "d":  "Buen punto de partida para recorrer el Pais Vasco",
         "t":  "playa",
         "lat":  43.3167,
-        "lon":  -2.3833
+        "lon":  -2.3833,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4542,7 +5146,9 @@
         "d":  "Entre Deba y Zumaia en pleno geoparque de la costa vasca",
         "t":  "playa",
         "lat":  43.29,
-        "lon":  -2.3
+        "lon":  -2.3,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4557,7 +5163,9 @@
         "d":  "Junto al Duero cerca del casco historico de Tordesillas",
         "t":  "rio",
         "lat":  41.5017,
-        "lon":  -5
+        "lon":  -5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4572,7 +5180,9 @@
         "d":  "Centro de Castilla y Leon entre Valladolid y Palencia",
         "t":  "naturaleza",
         "lat":  41.6167,
-        "lon":  -4.8
+        "lon":  -4.8,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4587,7 +5197,9 @@
         "d":  "Rodeado de bodegas de la Ribera del Duero junto al castillo",
         "t":  "rio",
         "lat":  41.5833,
-        "lon":  -4.1167
+        "lon":  -4.1167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4602,7 +5214,9 @@
         "d":  "Montana Palentina embalse de Ruesga senderismo",
         "t":  "montana",
         "lat":  42.8667,
-        "lon":  -4.5
+        "lon":  -4.5,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4617,7 +5231,9 @@
         "d":  "Parque Natural del Canon del Rio Lobos buitres leonados",
         "t":  "naturaleza",
         "lat":  41.6833,
-        "lon":  -3.0333
+        "lon":  -3.0333,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4632,7 +5248,9 @@
         "d":  "Reserva de lobo iberico naturaleza salvaje",
         "t":  "naturaleza",
         "lat":  41.8833,
-        "lon":  -6.4167
+        "lon":  -6.4167,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4647,7 +5265,9 @@
         "d":  "800m sobre el valle del Tietar hora y media de Madrid",
         "t":  "montana",
         "lat":  40.2333,
-        "lon":  -4.9
+        "lon":  -4.9,
+        "tel":  "",
+        "web":  ""
     },
     {
         "pais":  "España",
@@ -4662,6 +5282,8 @@
         "d":  "Junto a los embalses de Entrepenas y Buendia La Alcarria",
         "t":  "rio",
         "lat":  40.4833,
-        "lon":  -2.7333
+        "lon":  -2.7333,
+        "tel":  "",
+        "web":  ""
     }
 ]
