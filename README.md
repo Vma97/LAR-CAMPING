@@ -44,7 +44,8 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- 277 campings: 216 de España + 61 de Portugal (incluyendo ya todas las islas de ambos países).
+- 303 campings: 242 de España + 61 de Portugal (incluyendo ya todas las islas de ambos países).
+- Todas las comunidades autónomas de España tienen al menos 10-11 campings (antes había 7 comunidades con solo 10: Murcia, Navarra, Asturias, La Rioja, Castilla La Mancha, Extremadura y País Vasco — ampliadas con ~26 campings reales más).
 - Cobertura insular completa revisada isla por isla: las 7 islas Canarias habitadas + La Graciosa, Mallorca/Menorca/Ibiza, Madeira + Porto Santo, y 8 de las 9 islas de Açores (São Miguel, Terceira, Pico, Faial, Santa Maria, Flores, São Jorge, Graciosa) tienen al menos un camping real y verificado.
 - Dos excepciones documentadas a propósito, no son huecos de datos: **Formentera** no tiene ningún camping legal (la acampada está prohibida por normativa balear, confirmado en varias fuentes) y **Corvo** (Açores, ~400 habitantes) no tiene ningún camping formal verificable — no se han inventado alternativas.
 - Portugal (3-5 estrellas, verificados con fuentes oficiales — roteiro-campista.pt, visitalentejo.pt, webs municipales, ACSI/Eurocampings): 14 Algarve, 10 Lisboa e Costa de Prata, 11 Centro, 11 Norte, 5 Alentejo. Se descartaron explícitamente los que resultaron tener menos de 3 estrellas (p. ej. Zambujeira do Mar) o estar cerrados (Orbitur Rio Alto).
