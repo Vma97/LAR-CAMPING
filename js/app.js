@@ -13,9 +13,12 @@ function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":
 
 function buildLinks(c){
   const place = c.n + ", " + c.z;
+  const coords = c.lat + "," + c.lon;
   const L = {
-    maps: "https://www.google.com/maps/search/?api=1&query=" + q(place),
-    waze: "https://waze.com/ul?q=" + q(place) + "&navigate=yes",
+    // Rutas con coordenadas exactas (mas fiable que buscar por texto/geocoding)
+    waze: "https://waze.com/ul?ll=" + coords + "&navigate=yes",
+    maps: "https://www.google.com/maps/dir/?api=1&destination=" + coords,
+    appleMaps: "https://maps.apple.com/?daddr=" + coords,
     photos: "https://www.google.com/search?tbm=isch&q=" + q(place),
   };
   return L;
@@ -56,8 +59,14 @@ function popupHTML(c){
       </div>
       <p style="font-size:12px;margin:6px 0 0;">${esc(c.d)}</p>
       <div class="links">
-        <a class="primary" href="${L.waze}" target="_blank">🚗 Ir con Waze</a>
-        <a href="${L.maps}" target="_blank">📍 Ir con Google Maps</a>
+        <details class="poi-group route-group" open>
+          <summary>🧭 Comenzar trayecto</summary>
+          <div class="poi-links">
+            <a href="${L.waze}" target="_blank">🚗 Waze</a>
+            <a href="${L.maps}" target="_blank">📍 Google Maps</a>
+            <a href="${L.appleMaps}" target="_blank">🍎 Apple Maps</a>
+          </div>
+        </details>
         <a href="${L.photos}" target="_blank">🖼 Ver fotos del camping</a>
         <details class="poi-group">
           <summary>✨ Puntos de interés cerca</summary>
