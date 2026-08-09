@@ -1,12 +1,13 @@
 const CAMPINGS = window.CAMPINGS;
 
 const TERRAIN = {
-  playa: {label:"Costa", color:"#6ea6b3"},
-  montana: {label:"Montaña", color:"#8ba178"},
-  rio: {label:"Río / Lago", color:"#5fa588"},
-  ciudad: {label:"Ciudad", color:"#bb8b72"},
-  naturaleza: {label:"Naturaleza", color:"#7fae7a"},
+  playa: {color:"#6ea6b3", key:"terrainPlaya"},
+  montana: {color:"#8ba178", key:"terrainMontana"},
+  rio: {color:"#5fa588", key:"terrainRio"},
+  ciudad: {color:"#bb8b72", key:"terrainCiudad"},
+  naturaleza: {color:"#7fae7a", key:"terrainNaturaleza"},
 };
+function terrainLabel(k){ return t(TERRAIN[k].key); }
 
 function q(s){ return encodeURIComponent(s); }
 function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
@@ -27,17 +28,19 @@ function buildLinks(c){
 // Puntos de interés cerca, agrupados en subcategorías. Las 4 primeras son
 // genéricas (toda zona tiene pueblos, rutas, monumentos y naturaleza cerca);
 // las de agua dependen del terreno para no ofrecer playa en el interior.
+// Las búsquedas se hacen siempre en español/portugués (idioma local de la
+// zona), aunque la interfaz esté en otro idioma: da mejores resultados.
 function buildPOI(c){
   const poi = [
-    {icon:"🏘", label:"Pueblos con encanto", query:"pueblos con encanto cerca de " + c.z},
-    {icon:"🥾", label:"Rutas de senderismo", query:"rutas de senderismo cerca de " + c.z},
-    {icon:"🏛", label:"Monumentos y patrimonio", query:"monumentos y lugares historicos cerca de " + c.z},
-    {icon:"🏔", label:"Naturaleza y miradores", query:"miradores y parajes naturales cerca de " + c.z},
+    {labelKey:"poiPueblos", query:"pueblos con encanto cerca de " + c.z},
+    {labelKey:"poiSenderismo", query:"rutas de senderismo cerca de " + c.z},
+    {labelKey:"poiMonumentos", query:"monumentos y lugares historicos cerca de " + c.z},
+    {labelKey:"poiNaturalezaMiradores", query:"miradores y parajes naturales cerca de " + c.z},
   ];
   if (c.t === "playa") {
-    poi.push({icon:"🏖", label:"Playas", query:"playas cerca de " + c.z});
+    poi.push({labelKey:"poiPlayas", query:"playas cerca de " + c.z});
   } else {
-    poi.push({icon:"💧", label:"Lagunas y embalses", query:"lagunas y embalses cerca de " + c.z});
+    poi.push({labelKey:"poiLagunas", query:"lagunas y embalses cerca de " + c.z});
   }
   return poi.map(p => ({...p, url: "https://www.google.com/maps/search/" + q(p.query)}));
 }
@@ -45,33 +48,33 @@ function buildPOI(c){
 function popupHTML(c){
   const L = buildLinks(c);
   const poiHTML = buildPOI(c).map(p =>
-    `<a href="${p.url}" target="_blank">${p.icon} ${esc(p.label)}</a>`
+    `<a href="${p.url}" target="_blank">${esc(t(p.labelKey))}</a>`
   ).join("");
   return `
     <div class="pop">
       <h3>${esc(c.n)}</h3>
-      <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${c.km} km desde Torrejón</p>
+      <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${c.km} ${esc(t("kmFrom"))}</p>
       <div class="prices">
-        <div class="price">Parcela<b>${c.pp}€</b></div>
-        <div class="price">Adulto<b>${c.pa}€</b></div>
-        <div class="price">Coche<b>${c.pc}€</b></div>
-        <div class="price">Luz<b>${c.pl}€</b></div>
+        <div class="price">${esc(t("priceParcela"))}<b>${c.pp}€</b></div>
+        <div class="price">${esc(t("priceAdulto"))}<b>${c.pa}€</b></div>
+        <div class="price">${esc(t("priceCoche"))}<b>${c.pc}€</b></div>
+        <div class="price">${esc(t("priceLuz"))}<b>${c.pl}€</b></div>
       </div>
-      <p style="font-size:12px;margin:6px 0 0;">${esc(c.d)}</p>
+      <p style="font-size:12px;margin:6px 0 0;">${esc(descFor(c))}</p>
       <div class="links">
         <details class="poi-group route-group" open>
-          <summary>🧭 Comenzar trayecto</summary>
+          <summary>${esc(t("routeStart"))}</summary>
           <div class="poi-links">
-            <a href="${L.waze}" target="_blank">🚗 Waze</a>
-            <a href="${L.maps}" target="_blank">📍 Google Maps</a>
-            <a href="${L.appleMaps}" target="_blank">🍎 Apple Maps</a>
+            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
+            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
+            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
           </div>
         </details>
-        <a href="${L.photos}" target="_blank">🖼 Ver fotos del camping</a>
-        ${c.web ? `<a href="${esc(c.web)}" target="_blank">🌐 Web / reservas</a>` : ""}
+        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
+        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
         ${c.tel ? `<a href="tel:${esc(c.tel.replace(/\s+/g,""))}">📞 ${esc(c.tel)}</a>` : ""}
         <details class="poi-group">
-          <summary>✨ Puntos de interés cerca</summary>
+          <summary>${esc(t("poiTitle"))}</summary>
           <div class="poi-links">${poiHTML}</div>
         </details>
       </div>
@@ -88,43 +91,63 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 const markers = {};
 CAMPINGS.forEach(c => {
   const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
+  // bindPopup con funcion: Leaflet la vuelve a invocar cada vez que se abre,
+  // asi el popup siempre refleja el idioma actual sin reconstruir marcadores.
   const marker = L.circleMarker([c.lat, c.lon], {
     radius: 6,
     color: "#fff",
     weight: 1.5,
     fillColor: meta.color,
     fillOpacity: 0.9
-  }).bindPopup(popupHTML(c), {maxWidth: 260});
+  }).bindPopup(() => popupHTML(c), {maxWidth: 260});
   markers[c.n] = marker;
 });
 
 // legend
 const legend = L.control({position:'bottomleft'});
+let legendDiv = null;
 legend.onAdd = function(){
-  const div = L.DomUtil.create('div','legend');
-  div.innerHTML = Object.values(TERRAIN).map(t =>
-    `<div><span class="dot" style="background:${t.color}"></span>${t.label}</div>`
-  ).join('');
-  return div;
+  legendDiv = L.DomUtil.create('div','legend');
+  renderLegend();
+  return legendDiv;
 };
 legend.addTo(map);
+function renderLegend(){
+  if (!legendDiv) return;
+  legendDiv.innerHTML = Object.entries(TERRAIN).map(([k,v]) =>
+    `<div><span class="dot" style="background:${v.color}"></span>${esc(terrainLabel(k))}</div>`
+  ).join('');
+}
 
 // filtros
 const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
+const langSel = document.getElementById('lang');
 const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
+
+langSel.innerHTML = LANG_ORDER.map(l => `<option value="${l}">${esc(I18N[l].langName)}</option>`).join('');
+langSel.value = currentLang();
 
 // España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
 // regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
 // alfabeticamente con las CCAA espanolas en el mismo desplegable).
 const casEspana = [...new Set(CAMPINGS.filter(c => c.pais === "España").map(c => c.ca))].sort();
 const zonasPortugal = [...new Set(CAMPINGS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
-caSel.innerHTML = '<option value="Todas">Todas las zonas</option>'
-  + '<optgroup label="España">' + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
-  + '<optgroup label="Portugal">' + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
-terrainSel.innerHTML = '<option value="Todos">Todo tipo</option>' + Object.entries(TERRAIN).map(([k,v]) => `<option value="${k}">${v.label}</option>`).join('');
+
+function renderControls(){
+  const prevCa = caSel.value || "Todas";
+  const prevT = terrainSel.value || "Todos";
+  qInput.placeholder = t("searchPlaceholder");
+  caSel.innerHTML = `<option value="Todas">${esc(t("allZones"))}</option>`
+    + `<optgroup label="${esc(t("groupSpain"))}">` + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
+    + `<optgroup label="${esc(t("groupPortugal"))}">` + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
+  terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>` + Object.keys(TERRAIN).map(k => `<option value="${k}">${esc(terrainLabel(k))}</option>`).join('');
+  caSel.value = prevCa;
+  terrainSel.value = prevT;
+  renderLegend();
+}
 
 let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
 
@@ -147,7 +170,7 @@ function render(){
   map.removeLayer(activeGroup);
   activeGroup = L.layerGroup(filtered.map(c => markers[c.n])).addTo(map);
 
-  countEl.textContent = filtered.length + " campings · mapa interactivo";
+  countEl.textContent = filtered.length + " " + t("countSuffix");
 
   listEl.innerHTML = filtered.map(c => {
     const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
@@ -155,8 +178,8 @@ function render(){
       <h3>${esc(c.n)}</h3>
       <p>${esc(c.z)} · ${esc(c.ca)}</p>
       <div class="row">
-        <span class="badge" style="background:${meta.color}22;color:${meta.color}">${meta.label}</span>
-        <span class="km">${c.km} km · desde ${c.pp}€</span>
+        <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.t))}</span>
+        <span class="km">${c.km} ${esc(t("listKmDesde"))} ${c.pp}€</span>
       </div>
     </div>`;
   }).join('');
@@ -173,5 +196,12 @@ function render(){
 qInput.addEventListener('input', render);
 caSel.addEventListener('change', render);
 terrainSel.addEventListener('change', render);
+langSel.addEventListener('change', () => {
+  setLang(langSel.value);
+  renderControls();
+  render();
+  map.closePopup();
+});
 
+renderControls();
 render();
