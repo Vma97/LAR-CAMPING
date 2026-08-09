@@ -6,13 +6,20 @@ App/mapa interactivo de campings pensados desde Torrejón de Ardoz (Madrid), con
 
 ```
 campings-app/
-├── index.html          # Punto de entrada. Abrir directamente en el navegador, no necesita servidor ni Node.
-├── css/styles.css       # Estilos
-├── js/app.js             # Lógica del mapa, filtros y popups
-├── data/campings.json   # Fuente de datos canónica (editar aquí)
-├── data/campings.js     # Generado desde campings.json (ver "Cómo regenerar" abajo)
-└── legacy/               # Prototipos anteriores, solo como referencia histórica
+├── index.html                 # Punto de entrada. Abrir directamente en el navegador, no necesita servidor ni Node.
+├── css/styles.css              # Estilos
+├── js/app.js                    # Lógica del mapa, filtros, geolocalización y popups
+├── js/i18n.js                   # Traducciones de la interfaz (ES/EN/FR/NL/DE/ZH/JA)
+├── data/campings.json          # Fuente de datos canónica de campings (editar aquí)
+├── data/campings.js            # Generado desde campings.json (ver "Cómo regenerar" abajo)
+├── data/aparcamientos.json     # Áreas de autocaravanas GRATUITAS (dataset separado)
+├── data/aparcamientos.js       # Generado desde aparcamientos.json
+└── legacy/                      # Prototipos anteriores, solo como referencia histórica
 ```
+
+Importante: cada vez que se edita `index.html`/`js`/`css`, hay que subir el número de versión en los
+`?v=N` de los `<script src>` de `index.html` (el navegador cachea agresivamente los archivos locales
+por URL exacta y si no, no se refrescan los cambios).
 
 No hay build ni dependencias (Node no está instalado en este equipo). `data/campings.js` simplemente
 envuelve el JSON en `window.CAMPINGS = [...]` para poder cargarlo con `<script src>` sin problemas de
@@ -55,15 +62,20 @@ $js = "window.CAMPINGS = $json;`n"
 - Corregidos los campings de interior que estaban mal etiquetados como `playa` (mostraban enlaces de playa sin sentido en Sierra Norte, Gredos, Pirineo, Sierra Nevada...).
 - Los "puntos de interés cerca" de cada popup están agrupados en un desplegable con subcategorías fijas (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
 - El desplegable de zona/filtro está agrupado en dos `optgroup`: **España** (por comunidad autónoma) y **Portugal** (por ciudad/pueblo concreto de cada camping) — antes se mezclaban alfabéticamente y confundía (p. ej. "Algarve" aparecía antes que "Andalucia").
+- **Geolocalización real**: botón "Usar mi ubicación" que pide permiso al navegador y reordena todo (lista y popups) de más cerca a más lejos desde donde estés de verdad, en vez de depender siempre de Torrejón de Ardoz como origen fijo (que sigue siendo el fallback si no se activa).
+- **Idiomas**: selector ES/EN/FR/NL/DE/ZH/JA que traduce toda la interfaz fija. Las descripciones de cada camping (`d_en`, `d_fr`, `d_nl`, `d_de`, `d_zh`, `d_ja` en `campings.json`) se van traduciendo por lotes — de momento solo Madrid (13/303), el resto cae automáticamente al español hasta que se traduzcan.
+- **Áreas de autocaravanas gratuitas** (`data/aparcamientos.json`, dataset separado): capa de marcadores rojos activable con el botón "Ver áreas de autocaravanas", oculta por defecto. De momento 20 áreas verificadas como gratuitas (Castilla y León, Castilla La Mancha, Aragón, C. Valenciana, Cataluña, Extremadura, Andalucía, Galicia, Navarra y Portugal) — solo se incluyen las confirmadas gratis, no las de pago ni las de estado ambiguo.
 
 ## Pendiente (la "biblia del camping")
 
+- Traducir las ~290 descripciones de campings que faltan (`d_en/d_fr/d_nl/d_de/d_zh/d_ja`), se hace en lotes en commits sucesivos.
+- Ampliar áreas de autocaravanas gratuitas en Asturias, Cantabria, País Vasco, Murcia, Baleares, Canarias, La Rioja y más regiones de Portugal (todavía sin ninguna o con muy pocas).
+- Añadir teléfono/web al resto de campings (de momento solo cadenas Kampaoh y Orbitur).
 - Verificar/actualizar precios reales (muchos de Portugal y de las islas son orientativos por categoría, no tarifario oficial confirmado).
 - Fotos reales por camping.
 - Favoritos / marcados como "visitado" (localStorage).
 - PWA para uso en móvil sin conexión.
-- Geolocalización real del usuario en vez de solo distancia desde Torrejón.
-- Los km de Baleares/Canarias son distancia aproximada (no hay carretera), habría que aclararlo mejor en la UI (solo barco/avión).
+- Los km de Baleares/Canarias/Açores/Madeira son distancia aproximada (no hay carretera), habría que aclararlo mejor en la UI (solo barco/avión) cuando no se usa la geolocalización real.
 
 ## Paleta
 
