@@ -250,5 +250,41 @@ window.APARCAMIENTOS = [
         "d":  "Punto mas al norte de la peninsula junto al faro y los acantilados, area de pernocta no camping formal",
         "lat":  43.781,
         "lon":  -7.684
+    },
+    {
+        "pais":  "España",
+        "n":  "Zona de Acampada Son Serra de Marina",
+        "ca":  "Islas Baleares",
+        "z":  "Santa Margalida Mallorca",
+        "km":  550,
+        "plazas":  "",
+        "servicios":  "",
+        "d":  "Zona dunar 10 min a pie de la playa solo accesible en barco o avion (zona de acampada municipal/institucional, no camping comercial)",
+        "lat":  39.7333,
+        "lon":  3.2333
+    },
+    {
+        "pais":  "España",
+        "n":  "Zona de Acampada La Caleta",
+        "ca":  "Islas Canarias",
+        "z":  "La Oliva Fuerteventura",
+        "km":  1830,
+        "plazas":  "",
+        "servicios":  "",
+        "d":  "Entre Corralejo y Puerto del Rosario solo accesible en barco o avion (zona de acampada municipal/institucional, no camping comercial)",
+        "lat":  28.6,
+        "lon":  -13.84
+    },
+    {
+        "pais":  "España",
+        "n":  "Zona de Acampada El Salado",
+        "ca":  "Islas Canarias",
+        "z":  "La Graciosa Lanzarote",
+        "km":  1800,
+        "plazas":  "",
+        "servicios":  "",
+        "d":  "Unico camping de la isla gratuito 15 min a pie de Caleta de Sebo permiso online del Cabildo maximo 7 noches solo accesible en barco (zona de acampada municipal/institucional, no camping comercial)",
+        "lat":  29.2333,
+        "lon":  -13.5
     }
 ];
