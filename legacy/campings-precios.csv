@@ -1,0 +1,175 @@
+Nombre,Comunidad_Autonoma,Provincia/Zona,Distancia_aprox_km,Precio_parcela_noche_eur,Precio_persona_adulto_eur,Precio_coche_eur,Precio_luz_eur,Descripcion_y_que_tiene
+Camping Osuna,Madrid,Madrid capital,20,8,5,4,4,Junto a Barajas. Minimercado zona baile parque infantil parque canino
+Camping Ciudad de Madrid,Madrid,Madrid capital,25,9,5,4,4,En Casa de Campo. Restaurante supermercado piscina muy urbano
+Camping Arco Iris,Madrid,Villaviciosa de Odon,30,10,6,4,4,Dos piscinas suites jacuzzi bungalows parada de bus
+Camping Aranjuez,Madrid,Aranjuez,40,9,5,3,4,Junto a jardines y palacio entretenimiento adultos animacion ninos
+Camping El Escorial Resort,Madrid,El Escorial,50,12,6,4,5,Tres piscinas una climatizada tobogan grande bungalows
+Camping Monte Holiday,Madrid,Guadarrama,85,10,6,4,4,Parcelas piscina parque aventuras tirolina restaurante
+Camping Doremor,Madrid,Cabanillas de la Sierra,55,8,5,3,4,Cerca sierra de la Cabrera ambiente tranquilo familiar
+Camping La Fresneda,Madrid,Soto del Real,75,9,5,4,4,Bosques y montanas piscina area recreativa rutas btt
+Camping El Rio,Madrid,San Martin de Valdeiglesias,70,8,5,3,4,Junto al Tormes piscina naturaleza embalse cerca
+Camping El Picachuelo,Madrid,Sierra Norte,90,9,5,4,4,Especializado deportes de aventura barranquismo escalada
+Camping Cervera de Buitrago,Madrid,Sierra Norte,80,8,5,3,4,Bungalows pueblo con encanto entorno rural
+Camping San Juan,Madrid,Nuevo Baztan,60,8,5,3,4,Senderismo y aventura entorno montanoso
+Camping Pico Miel,Madrid,Bustarviejo,65,8,5,3,4,Cerca pico de la Miel naturaleza tranquila
+Glamping The Teepee,Castilla y Leon,Mombeltran Avila,150,45,incluido,incluido,incluido,Cabanas teepee dobles bano privado cocina comun pareja
+Camping Batanes,Castilla y Leon,Miranda del Castanar Salamanca,250,9,5,3,4,Entorno rural sierra de Francia piscina naturaleza
+Camping Puerta de Gredos,Castilla y Leon,Navarredonda de Gredos,180,9,5,3,4,A los pies de Gredos senderismo escalada clima fresco
+Camping Segovia,Castilla y Leon,Segovia,100,10,5,4,4,Cerca acueducto piscina bungalows familia
+Camping Riaza,Castilla y Leon,Riaza Segovia,120,9,5,3,4,Sierra de Ayllon naturaleza tranquila pinares
+Camping Salamanca,Castilla y Leon,Salamanca,220,10,5,4,4,Junto al Tormes cerca casco historico
+Camping Aranda de Duero,Castilla y Leon,Aranda de Duero Burgos,180,9,5,3,4,Ribera del Duero zona de bodegas
+Camping Burgos,Castilla y Leon,Burgos,240,10,5,4,4,Cerca catedral bien comunicado con la ciudad
+Camping Sanabria,Castilla y Leon,Lago de Sanabria Zamora,340,9,5,3,4,Junto al lago glaciar mas grande de la peninsula
+Camping Covaleda,Castilla y Leon,Sierra de Urbion Soria,220,8,5,3,4,Pinares de Urbion cerca laguna Negra
+Camping Leon,Castilla y Leon,Leon,340,10,5,4,4,Bien comunicado con la capital leonesa
+Camping Toledo,Castilla La Mancha,Toledo Vega del Tajo,75,10,5,4,4,Vistas al Alcazar piscina zona verde junto al rio
+Camping Ciudad Encantada,Castilla La Mancha,Cuenca,200,9,5,3,4,Junto al paraje karstico piscina senderismo naturaleza
+Camping Rio Mundo,Castilla La Mancha,Riopar Albacete,300,8,5,3,4,Cerca del nacimiento del rio Mundo cascadas piscina
+Camping Bosque Aventura,Castilla La Mancha,Serrania de Cuenca,190,9,5,3,4,Tirolinas rutas 4x4 entorno pinar
+Camping Alarcon,Castilla La Mancha,Alarcon Cuenca,220,9,5,3,4,Junto al embalse pueblo medieval sobre penasco
+Camping Almagro,Castilla La Mancha,Almagro Ciudad Real,220,9,5,3,4,Casco historico manchego corral de comedias cerca
+Camping Lagunas de Ruidera,Castilla La Mancha,Ruidera Ciudad Real,260,10,5,4,4,Parque natural lagunas encadenadas piscina natural cerca
+Camping Consuegra,Castilla La Mancha,Consuegra Toledo,120,8,5,3,4,Molinos de viento ruta del Quijote
+Camping Guadalajara,Castilla La Mancha,Guadalajara,60,8,5,3,4,Cerca del Henares bien comunicado con Madrid
+Camping Sigüenza,Castilla La Mancha,Sigüenza Guadalajara,130,8,5,3,4,Ciudad medieval catedral y castillo
+Camping Trujillo,Extremadura,Caceres,290,9,5,3,4,Cerca casco historico piscina parcelas amplias
+Camping Caceres,Extremadura,Caceres,300,10,5,4,4,Naturista familiar piscina zonas verdes bien comunicado
+Camping Merida,Extremadura,Badajoz,350,10,5,4,4,Junto al Guadiana ruinas romanas cercanas piscina
+Camping Monfrague,Extremadura,Parque Nacional Monfrague,270,9,5,3,4,Observacion de aves buitres rutas naturaleza
+Camping Yuste,Extremadura,La Vera Caceres,280,9,5,3,4,Valle del Jerte cerca zona de pantanos piscina natural
+Camping Badajoz,Extremadura,Badajoz,400,9,5,3,4,Frontera con Portugal cerca del rio Guadiana
+Camping Guadalupe,Extremadura,Guadalupe Caceres,320,9,5,3,4,Monasterio Patrimonio Humanidad entorno serrano
+Camping Jerte,Extremadura,Valle del Jerte Caceres,290,9,5,3,4,Famoso por floracion del cerezo rio con piscinas naturales
+Camping Zafra,Extremadura,Zafra Badajoz,380,8,5,3,4,Casco historico cerca ruta de la Plata
+Camping Coria,Extremadura,Coria Caceres,320,8,5,3,4,Ciudad amurallada junto al rio Alagon
+Camping Alquezar,Aragon,Huesca,450,10,6,4,4,Canon del rio Vero barranquismo escalada piscina
+Camping Ordesa,Aragon,Torla Huesca,480,10,6,4,4,Puerta al Parque Nacional de Ordesa senderismo alta montana
+Camping Teruel,Aragon,Teruel,300,9,5,3,4,Naturaleza tranquila punto de paso hacia Levante
+Camping Zaragoza,Aragon,Zaragoza,320,10,5,4,4,Junto al Ebro urbano bien comunicado
+Camping Benasque,Aragon,Huesca,500,11,6,4,5,Pirineo aragones alta montana escalada esqui de fondo
+Camping Formiche,Aragon,Gudar Javalambre Teruel,350,8,5,3,4,Montana turolense tranquilo estrellas dark sky
+Camping Jaca,Aragon,Jaca Huesca,470,10,6,4,4,Pirineo occidental ciudadela cerca camino de Santiago
+Camping Albarracin,Aragon,Albarracin Teruel,330,9,5,3,4,Pueblo medieval casco rojizo entorno serrano
+Camping Sos del Rey Catolico,Aragon,Sos del Rey Catolico Zaragoza,420,9,5,3,4,Pueblo medieval cuna de Fernando el Catolico
+Camping Sallent de Gallego,Aragon,Valle de Tena Huesca,510,11,6,4,5,Pirineo cerca Formigal esqui y senderismo
+Camping Nuevalos,Aragon,Monasterio de Piedra Zaragoza,330,9,5,3,4,Junto al parque natural del Monasterio de Piedra cascadas
+Kikopark Playa,Comunidad Valenciana,Oliva Valencia,400,12,6,4,5,Junto al puerto deportivo piscinas parcelas amplias
+Camping Benisol,Comunidad Valenciana,Benidorm Alicante,430,13,6,4,5,Playa cerca del centro piscina animacion todo el ano
+Camping Villasol,Comunidad Valenciana,Benidorm,430,13,6,4,5,Cerca playa de Levante piscinas parque acuatico bungalows
+Marjal Costa Blanca Resort,Comunidad Valenciana,Crevillente Guardamar Alicante,450,16,7,5,5,Resort moderno lago artificial spa bungalows lujo
+Alannia Guardamar,Comunidad Valenciana,Guardamar del Segura,450,14,6,4,5,Piscinas toboganes bungalows todo incluido familiar
+Camping Internacional La Marina,Comunidad Valenciana,Elche Alicante,440,12,6,4,5,Junto a playas de Elche pinar frondoso amplio
+Camping Javea,Comunidad Valenciana,Javea Alicante,420,12,6,4,5,Cala tranquila entorno natural buceo cercano
+Camping Calpe Mar,Comunidad Valenciana,Calpe Alicante,410,12,6,4,5,Bajo el Penon de Ifach piscina playa cercana
+Bravoplaya Camping Resort,Comunidad Valenciana,Peniscola Castellon,470,14,6,4,5,Primera linea playa protegida tres piscinas abierto todo el ano
+Camping Playa Tropicana,Comunidad Valenciana,Alcossebre Castellon,450,12,6,4,5,A pie de playa tamano medio tranquilo
+Euro Camping Oliva,Comunidad Valenciana,Oliva Valencia,400,11,6,4,5,Playa ancha arena blanca amplias parcelas
+SAMAY La Marina,Comunidad Valenciana,La Marina Alicante,440,12,6,4,5,Top valorado costa blanca apto ninos piscina
+Camping Valencia el Saler,Comunidad Valenciana,El Saler Valencia,380,11,6,4,5,Junto a la Albufera y dunas pinar
+Camping Lo Monte,Region de Murcia,Torre de la Horadada,470,11,6,4,5,Costa Calida recomendado ciclismo apto mayores
+Camper Park Huerta de Murcia,Region de Murcia,Los Ramos Murcia,400,10,5,4,4,Area autocaravanas servicios completos bien valorado
+Camping Murcia,Region de Murcia,Murcia capital,390,9,5,3,4,Bien comunicado con la capital
+Camping Mazarron,Region de Murcia,Mazarron,450,11,6,4,4,Playas del mediterraneo aguas tranquilas
+Camping Aguilas,Region de Murcia,Aguilas,470,10,5,4,4,Costa Calida calas y castillo de San Juan
+Camping Cartagena,Region de Murcia,Cartagena,440,10,5,4,4,Puerto historico buceo pecios romanos cerca
+Camping Calblanque,Region de Murcia,Parque Regional Calblanque,450,9,5,3,4,Dunas virgenes calas protegidas naturaleza
+Camping Cabo de Palos,Region de Murcia,Cabo de Palos,460,11,6,4,4,Faro emblematico buceo Islas Hormigas
+Camping Lorca,Region de Murcia,Lorca,420,9,5,3,4,Castillo y casco historico cerca sierra
+Camping Bullas,Region de Murcia,Bullas,410,9,5,3,4,Zona vinicola entorno rural tranquilo
+Kampaoh Cambrils,Cataluna,Cambrils Tarragona,590,15,6,4,5,Tiendas equipadas listas playa cerca
+Kampaoh Delta del Ebro,Cataluna,Delta del Ebro Tarragona,520,14,6,4,5,Naturaleza humedales observacion aves kayak
+Camping La Siesta,Cataluna,Salou Tarragona,580,14,6,4,5,Costa Dorada piscinas cerca Port Aventura
+Kampaoh Costa Brava,Cataluna,Playa Brava Girona,650,15,6,4,5,Dos piscinas adultos y ninos zona verde
+Camping Cala Montjoi,Cataluna,Roses Girona,660,15,6,4,5,Junto a cala salvaje cerca Cap de Creus
+Camping Port de la Vall,Cataluna,El Port de la Selva Girona,670,13,6,4,5,Extremo Cap de Creus vistas mar y montana
+Camping Blanes,Cataluna,Blanes Girona,640,14,6,4,5,Puerta a Costa Brava piscina playa cercana
+Camping Cypsela,Cataluna,Pals Girona,660,18,7,5,5,Resort premium piscinas parque acuatico grande
+Camping Barcelona,Cataluna,Vilanova i la Geltru,610,14,6,4,5,Bien comunicado con la ciudad playa cerca
+Kampaoh L Almadrava,Cataluna,Costa Dorada Tarragona,560,14,6,4,5,Playa amplia tiendas equipadas
+Camping Sitges,Cataluna,Sitges Barcelona,600,15,6,4,5,Ambiente animado playa urbana cercana
+Camping Berga,Cataluna,Berga Barcelona,650,11,6,4,4,Prepirineo catalan cerca Cadi Moixero
+Kampaoh Zumaia,Pais Vasco,Zumaia Guipuzcoa,480,15,6,4,5,Geoparque Flysch escenario Juego de Tronos
+Camping Igueldo,Pais Vasco,San Sebastian,470,17,6,5,5,Sobre la ciudad vistas bahia de la Concha
+Camping Portuondo,Pais Vasco,Mundaka Vizcaya,460,14,6,4,5,Junto a la ria surf en Mundaka cerca
+Camping Laga,Pais Vasco,Ibarrangelu Vizcaya,470,13,6,4,5,Costa vasca acantilados playa salvaje
+Camping Bilbao,Pais Vasco,Bilbao,450,15,6,4,5,Bien comunicado con la ciudad y el metro
+Camping Orio,Pais Vasco,Orio Guipuzcoa,475,14,6,4,5,Junto a la ria y playa apto surf
+Camping Vitoria,Pais Vasco,Vitoria Gasteiz,400,12,6,4,4,Cerca de los Sabinares del Rio Ebro
+Camping Sopelana,Pais Vasco,Sopelana Vizcaya,460,14,6,4,5,Playas de surf acantilados flysch
+Camping Deba,Pais Vasco,Deba Guipuzcoa,475,13,6,4,5,Costa vasca cerca ruta del flysch
+Camping Alegria de Alava,Pais Vasco,Alegria Alava,420,11,6,4,4,Entorno rural montanoso tranquilo
+Kampaoh Sierra de Urbasa,Navarra,Urbasa,420,13,6,4,4,Sierra y hayedo entorno de montana tranquilo
+Kampaoh Mendigorria,Navarra,Mendigorria,400,12,6,4,4,Junto al rio Arga cerca del Camino de Santiago
+Camping Pamplona,Navarra,Pamplona,410,12,6,4,4,Bien comunicado casco historico y sanfermines
+Camping Roncal,Navarra,Valle del Roncal,470,11,6,4,4,Pirineo navarro quesos DOP naturaleza
+Camping Ochagavia,Navarra,Valle de Salazar,460,11,6,4,4,Pirineo navarro bosques hayedos
+Camping Bardenas Reales,Navarra,Bardenas Reales,430,10,5,3,4,Paisaje desertico unico rutas 4x4 y btt
+Camping Baztan,Navarra,Valle del Baztan,480,11,6,4,4,Pirineo atlantico caserios y bosques
+Camping Tudela,Navarra,Tudela,370,10,5,3,4,Ribera navarra huerta y verduras
+Camping Estella,Navarra,Estella Lizarra,440,10,5,3,4,Etapa clave del Camino de Santiago
+Camping Leitza,Navarra,Leitza,450,11,6,4,4,Pirineo humedo bosques atlanticos
+Camping Ezcaray,La Rioja,Ezcaray,340,11,6,4,4,Sierra de la Demanda cerca estacion de esqui
+Camping Haro,La Rioja,Haro,350,10,5,3,4,Capital del Rioja zona de bodegas
+Camping Logrono,La Rioja,Logrono,380,10,5,3,4,Bien comunicado camino de Santiago
+Camping San Millan,La Rioja,San Millan de la Cogolla,340,9,5,3,4,Monasterios Patrimonio Humanidad entorno tranquilo
+Camping Najera,La Rioja,Najera,360,9,5,3,4,Etapa del Camino de Santiago junto al rio Najerilla
+Camping Arnedillo,La Rioja,Arnedillo,370,10,5,3,4,Aguas termales valle del Cidacos
+Camping Torrecilla,La Rioja,Torrecilla en Cameros,350,9,5,3,4,Sierra riojana bosques y naturaleza
+Camping Calahorra,La Rioja,Calahorra,390,9,5,3,4,Huerta riojana bien comunicado
+Camping Enciso,La Rioja,Enciso,360,9,5,3,4,Zona de icnitas de dinosaurios naturaleza
+Camping Cervera del Rio Alhama,La Rioja,Cervera del Rio Alhama,400,9,5,3,4,Frontera con Aragon entorno rural
+Camping Las Arenas,Cantabria,Pechon,420,12,6,4,5,Junto a la ria de Tina Mayor piscina actividades canoning
+Camping El Helguero,Cantabria,Comillas,400,13,6,4,5,Mejor camping playa 2017 FECC animacion infantil
+Camping Playa Joyel,Cantabria,Isla,410,13,6,4,5,Acceso a seis playas lavanderia supermercado
+Camping Los Molinos de Bareyo,Cantabria,Bareyo,395,11,6,4,5,A 4 km de playa 35 de Santander piscina vistas
+Camping Oyambre,Cantabria,Comillas,400,12,6,4,5,Parque natural playa extensa dunas
+Somo Parque,Cantabria,Suesa,410,13,6,4,5,A 1.5 km playa de Somo top surf y kitesurf
+Camping Santillana del Mar,Cantabria,Santillana,390,12,6,4,5,Casco historico cerca cuevas de Altamira
+Camping Cabuerniga,Cantabria,Cabuerniga,420,10,5,4,4,Valle interior naturaleza tranquila rio cercano
+Camping Ruiloba,Cantabria,Ruiloba,405,11,6,4,4,Costa occidental cantabra playas tranquilas
+Camping Liebana,Cantabria,Potes,440,10,5,3,4,Picos de Europa desfiladero senderismo
+Camping Suances,Cantabria,Suances,395,12,6,4,5,Playas urbanas surf y paseo maritimo
+Kampaoh Playa Troenzo,Asturias,Llanes,470,13,6,4,5,Costa oriental asturiana calas y acantilados
+Camping Costa Verde,Asturias,Colunga,480,12,6,4,5,Playa al lado cerca museo jurasico
+Camping La Isla,Asturias,Cangas de Onis,490,12,6,4,5,Puerta a Picos de Europa rutas Covadonga cercanas
+Camping Playa Sauces,Asturias,Ribadesella,470,12,6,4,5,Familiar cerca mar y montana descenso del Sella
+Camping Las Gaviotas,Asturias,Castrillon,490,12,6,4,5,Primera linea de playa abierto en verano diario
+Kampaoh La Franca,Asturias,La Franca,460,13,6,4,5,Playa extensa entre Asturias y Cantabria
+Camping Gijon,Asturias,Gijon,510,13,6,4,5,Bien comunicado con la ciudad playa San Lorenzo cerca
+Camping Cudillero,Asturias,Cudillero,520,11,6,4,4,Pueblo marinero de colores pesquero
+Camping Somiedo,Asturias,Parque Natural de Somiedo,470,10,5,3,4,Osos pardos brañas y lagos glaciares
+Camping Oviedo,Asturias,Oviedo,480,12,6,4,4,Capital asturiana bien comunicada
+Camping Fisterra,Galicia,Fisterra A Coruna,610,12,6,4,4,Extremo occidental fin de la tierra faro y acantilados
+Camping O Muino,Galicia,Oia Pontevedra,610,11,6,4,4,Primera linea Atlantico acceso a cala bungalows
+Camping Bayona Playa,Galicia,Baiona Pontevedra,590,13,6,4,5,Cerca casco historico Baiona playa amplia piscinas
+Camping Playa America,Galicia,Nigran Pontevedra,595,13,6,4,5,Playa extensa supermercado restaurante piscina tobogan
+Camping Ria de Arousa,Galicia,Ribeira A Coruna,580,11,6,4,4,A las faldas del monte A Curota trekking rutas a caballo
+Camping Punta Batuda,Galicia,Porto do Son A Coruna,590,12,6,4,4,Primera categoria 167 parcelas 25 bungalows junto al mar
+Camping Los Manzanos,Galicia,Oleiros A Coruna,610,12,6,4,4,Jardin botanico museo al aire libre familiar
+Camping Santa Tecla,Galicia,A Guarda Pontevedra,580,11,6,4,4,Estuario del Mino vistas a Portugal llano y con sombra
+Camping Playa Canelas,Galicia,Portonovo Pontevedra,585,12,6,4,4,Playa blanca aguas cristalinas piscinas toboganes
+Kampaoh O Pedrouzo,Galicia,O Pedrouzo A Coruna,560,12,6,4,4,En el Camino de Santiago parada de peregrinos
+Camping Rinlo Costa,Galicia,Ribadeo Lugo,560,10,5,3,4,Costa norte de Lugo acantilados playas salvajes
+Camping Vila de Sarria,Galicia,Sarria Lugo,540,10,5,3,4,Punto clave del Camino Frances entorno verde
+Camping Estaca de Bares,Galicia,Manon A Coruna,650,10,5,3,4,Punto mas al norte de la peninsula faro y acantilados
+Camping As Cabazas,Galicia,Ortigueira A Coruna,630,10,5,3,4,Cerca del extremo norte rias altas tranquilo
+Camping Giralda,Andalucia,Sevilla,530,12,6,4,4,Urbano bien comunicado con el centro historico
+Camping Dos Hermanas,Andalucia,Sevilla,535,11,6,4,4,Piscina parcelas amplias cerca capital
+Camping Cordoba,Andalucia,Cordoba,400,11,6,4,4,Junto al rio Guadalquivir cerca mezquita catedral
+Kampaoh Grazalema,Andalucia,Grazalema Cadiz,620,13,6,4,4,Sierra pueblo blanco parque natural senderismo
+Camping El Palmar,Andalucia,Vejer de la Frontera Cadiz,660,13,6,4,5,Playa de surf famosa ambiente relajado
+Camping Los Canos de Meca,Andalucia,Barbate Cadiz,665,13,6,4,5,Playa virgen faro de Trafalgar cerca
+Kampaoh Tarifa,Andalucia,Tarifa Cadiz,700,15,7,5,5,Kitesurf capital de Europa vientos de levante
+Camping Torre de la Pena,Andalucia,Tarifa Cadiz,700,14,6,4,5,Vistas a Africa punto mas al sur peninsular
+Camping Lago de Arcos,Andalucia,Arcos de la Frontera Cadiz,610,11,6,4,4,Junto al embalse pueblo blanco emblematico
+Camping Conil,Andalucia,Conil de la Frontera Cadiz,650,13,6,4,5,Playas extensas ambiente surfero
+Camping Torremolinos,Andalucia,Malaga,540,14,6,4,5,Costa del Sol piscina cerca playa
+Kampaoh Estepona,Andalucia,Estepona Malaga,590,14,6,4,5,Costa del Sol occidental clima suave todo el ano
+Camping Sierra Nevada,Andalucia,Monachil Granada,480,11,6,4,4,Montana y nieve cercania a la costa tropical
+Camping Motril,Andalucia,Motril Granada,500,12,6,4,5,Costa tropical clima subtropical piscina
+Kampaoh Roquetas,Andalucia,Roquetas de Mar Almeria,580,12,6,4,5,Playas de arena fina invernaderos alrededor
+Kampaoh Escullos,Andalucia,Cabo de Gata Almeria,640,13,6,4,5,Parque natural volcanico calas virgenes
+Kampaoh El Rocio,Andalucia,El Rocio Huelva,560,11,6,4,4,Junto al Parque Nacional de Donana caballos
+Kampaoh Doñana,Andalucia,Matalascanas Huelva,580,12,6,4,5,Playa y marisma parque nacional observacion aves
+Camping Ayamonte,Andalucia,Ayamonte Huelva,640,11,6,4,4,Frontera con Portugal desembocadura Guadiana
