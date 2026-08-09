@@ -17,32 +17,33 @@ function buildLinks(c){
     maps: "https://www.google.com/maps/search/?api=1&query=" + q(place),
     waze: "https://waze.com/ul?q=" + q(place) + "&navigate=yes",
     photos: "https://www.google.com/search?tbm=isch&q=" + q(place),
-    around: "https://www.google.com/maps/search/" + q("que ver cerca de " + c.z),
   };
-  // Contenido de "puntos de interes cerca" segun el tipo de terreno del camping,
-  // para no ofrecer playas cuando el camping esta en el interior peninsular.
-  if (c.t === "playa") {
-    L.beaches = "https://www.google.com/maps/search/" + q("playas cerca de " + c.z);
-  } else if (c.t === "rio") {
-    L.water = "https://www.google.com/maps/search/" + q("lagunas y embalses cerca de " + c.z);
-  } else if (c.t === "montana") {
-    L.viewpoints = "https://www.google.com/maps/search/" + q("miradores y valles cerca de " + c.z);
-  } else if (c.t === "naturaleza") {
-    L.villages = "https://www.google.com/maps/search/" + q("pueblos con encanto cerca de " + c.z);
-  }
-  // Rutas de senderismo: no tiene sentido en campings urbanos
-  if (c.t !== "ciudad") L.hiking = "https://www.google.com/maps/search/" + q("rutas de senderismo cerca de " + c.z);
   return L;
+}
+
+// Puntos de interés cerca, agrupados en subcategorías. Las 4 primeras son
+// genéricas (toda zona tiene pueblos, rutas, monumentos y naturaleza cerca);
+// las de agua dependen del terreno para no ofrecer playa en el interior.
+function buildPOI(c){
+  const poi = [
+    {icon:"🏘", label:"Pueblos con encanto", query:"pueblos con encanto cerca de " + c.z},
+    {icon:"🥾", label:"Rutas de senderismo", query:"rutas de senderismo cerca de " + c.z},
+    {icon:"🏛", label:"Monumentos y patrimonio", query:"monumentos y lugares historicos cerca de " + c.z},
+    {icon:"🏔", label:"Naturaleza y miradores", query:"miradores y parajes naturales cerca de " + c.z},
+  ];
+  if (c.t === "playa") {
+    poi.push({icon:"🏖", label:"Playas", query:"playas cerca de " + c.z});
+  } else {
+    poi.push({icon:"💧", label:"Lagunas y embalses", query:"lagunas y embalses cerca de " + c.z});
+  }
+  return poi.map(p => ({...p, url: "https://www.google.com/maps/search/" + q(p.query)}));
 }
 
 function popupHTML(c){
   const L = buildLinks(c);
-  let extra = "";
-  if (L.beaches) extra += `<a href="${L.beaches}" target="_blank">🏖 Playas cerca</a>`;
-  if (L.water) extra += `<a href="${L.water}" target="_blank">💧 Lagunas y embalses cerca</a>`;
-  if (L.viewpoints) extra += `<a href="${L.viewpoints}" target="_blank">🏔 Miradores y valles cerca</a>`;
-  if (L.villages) extra += `<a href="${L.villages}" target="_blank">🏘 Pueblos con encanto cerca</a>`;
-  if (L.hiking) extra += `<a href="${L.hiking}" target="_blank">🥾 Rutas de senderismo cerca</a>`;
+  const poiHTML = buildPOI(c).map(p =>
+    `<a href="${p.url}" target="_blank">${p.icon} ${esc(p.label)}</a>`
+  ).join("");
   return `
     <div class="pop">
       <h3>${esc(c.n)}</h3>
@@ -58,8 +59,10 @@ function popupHTML(c){
         <a class="primary" href="${L.waze}" target="_blank">🚗 Ir con Waze</a>
         <a href="${L.maps}" target="_blank">📍 Ir con Google Maps</a>
         <a href="${L.photos}" target="_blank">🖼 Ver fotos del camping</a>
-        ${extra}
-        <a href="${L.around}" target="_blank">✨ Qué ver cerca</a>
+        <details class="poi-group">
+          <summary>✨ Puntos de interés cerca</summary>
+          <div class="poi-links">${poiHTML}</div>
+        </details>
       </div>
     </div>
   `;
