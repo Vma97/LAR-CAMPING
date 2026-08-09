@@ -105,8 +105,14 @@ const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 
-const cas = [...new Set(CAMPINGS.map(c => c.ca))].sort();
-caSel.innerHTML = '<option value="Todas">Todas las CCAA</option>' + cas.map(c => `<option value="${esc(c)}">${esc(c)}</option>`).join('');
+// España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
+// regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
+// alfabeticamente con las CCAA espanolas en el mismo desplegable).
+const casEspana = [...new Set(CAMPINGS.filter(c => c.pais === "España").map(c => c.ca))].sort();
+const zonasPortugal = [...new Set(CAMPINGS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
+caSel.innerHTML = '<option value="Todas">Todas las zonas</option>'
+  + '<optgroup label="España">' + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
+  + '<optgroup label="Portugal">' + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
 terrainSel.innerHTML = '<option value="Todos">Todo tipo</option>' + Object.entries(TERRAIN).map(([k,v]) => `<option value="${k}">${v.label}</option>`).join('');
 
 let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
@@ -118,7 +124,11 @@ function render(){
 
   const filtered = CAMPINGS.filter(c => {
     const mQ = !query || c.n.toLowerCase().includes(query) || c.z.toLowerCase().includes(query);
-    const mCa = ca === "Todas" || c.ca === ca;
+    let mCa = true;
+    if (ca !== "Todas") {
+      if (ca.startsWith("ES::")) mCa = c.pais === "España" && c.ca === ca.slice(4);
+      else if (ca.startsWith("PT::")) mCa = c.pais === "Portugal" && c.z === ca.slice(4);
+    }
     const mT = terrain === "Todos" || c.t === terrain;
     return mQ && mCa && mT;
   });

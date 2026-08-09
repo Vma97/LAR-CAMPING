@@ -44,20 +44,22 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- 252 campings: 201 de España peninsular + 51 de Portugal continental.
+- 263 campings: 212 de España (las 17 comunidades autónomas, incluidas Baleares y Canarias) + 51 de Portugal continental.
 - Portugal (3-5 estrellas, verificados con fuentes oficiales — roteiro-campista.pt, visitalentejo.pt, webs municipales, ACSI/Eurocampings): 14 Algarve, 10 Lisboa e Costa de Prata, 11 Centro, 11 Norte, 5 Alentejo. Se descartaron explícitamente los que resultaron tener menos de 3 estrellas (p. ej. Zambujeira do Mar) o estar cerrados (Orbitur Rio Alto).
 - Ampliada la densidad en Pirineos (aragonés, catalán, Val d'Aran) y Costa Brava con ~28 campings reales más.
+- Añadidas Islas Baleares (5) e Islas Canarias (6), antes ausentes del dataset. Ceuta y Melilla se comprobaron explícitamente y no tienen ningún camping real en funcionamiento (solo áreas de autocaravanas), así que se quedan fuera.
 - Corregidos los campings de interior que estaban mal etiquetados como `playa` (mostraban enlaces de playa sin sentido en Sierra Norte, Gredos, Pirineo, Sierra Nevada...).
 - Los "puntos de interés cerca" de cada popup están agrupados en un desplegable con subcategorías fijas (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
+- El desplegable de zona/filtro está agrupado en dos `optgroup`: **España** (por comunidad autónoma) y **Portugal** (por ciudad/pueblo concreto de cada camping) — antes se mezclaban alfabéticamente y confundía (p. ej. "Algarve" aparecía antes que "Andalucia").
 
 ## Pendiente (la "biblia del camping")
 
-- Ampliar más comunidades autónomas de España que siguen con poca densidad.
-- Verificar/actualizar precios reales (muchos de Portugal son orientativos por categoría, no tarifario oficial confirmado).
+- Verificar/actualizar precios reales (muchos de Portugal y de las islas son orientativos por categoría, no tarifario oficial confirmado).
 - Fotos reales por camping.
 - Favoritos / marcados como "visitado" (localStorage).
 - PWA para uso en móvil sin conexión.
 - Geolocalización real del usuario en vez de solo distancia desde Torrejón.
+- Los km de Baleares/Canarias son distancia aproximada (no hay carretera), habría que aclararlo mejor en la UI (solo barco/avión).
 
 ## Paleta
 
