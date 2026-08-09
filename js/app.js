@@ -12,6 +12,20 @@ function terrainLabel(k){ return t(TERRAIN[k].key); }
 function q(s){ return encodeURIComponent(s); }
 function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
+// Distancia real desde la ubicacion del usuario (si la ha activado) en vez
+// de depender siempre de Torrejon de Ardoz como origen fijo.
+let userLoc = null;
+function haversineKm(lat1, lon1, lat2, lon2){
+  const R = 6371;
+  const dLat = (lat2 - lat1) * Math.PI / 180;
+  const dLon = (lon2 - lon1) * Math.PI / 180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLon/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+function distKmFor(c){
+  return userLoc ? haversineKm(userLoc.lat, userLoc.lon, c.lat, c.lon) : c.km;
+}
+
 function buildLinks(c){
   const place = c.n + ", " + c.z;
   const coords = c.lat + "," + c.lon;
@@ -53,7 +67,7 @@ function popupHTML(c){
   return `
     <div class="pop">
       <h3>${esc(c.n)}</h3>
-      <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${c.km} ${esc(t("kmFrom"))}</p>
+      <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
       <div class="prices">
         <div class="price">${esc(t("priceParcela"))}<b>${c.pp}€</b></div>
         <div class="price">${esc(t("priceAdulto"))}<b>${c.pa}€</b></div>
@@ -123,12 +137,37 @@ function renderLegend(){
 const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
 const langSel = document.getElementById('lang');
+const locateBtn = document.getElementById('locateBtn');
 const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 
 langSel.innerHTML = LANG_ORDER.map(l => `<option value="${l}">${esc(I18N[l].langName)}</option>`).join('');
 langSel.value = currentLang();
+
+function updateLocateBtn(){
+  locateBtn.textContent = userLoc ? t("locateActive") : t("locateBtn");
+  locateBtn.classList.toggle('active', !!userLoc);
+}
+locateBtn.addEventListener('click', () => {
+  if (!navigator.geolocation) return;
+  locateBtn.disabled = true;
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      userLoc = {lat: pos.coords.latitude, lon: pos.coords.longitude};
+      locateBtn.disabled = false;
+      updateLocateBtn();
+      render();
+      map.setView([userLoc.lat, userLoc.lon], 8);
+    },
+    () => {
+      locateBtn.disabled = false;
+      locateBtn.textContent = t("locateDenied");
+      setTimeout(updateLocateBtn, 2500);
+    },
+    {timeout: 10000}
+  );
+});
 
 // España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
 // regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
@@ -147,6 +186,7 @@ function renderControls(){
   caSel.value = prevCa;
   terrainSel.value = prevT;
   renderLegend();
+  updateLocateBtn();
 }
 
 let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
@@ -167,6 +207,10 @@ function render(){
     return mQ && mCa && mT;
   });
 
+  // Siempre de mas cerca a mas lejos: desde tu ubicacion si la has activado,
+  // si no, desde Torrejon de Ardoz (los km guardados en el dataset).
+  filtered.sort((a, b) => distKmFor(a) - distKmFor(b));
+
   map.removeLayer(activeGroup);
   activeGroup = L.layerGroup(filtered.map(c => markers[c.n])).addTo(map);
 
@@ -179,7 +223,7 @@ function render(){
       <p>${esc(c.z)} · ${esc(c.ca)}</p>
       <div class="row">
         <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.t))}</span>
-        <span class="km">${c.km} ${esc(t("listKmDesde"))} ${c.pp}€</span>
+        <span class="km">${Math.round(distKmFor(c))} ${esc(t("listKmDesde"))} ${c.pp}€</span>
       </div>
     </div>`;
   }).join('');
