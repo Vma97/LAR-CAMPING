@@ -44,15 +44,16 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- 174 campings de España peninsular.
+- 252 campings: 201 de España peninsular + 51 de Portugal continental.
+- Portugal (3-5 estrellas, verificados con fuentes oficiales — roteiro-campista.pt, visitalentejo.pt, webs municipales, ACSI/Eurocampings): 14 Algarve, 10 Lisboa e Costa de Prata, 11 Centro, 11 Norte, 5 Alentejo. Se descartaron explícitamente los que resultaron tener menos de 3 estrellas (p. ej. Zambujeira do Mar) o estar cerrados (Orbitur Rio Alto).
+- Ampliada la densidad en Pirineos (aragonés, catalán, Val d'Aran) y Costa Brava con ~28 campings reales más.
 - Corregidos los campings de interior que estaban mal etiquetados como `playa` (mostraban enlaces de playa sin sentido en Sierra Norte, Gredos, Pirineo, Sierra Nevada...).
-- Enlaces de "cerca de ti" ahora dependen del tipo de terreno: `rio` → lagunas/embalses, `montana` → miradores/valles, `naturaleza` → pueblos con encanto, `playa` → playas. Siempre hay rutas de senderismo (salvo en `ciudad`) y "qué ver cerca" genérico.
+- Los "puntos de interés cerca" de cada popup están agrupados en un desplegable con subcategorías fijas (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
 
 ## Pendiente (la "biblia del camping")
 
-- Añadir campings de Portugal (3-5 estrellas).
-- Ampliar densidad de campings por comunidad autónoma (actualmente entre 10 y 19 por CA).
-- Verificar/actualizar precios reales.
+- Ampliar más comunidades autónomas de España que siguen con poca densidad.
+- Verificar/actualizar precios reales (muchos de Portugal son orientativos por categoría, no tarifario oficial confirmado).
 - Fotos reales por camping.
 - Favoritos / marcados como "visitado" (localStorage).
 - PWA para uso en móvil sin conexión.
