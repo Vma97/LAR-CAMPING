@@ -161,9 +161,9 @@ window.APARCAMIENTOS = [
         "ca":  "Galicia",
         "z":  "Foz Lugo",
         "km":  570,
-        "plazas":  "",
-        "servicios":  "",
-        "d":  "Pet-friendly bicis de prestamo gratuitas bar restaurante",
+        "plazas":  "30",
+        "servicios":  "vaciado, agua",
+        "d":  "Area municipal gratuita 30 plazas maximo 48 horas a 300m del casco antiguo y del puerto",
         "lat":  43.5667,
         "lon":  -7.2500
     },
@@ -238,5 +238,17 @@ window.APARCAMIENTOS = [
         "d":  "Estacionamiento gratuito maximo 48 horas",
         "lat":  40.4000,
         "lon":  -8.1333
+    },
+    {
+        "pais":  "España",
+        "n":  "Área Estaca de Bares",
+        "ca":  "Galicia",
+        "z":  "Manon A Coruna",
+        "km":  650,
+        "plazas":  "",
+        "servicios":  "agua, luz",
+        "d":  "Punto mas al norte de la peninsula junto al faro y los acantilados, area de pernocta no camping formal",
+        "lat":  43.781,
+        "lon":  -7.684
     }
 ];
