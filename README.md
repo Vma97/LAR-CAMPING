@@ -52,7 +52,8 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- 303 campings: 242 de España + 61 de Portugal (incluyendo ya todas las islas de ambos países).
+- 290 campings: nombre real, web oficial (203 de 290) y ubicación verificados con investigación web dedicada (6 rondas de investigación en paralelo, una por región). Se eliminaron 27 entradas del dataset original que no correspondían a ningún negocio real (nombres genéricos tipo "Camping Teruel" o "Camping Bilbao" sin ningún camping real detrás) y se corrigieron varias ubicaciones que estaban en el pueblo equivocado (alguna hasta a 100km de donde debía).
+- 203 de los 290 campings tienen web oficial verificada, mostrada en el popup ("🌐 Web / reservas").
 - Todas las comunidades autónomas de España tienen al menos 10-11 campings (antes había 7 comunidades con solo 10: Murcia, Navarra, Asturias, La Rioja, Castilla La Mancha, Extremadura y País Vasco — ampliadas con ~26 campings reales más).
 - Cobertura insular completa revisada isla por isla: las 7 islas Canarias habitadas + La Graciosa, Mallorca/Menorca/Ibiza, Madeira + Porto Santo, y 8 de las 9 islas de Açores (São Miguel, Terceira, Pico, Faial, Santa Maria, Flores, São Jorge, Graciosa) tienen al menos un camping real y verificado.
 - Dos excepciones documentadas a propósito, no son huecos de datos: **Formentera** no tiene ningún camping legal (la acampada está prohibida por normativa balear, confirmado en varias fuentes) y **Corvo** (Açores, ~400 habitantes) no tiene ningún camping formal verificable — no se han inventado alternativas.
