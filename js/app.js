@@ -1,4 +1,5 @@
 const CAMPINGS = window.CAMPINGS;
+const APARCAMIENTOS = window.APARCAMIENTOS || [];
 
 const TERRAIN = {
   playa: {color:"#6ea6b3", key:"terrainPlaya"},
@@ -96,6 +97,32 @@ function popupHTML(c){
   `;
 }
 
+function parkingPopupHTML(p){
+  const coords = p.lat + "," + p.lon;
+  const waze = "https://waze.com/ul?ll=" + coords + "&navigate=yes";
+  const gmaps = "https://www.google.com/maps/dir/?api=1&destination=" + coords;
+  const amaps = "https://maps.apple.com/?daddr=" + coords;
+  return `
+    <div class="pop">
+      <h3>${esc(p.n)}</h3>
+      <p class="zone">${esc(p.z)} · ${esc(p.ca)}${p.pais && p.pais !== "España" ? " · " + esc(p.pais) : ""} · ${Math.round(userLoc ? haversineKm(userLoc.lat, userLoc.lon, p.lat, p.lon) : p.km)} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
+      <p style="font-size:12px;margin:6px 0;"><span class="parking-badge">${esc(t("parkingFreeBadge"))}</span>${p.plazas ? " · " + esc(t("parkingPlazas")) + ": " + esc(p.plazas) : ""}</p>
+      ${p.servicios ? `<p style="font-size:12px;margin:0 0 6px;">${esc(t("parkingServicios"))}: ${esc(p.servicios)}</p>` : ""}
+      <p style="font-size:12px;margin:6px 0 0;">${esc(p.d)}</p>
+      <div class="links">
+        <details class="poi-group route-group" open>
+          <summary>${esc(t("routeStart"))}</summary>
+          <div class="poi-links">
+            <a href="${waze}" target="_blank">${esc(t("routeWaze"))}</a>
+            <a href="${gmaps}" target="_blank">${esc(t("routeGoogle"))}</a>
+            <a href="${amaps}" target="_blank">${esc(t("routeApple"))}</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  `;
+}
+
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
@@ -117,6 +144,35 @@ CAMPINGS.forEach(c => {
   markers[c.n] = marker;
 });
 
+// areas de autocaravanas gratuitas: capa aparte, en rojo, oculta por defecto
+const parkingMarkers = APARCAMIENTOS.map(p =>
+  L.circleMarker([p.lat, p.lon], {
+    radius: 6,
+    color: "#fff",
+    weight: 1.5,
+    fillColor: "#c0392b",
+    fillOpacity: 0.95
+  }).bindPopup(() => parkingPopupHTML(p), {maxWidth: 260})
+);
+let showParking = false;
+let parkingLayer = null;
+const parkingToggle = document.getElementById('parkingToggle');
+function updateParkingToggle(){
+  parkingToggle.textContent = showParking ? t("parkingToggleHide") : t("parkingToggleShow");
+  parkingToggle.classList.toggle('active', showParking);
+}
+parkingToggle.addEventListener('click', () => {
+  showParking = !showParking;
+  if (showParking) {
+    parkingLayer = L.layerGroup(parkingMarkers).addTo(map);
+  } else if (parkingLayer) {
+    map.removeLayer(parkingLayer);
+    parkingLayer = null;
+  }
+  updateParkingToggle();
+  renderLegend();
+});
+
 // legend
 const legend = L.control({position:'bottomleft'});
 let legendDiv = null;
@@ -128,9 +184,13 @@ legend.onAdd = function(){
 legend.addTo(map);
 function renderLegend(){
   if (!legendDiv) return;
-  legendDiv.innerHTML = Object.entries(TERRAIN).map(([k,v]) =>
+  let html = Object.entries(TERRAIN).map(([k,v]) =>
     `<div><span class="dot" style="background:${v.color}"></span>${esc(terrainLabel(k))}</div>`
   ).join('');
+  if (showParking) {
+    html += `<div><span class="dot" style="background:#c0392b"></span>${esc(t("parkingLegend"))}</div>`;
+  }
+  legendDiv.innerHTML = html;
 }
 
 // filtros
@@ -187,6 +247,7 @@ function renderControls(){
   terrainSel.value = prevT;
   renderLegend();
   updateLocateBtn();
+  updateParkingToggle();
 }
 
 let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
