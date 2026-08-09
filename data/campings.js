@@ -20,34 +20,11 @@ window.CAMPINGS = [
         "lat":  40.4368,
         "lon":  -3.5844,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingosuna.com"
     },
     {
         "pais":  "España",
-        "n":  "Camping Ciudad de Madrid",
-        "ca":  "Madrid",
-        "z":  "Madrid capital",
-        "km":  25,
-        "pp":  "9",
-        "pa":  "5",
-        "pc":  "4",
-        "pl":  "4",
-        "d":  "En Casa de Campo. Restaurante supermercado piscina muy urbano",
-        "d_en":  "In Casa de Campo park. Restaurant, supermarket, pool, very urban",
-        "d_fr":  "Dans le parc Casa de Campo. Restaurant, supermarché, piscine, très urbain",
-        "d_nl":  "In het park Casa de Campo. Restaurant, supermarkt, zwembad, erg stedelijk",
-        "d_de":  "Im Park Casa de Campo. Restaurant, Supermarkt, Pool, sehr städtisch",
-        "d_zh":  "位于卡萨德坎波公园内。餐厅、超市、游泳池,非常都市化",
-        "d_ja":  "カサ・デ・カンポ公園内。レストラン、スーパー、プール、都会的な立地",
-        "t":  "ciudad",
-        "lat":  40.4234,
-        "lon":  -3.7495,
-        "tel":  "",
-        "web":  ""
-    },
-    {
-        "pais":  "España",
-        "n":  "Camping Arco Iris",
+        "n":  "Camping Madrid Arco Iris",
         "ca":  "Madrid",
         "z":  "Villaviciosa de Odon",
         "km":  30,
@@ -66,7 +43,7 @@ window.CAMPINGS = [
         "lat":  40.3567,
         "lon":  -3.9017,
         "tel":  "",
-        "web":  ""
+        "web":  "https://bungalowsarcoiris.com"
     },
     {
         "pais":  "España",
@@ -89,7 +66,7 @@ window.CAMPINGS = [
         "lat":  40.0311,
         "lon":  -3.6039,
         "tel":  "",
-        "web":  ""
+        "web":  "https://samay.com/es/camping-aranjuez"
     },
     {
         "pais":  "España",
@@ -112,13 +89,13 @@ window.CAMPINGS = [
         "lat":  40.5925,
         "lon":  -4.1477,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingelescorial.com"
     },
     {
         "pais":  "España",
         "n":  "Camping Monte Holiday",
         "ca":  "Madrid",
-        "z":  "Guadarrama",
+        "z":  "Gargantilla del Lozoya Madrid",
         "km":  85,
         "pp":  "10",
         "pa":  "6",
@@ -132,14 +109,14 @@ window.CAMPINGS = [
         "d_zh":  "营位、游泳池、探险公园、滑索、餐厅",
         "d_ja":  "区画、プール、アドベンチャーパーク、ジップライン、レストラン",
         "t":  "naturaleza",
-        "lat":  40.6786,
-        "lon":  -4.1497,
+        "lat":  40.9667,
+        "lon":  "-3.7167",
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingmonteholiday.com"
     },
     {
         "pais":  "España",
-        "n":  "Camping Doremor",
+        "n":  "Camping D Oremor",
         "ca":  "Madrid",
         "z":  "Cabanillas de la Sierra",
         "km":  55,
@@ -185,7 +162,7 @@ window.CAMPINGS = [
     },
     {
         "pais":  "España",
-        "n":  "Camping El Rio",
+        "n":  "Camping La Ardilla Roja",
         "ca":  "Madrid",
         "z":  "San Martin de Valdeiglesias",
         "km":  70,
@@ -210,12 +187,12 @@ window.CAMPINGS = [
         "pais":  "España",
         "n":  "Camping El Picachuelo",
         "ca":  "Madrid",
-        "z":  "Sierra Norte",
+        "z":  "El Berrueco Madrid",
         "km":  90,
-        "pp":  "9",
-        "pa":  "5",
-        "pc":  "4",
-        "pl":  "4",
+        "pp":  "8",
+        "pa":  "8",
+        "pc":  "8",
+        "pl":  "8",
         "d":  "Especializado deportes de aventura barranquismo escalada",
         "d_en":  "Specialized in adventure sports: canyoning, climbing",
         "d_fr":  "Spécialisé dans les sports d\u0027aventure : canyoning, escalade",
@@ -224,21 +201,21 @@ window.CAMPINGS = [
         "d_zh":  "专注于探险运动:溯溪、攀岩",
         "d_ja":  "アドベンチャースポーツ専門:キャニオニング、クライミング",
         "t":  "montana",
-        "lat":  40.9,
-        "lon":  -3.6,
+        "lat":  40.8833,
+        "lon":  "-3.5667",
         "tel":  "",
-        "web":  ""
+        "web":  "https://cbaquanor.es/campingelpicachuelo"
     },
     {
         "pais":  "España",
-        "n":  "Camping Cervera de Buitrago",
+        "n":  "Camping de Cervera",
         "ca":  "Madrid",
         "z":  "Sierra Norte",
         "km":  80,
         "pp":  "8",
-        "pa":  "5",
-        "pc":  "3",
-        "pl":  "4",
+        "pa":  "8",
+        "pc":  "8",
+        "pl":  "8",
         "d":  "Bungalows pueblo con encanto entorno rural",
         "d_en":  "Bungalows, charming village, rural surroundings",
         "d_fr":  "Bungalows, village pittoresque, environnement rural",
@@ -250,18 +227,18 @@ window.CAMPINGS = [
         "lat":  40.9333,
         "lon":  -3.6167,
         "tel":  "",
-        "web":  ""
+        "web":  "https://cbaquanor.es/campingcervera"
     },
     {
         "pais":  "España",
         "n":  "Camping San Juan",
         "ca":  "Madrid",
-        "z":  "Nuevo Baztan",
+        "z":  "Valdemorillo Madrid",
         "km":  60,
-        "pp":  "8",
+        "pp":  "7",
         "pa":  "5",
-        "pc":  "3",
-        "pl":  "4",
+        "pc":  "4",
+        "pl":  "5",
         "d":  "Senderismo y aventura entorno montanoso",
         "d_en":  "Hiking and adventure, mountainous surroundings",
         "d_fr":  "Randonnée et aventure, environnement montagneux",
@@ -270,16 +247,16 @@ window.CAMPINGS = [
         "d_zh":  "徒步与探险,山区环境",
         "d_ja":  "ハイキングとアドベンチャー、山岳地帯",
         "t":  "montana",
-        "lat":  40.3667,
-        "lon":  -3.3333,
+        "lat":  40.4667,
+        "lon":  "-4.0667",
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingsanjuan.es"
     },
     {
         "pais":  "España",
-        "n":  "Camping Pico Miel",
+        "n":  "Camping Pico de la Miel",
         "ca":  "Madrid",
-        "z":  "Bustarviejo",
+        "z":  "La Cabrera Madrid",
         "km":  65,
         "pp":  "8",
         "pa":  "5",
@@ -294,9 +271,9 @@ window.CAMPINGS = [
         "d_ja":  "ピコ・デ・ラ・ミエル近く、静かな自然",
         "t":  "montana",
         "lat":  40.8667,
-        "lon":  -3.6833,
+        "lon":  "-3.6333",
         "tel":  "",
-        "web":  ""
+        "web":  "https://picodelamiel.com"
     },
     {
         "pais":  "España",
@@ -350,10 +327,10 @@ window.CAMPINGS = [
         "ca":  "Castilla y Leon",
         "z":  "Navarredonda de Gredos",
         "km":  180,
-        "pp":  "9",
+        "pp":  "10",
         "pa":  "5",
         "pc":  "3",
-        "pl":  "4",
+        "pl":  "7",
         "d":  "A los pies de Gredos senderismo escalada clima fresco",
         "d_en":  "",
         "d_fr":  "",
@@ -365,7 +342,7 @@ window.CAMPINGS = [
         "lat":  40.3333,
         "lon":  -5.15,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingnavagredos.com"
     },
     {
         "pais":  "España",
@@ -388,7 +365,7 @@ window.CAMPINGS = [
         "lat":  40.9429,
         "lon":  -4.1088,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingacueducto.com"
     },
     {
         "pais":  "España",
@@ -411,7 +388,7 @@ window.CAMPINGS = [
         "lat":  41.2833,
         "lon":  -3.4667,
         "tel":  "",
-        "web":  ""
+        "web":  "https://camping-riaza.com"
     },
     {
         "pais":  "España",
@@ -434,7 +411,7 @@ window.CAMPINGS = [
         "lat":  40.9701,
         "lon":  -5.6635,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingregio.com"
     },
     {
         "pais":  "España",
@@ -457,7 +434,7 @@ window.CAMPINGS = [
         "lat":  41.6706,
         "lon":  -3.6889,
         "tel":  "",
-        "web":  ""
+        "web":  "https://piscinascostajan.com"
     },
     {
         "pais":  "España",
@@ -465,10 +442,10 @@ window.CAMPINGS = [
         "ca":  "Castilla y Leon",
         "z":  "Burgos",
         "km":  240,
-        "pp":  "10",
-        "pa":  "5",
-        "pc":  "4",
-        "pl":  "4",
+        "pp":  "21",
+        "pa":  "7",
+        "pc":  "7",
+        "pl":  "8",
         "d":  "Cerca catedral bien comunicado con la ciudad",
         "d_en":  "",
         "d_fr":  "",
@@ -480,7 +457,7 @@ window.CAMPINGS = [
         "lat":  42.3439,
         "lon":  -3.6969,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingfuentesblancas.com"
     },
     {
         "pais":  "España",
@@ -503,7 +480,7 @@ window.CAMPINGS = [
         "lat":  42.1167,
         "lon":  -6.7,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campinglosrobles.com"
     },
     {
         "pais":  "España",
@@ -526,17 +503,17 @@ window.CAMPINGS = [
         "lat":  41.9667,
         "lon":  -2.8833,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingcovaleda.com"
     },
     {
         "pais":  "España",
-        "n":  "Camping Leon",
+        "n":  "Camping Ciudad de León",
         "ca":  "Castilla y Leon",
         "z":  "Leon",
         "km":  340,
-        "pp":  "10",
-        "pa":  "5",
-        "pc":  "4",
+        "pp":  "7",
+        "pa":  "8",
+        "pc":  "6",
         "pl":  "4",
         "d":  "Bien comunicado con la capital leonesa",
         "d_en":  "",
@@ -549,7 +526,7 @@ window.CAMPINGS = [
         "lat":  42.5987,
         "lon":  -5.5671,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingleon.com"
     },
     {
         "pais":  "España",
@@ -572,7 +549,7 @@ window.CAMPINGS = [
         "lat":  39.8628,
         "lon":  -4.0273,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingelgreco.es"
     },
     {
         "pais":  "España",
@@ -595,7 +572,7 @@ window.CAMPINGS = [
         "lat":  40.1333,
         "lon":  -1.9333,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingcuenca.com"
     },
     {
         "pais":  "España",
@@ -618,7 +595,7 @@ window.CAMPINGS = [
         "lat":  38.5,
         "lon":  -2.45,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingriomundo.es"
     },
     {
         "pais":  "España",
@@ -641,11 +618,11 @@ window.CAMPINGS = [
         "lat":  40.2,
         "lon":  -2.0,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campinglasmajadas.net"
     },
     {
         "pais":  "España",
-        "n":  "Camping Alarcon",
+        "n":  "Camping Pantapino",
         "ca":  "Castilla La Mancha",
         "z":  "Alarcon Cuenca",
         "km":  220,
@@ -664,11 +641,11 @@ window.CAMPINGS = [
         "lat":  39.5667,
         "lon":  -2.15,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingpantapino.com"
     },
     {
         "pais":  "España",
-        "n":  "Camping Almagro",
+        "n":  "Camping Los Arenales",
         "ca":  "Castilla La Mancha",
         "z":  "Almagro Ciudad Real",
         "km":  220,
@@ -687,7 +664,7 @@ window.CAMPINGS = [
         "lat":  38.8667,
         "lon":  -3.7,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campinglosarenales.com"
     },
     {
         "pais":  "España",
@@ -710,76 +687,7 @@ window.CAMPINGS = [
         "lat":  38.95,
         "lon":  -2.85,
         "tel":  "",
-        "web":  ""
-    },
-    {
-        "pais":  "España",
-        "n":  "Camping Consuegra",
-        "ca":  "Castilla La Mancha",
-        "z":  "Consuegra Toledo",
-        "km":  120,
-        "pp":  "8",
-        "pa":  "5",
-        "pc":  "3",
-        "pl":  "4",
-        "d":  "Molinos de viento ruta del Quijote",
-        "d_en":  "",
-        "d_fr":  "",
-        "d_nl":  "",
-        "d_de":  "",
-        "d_zh":  "",
-        "d_ja":  "",
-        "t":  "naturaleza",
-        "lat":  39.4667,
-        "lon":  -3.6167,
-        "tel":  "",
-        "web":  ""
-    },
-    {
-        "pais":  "España",
-        "n":  "Camping Guadalajara",
-        "ca":  "Castilla La Mancha",
-        "z":  "Guadalajara",
-        "km":  60,
-        "pp":  "8",
-        "pa":  "5",
-        "pc":  "3",
-        "pl":  "4",
-        "d":  "Cerca del Henares bien comunicado con Madrid",
-        "d_en":  "",
-        "d_fr":  "",
-        "d_nl":  "",
-        "d_de":  "",
-        "d_zh":  "",
-        "d_ja":  "",
-        "t":  "naturaleza",
-        "lat":  40.6333,
-        "lon":  -3.1667,
-        "tel":  "",
-        "web":  ""
-    },
-    {
-        "pais":  "España",
-        "n":  "Camping Sigüenza",
-        "ca":  "Castilla La Mancha",
-        "z":  "Sigüenza Guadalajara",
-        "km":  130,
-        "pp":  "8",
-        "pa":  "5",
-        "pc":  "3",
-        "pl":  "4",
-        "d":  "Ciudad medieval catedral y castillo",
-        "d_en":  "",
-        "d_fr":  "",
-        "d_nl":  "",
-        "d_de":  "",
-        "d_zh":  "",
-        "d_ja":  "",
-        "t":  "ciudad",
-        "lat":  41.05,
-        "lon":  -2.65,
-        "tel":  "",
-        "web":  ""
+        "web":  "https://campinglosmolinos.top"
     },
     {
         "pais":  "España",
@@ -6207,11 +6115,11 @@ window.CAMPINGS = [
         "lat":  38.3667,
         "lon":  -2.3167,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingriotus.net"
     },
     {
         "pais":  "España",
-        "n":  "Camping Cazalegas",
+        "n":  "Camping Complejo The Dreams",
         "ca":  "Castilla La Mancha",
         "z":  "Cazalegas Toledo",
         "km":  130,
@@ -6230,7 +6138,7 @@ window.CAMPINGS = [
         "lat":  39.9833,
         "lon":  -4.7333,
         "tel":  "",
-        "web":  ""
+        "web":  "https://camping.complejothedreams.com"
     },
     {
         "pais":  "España",
@@ -6253,7 +6161,7 @@ window.CAMPINGS = [
         "lat":  39.4167,
         "lon":  -4.4667,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingcabaneros.com"
     },
     {
         "pais":  "España",
@@ -6276,7 +6184,7 @@ window.CAMPINGS = [
         "lat":  38.9667,
         "lon":  -2.8667,
         "tel":  "",
-        "web":  ""
+        "web":  "https://losbatanes.com"
     },
     {
         "pais":  "España",
@@ -6460,7 +6368,7 @@ window.CAMPINGS = [
         "lat":  41.5017,
         "lon":  -5,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingelastral.es"
     },
     {
         "pais":  "España",
@@ -6483,7 +6391,7 @@ window.CAMPINGS = [
         "lat":  41.6167,
         "lon":  -4.8,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingcubillas.com"
     },
     {
         "pais":  "España",
@@ -6506,7 +6414,7 @@ window.CAMPINGS = [
         "lat":  41.5833,
         "lon":  -4.1167,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingriberduero.com"
     },
     {
         "pais":  "España",
@@ -6529,7 +6437,7 @@ window.CAMPINGS = [
         "lat":  42.8667,
         "lon":  -4.5,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingfuentescarrionas.com"
     },
     {
         "pais":  "España",
@@ -6552,7 +6460,7 @@ window.CAMPINGS = [
         "lat":  41.6833,
         "lon":  -3.0333,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingriolobos.es"
     },
     {
         "pais":  "España",
@@ -6575,7 +6483,7 @@ window.CAMPINGS = [
         "lat":  41.8833,
         "lon":  -6.4167,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingsierradelaculebra.com"
     },
     {
         "pais":  "España",
@@ -6598,13 +6506,13 @@ window.CAMPINGS = [
         "lat":  40.2333,
         "lon":  -4.9,
         "tel":  "",
-        "web":  ""
+        "web":  "https://campingpedrobernardo.com"
     },
     {
         "pais":  "España",
         "n":  "Camping La Serradora",
         "ca":  "Castilla La Mancha",
-        "z":  "Sacedón Guadalajara",
+        "z":  "Peralejos de las Truchas Guadalajara",
         "km":  110,
         "pp":  "9",
         "pa":  "5",
@@ -6618,10 +6526,10 @@ window.CAMPINGS = [
         "d_zh":  "",
         "d_ja":  "",
         "t":  "rio",
-        "lat":  40.4833,
-        "lon":  -2.7333,
+        "lat":  40.6167,
+        "lon":  "-1.9833",
         "tel":  "",
-        "web":  ""
+        "web":  "https://laserradora.es"
     },
     {
         "pais":  "España",
