@@ -52,10 +52,11 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- **339 campings** con nombre real, ubicación verificada y descripción, revisados en varias rondas de investigación web dedicadas región por región. Se eliminaron todas las entradas que no correspondían a ningún negocio real y se corrigieron ubicaciones erróneas (alguna hasta a 100km de donde debía, incluyendo un caso donde el marcador caía en el mar).
-- Todas las comunidades autónomas de España e islas (Canarias, Baleares, Açores, Madeira) tienen cobertura, incluyendo excepciones documentadas a propósito: **Formentera** (acampada prohibida por normativa balear) y **Corvo** (Açores, sin camping formal verificable).
-- Portugal cubierto de norte a sur (Algarve, Lisboa e Costa de Prata, Centro, Norte, Alentejo), solo campings de 3-5 estrellas verificados con fuentes oficiales.
-- Ampliada la densidad junto a agua (embalses, ríos, lagos, playas) en Galicia, Comunidad Valenciana, Murcia, Navarra y Aragón.
+- **429 campings** con nombre real, ubicación verificada y descripción, revisados en varias rondas de investigación web dedicadas región por región (la última ronda, con 6 agentes en paralelo cubriendo Norte/Centro/Este/Andalucía/Islas/Portugal, añadió 90 campings nuevos verificados). Se eliminaron todas las entradas que no correspondían a ningún negocio real y se corrigieron ubicaciones erróneas (alguna hasta a 100km de donde debía, incluyendo un caso donde el marcador caía en el mar).
+- Todas las comunidades autónomas de España e islas (Canarias, Baleares, Açores, Madeira) tienen cobertura, incluyendo excepciones documentadas a propósito: **Formentera** (acampada prohibida por normativa balear) y **Corvo** (Açores, con un pequeño camping municipal junto a la única playa de arena de la isla).
+- Portugal cubierto de norte a sur (Algarve, Lisboa e Costa de Prata, Centro, Norte, Alentejo, Madeira), solo campings de 3-5 estrellas o áreas oficiales verificados con fuentes oficiales.
+- Ampliada la densidad junto a agua (embalses, ríos, lagos, playas) en toda la península, y reforzadas especialmente las zonas más flojas: Madeira (1→5), Alentejo (5→12) e Islas Baleares (6→11).
+- Algunos campings de Mallorca y Canarias son **zonas de acampada oficiales** gestionadas por IBANAT/Cabildos insulares en vez de campings de servicios tradicionales (es la única opción legal en esas zonas de interior) — se indica explícitamente en su descripción.
 - **100% de las descripciones traducidas** a los 7 idiomas soportados (ES/EN/FR/NL/DE/ZH/JA), con fallback automático al español si falta alguna.
 - Precios, teléfonos y webs oficiales verificados con investigación dedicada por camping (URL directa mostrada en el popup, "🌐 Web / reservas").
 - Los "puntos de interés cerca" de cada popup están agrupados por subcategorías (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
