@@ -9,14 +9,6 @@ const TERRAIN = {
 };
 function terrainLabel(k){ return t(TERRAIN[k].key); }
 
-// Franja de precio calculada sobre el precio de parcela (pp), no hay datos
-// de valoracion/servicios reales en el dataset asi que no se inventan.
-function priceTier(c){
-  if (c.pp <= 6) return "eco";
-  if (c.pp <= 12) return "medio";
-  return "premium";
-}
-
 function q(s){ return encodeURIComponent(s); }
 function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
 
@@ -221,7 +213,6 @@ function renderLegend(){
 // filtros
 const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
-const priceSel = document.getElementById('price');
 const langSel = document.getElementById('lang');
 const locateBtn = document.getElementById('locateBtn');
 const favToggle = document.getElementById('favToggle');
@@ -309,19 +300,13 @@ function renderChips(){
 function renderControls(){
   const prevCa = caSel.value || "Todas";
   const prevT = terrainSel.value || "Todos";
-  const prevP = priceSel.value || "Todos";
   qInput.placeholder = t("searchPlaceholder");
   caSel.innerHTML = `<option value="Todas">${esc(t("allZones"))}</option>`
     + `<optgroup label="${esc(t("groupSpain"))}">` + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
     + `<optgroup label="${esc(t("groupPortugal"))}">` + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
   terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>` + Object.keys(TERRAIN).map(k => `<option value="${k}">${esc(terrainLabel(k))}</option>`).join('');
-  priceSel.innerHTML = `<option value="Todos">${esc(t("priceAll"))}</option>`
-    + `<option value="eco">${esc(t("priceEco"))}</option>`
-    + `<option value="medio">${esc(t("priceMedio"))}</option>`
-    + `<option value="premium">${esc(t("pricePremium"))}</option>`;
   caSel.value = prevCa;
   terrainSel.value = prevT;
-  priceSel.value = prevP;
   renderLegend();
   renderChips();
   updateLocateBtn();
@@ -343,7 +328,6 @@ function render(){
   const query = qInput.value.trim().toLowerCase();
   const ca = caSel.value;
   const terrain = terrainSel.value;
-  const price = priceSel.value;
 
   const filtered = CAMPINGS.filter(c => {
     const mQ = !query || c.n.toLowerCase().includes(query) || c.z.toLowerCase().includes(query)
@@ -354,9 +338,8 @@ function render(){
       else if (ca.startsWith("PT::")) mCa = c.pais === "Portugal" && c.z === ca.slice(4);
     }
     const mT = terrain === "Todos" || c.t === terrain;
-    const mP = price === "Todos" || priceTier(c) === price;
     const mFav = !showFavsOnly || isFav(c.n);
-    return mQ && mCa && mT && mP && mFav;
+    return mQ && mCa && mT && mFav;
   });
 
   // Siempre de mas cerca a mas lejos: desde tu ubicacion si la has activado,
@@ -415,7 +398,6 @@ function render(){
 qInput.addEventListener('input', render);
 caSel.addEventListener('change', render);
 terrainSel.addEventListener('change', render);
-priceSel.addEventListener('change', render);
 langSel.addEventListener('change', () => {
   setLang(langSel.value);
   renderControls();
