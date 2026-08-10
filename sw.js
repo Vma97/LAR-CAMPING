@@ -1,7 +1,7 @@
 // Service worker: cachea el shell de la app (HTML/CSS/JS/datos) para que
 // funcione sin conexion. Los tiles del mapa (OpenStreetMap) necesitan
 // internet siempre, pero la lista de campings y los popups funcionan offline.
-const CACHE = "campings-shell-v2";
+const CACHE = "campings-shell-v3";
 const SHELL = [
   "./",
   "./index.html",
@@ -29,14 +29,19 @@ self.addEventListener("activate", (event) => {
   );
 });
 
-// Cache-first para el shell; red con fallback a cache para el resto
-// (tiles del mapa, etc, que no queremos cachear indefinidamente).
+// Red primero para el shell (HTML/JS/CSS): asi siempre se sirve la version
+// mas reciente cuando hay conexion, y solo cae a la cache (para poder usar
+// la app sin conexion) si la red falla. Cache-first causaba que los cambios
+// de codigo tardaran en verse reflejados aunque se subiera el ?v= del script.
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
   event.respondWith(
-    caches.match(event.request).then((cached) => {
-      if (cached) return cached;
-      return fetch(event.request).catch(() => cached);
-    })
+    fetch(event.request)
+      .then((res) => {
+        const copy = res.clone();
+        caches.open(CACHE).then((cache) => cache.put(event.request, copy));
+        return res;
+      })
+      .catch(() => caches.match(event.request))
   );
 });
