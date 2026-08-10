@@ -12,7 +12,11 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 #app{display:flex;flex-direction:column;height:100vh;min-height:640px;}
 #topbar{
   background-color:var(--accent-dark);
-  color:#eef4f0;padding:14px 16px 12px;border-bottom:4px solid var(--accent);flex-shrink:0;
+  background-image:linear-gradient(rgba(15,25,20,.45),rgba(15,25,20,.2) 55%,rgba(15,25,20,.5)),url("../icons/topbar-bg.webp");
+  background-repeat:no-repeat;
+  background-position:center 68%;
+  background-size:cover;
+  color:#eef4f0;padding:20px 16px 16px;border-bottom:4px solid var(--accent);flex-shrink:0;
 }
 #topbar h1{margin:0;font-size:19px;font-weight:800;letter-spacing:0;font-family:'Inter',system-ui,sans-serif;display:flex;align-items:center;gap:8px;}
 .logo-img{width:26px;height:auto;flex-shrink:0;}
