@@ -1,11 +1,11 @@
 const CAMPINGS = window.CAMPINGS;
 
 const TERRAIN = {
-  playa: {color:"#5f97a6", key:"terrainPlaya", glyph:"≈"},
-  montana: {color:"#7f9a6c", key:"terrainMontana", glyph:"▲"},
-  rio: {color:"#4f9a83", key:"terrainRio", glyph:"〜"},
-  ciudad: {color:"#b98561", key:"terrainCiudad", glyph:"■"},
-  naturaleza: {color:"#6ea468", key:"terrainNaturaleza", glyph:"✦"},
+  playa: {color:"#5f97a6", key:"terrainPlaya", glyph:"🏖️"},
+  montana: {color:"#7f9a6c", key:"terrainMontana", glyph:"🏔️"},
+  rio: {color:"#4f9a83", key:"terrainRio", glyph:"💧"},
+  ciudad: {color:"#b98561", key:"terrainCiudad", glyph:"🏙️"},
+  naturaleza: {color:"#6ea468", key:"terrainNaturaleza", glyph:"🌲"},
 };
 function terrainLabel(k){ return t(TERRAIN[k].key); }
 
