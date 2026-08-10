@@ -289,9 +289,6 @@ if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 
 // nombre/zona/comunidad/descripcion), asi no hace falta ningun dato nuevo.
 const QUICK_CHIPS = [
   {key:"chipCercaDeMi", locate:true},
-  {key:"chipPirineos", query:"pirineo"},
-  {key:"chipCostaBrava", query:"costa brava"},
-  {key:"chipSierraGuadarrama", query:"guadarrama"},
 ];
 function renderChips(){
   if (!chipsRowEl) return;
