@@ -331,9 +331,16 @@ function renderControls(){
   updateFavToggle();
 }
 
-let activeGroup = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 50});
-activeGroup.addLayers(Object.values(markers));
-map.addLayer(activeGroup);
+// Un grupo de clusters por comunidad autonoma / region (en vez de uno solo
+// global), asi los clusters nunca mezclan campings de zonas distintas aunque
+// esten geograficamente cerca en el mapa a poco zoom.
+const uniqueCAs = [...new Set(CAMPINGS.map(c => c.ca))];
+const caGroups = {};
+uniqueCAs.forEach(ca => {
+  const group = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 50});
+  caGroups[ca] = group;
+  map.addLayer(group);
+});
 
 function render(){
   const query = qInput.value.trim().toLowerCase();
@@ -359,8 +366,8 @@ function render(){
   // si no, desde Torrejon de Ardoz (los km guardados en el dataset).
   filtered.sort((a, b) => distKmFor(a) - distKmFor(b));
 
-  activeGroup.clearLayers();
-  activeGroup.addLayers(filtered.map(c => markers[c.n]));
+  Object.values(caGroups).forEach(g => g.clearLayers());
+  filtered.forEach(c => caGroups[c.ca].addLayer(markers[c.n]));
 
   countEl.textContent = filtered.length === CAMPINGS.length
     ? filtered.length + " " + t("countSuffix")
