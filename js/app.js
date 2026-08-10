@@ -49,9 +49,11 @@ function buildLinks(c){
   const place = c.n + ", " + c.z;
   const coords = c.lat + "," + c.lon;
   const L = {
-    // Se guian por el nombre real del camping (mejor rotulo al llegar), pero
-    // llevan tambien las coordenadas exactas para que la ruta sea precisa.
-    waze: "https://waze.com/ul?q=" + q(c.n) + "&ll=" + coords + "&navigate=yes",
+    // Se guian por el nombre real del camping. Waze prioriza "ll" sobre "q"
+    // si van juntos (acaba mostrando solo coordenadas), asi que aqui va solo
+    // el nombre+zona para que busque y navegue por el sitio real, igual que
+    // ya hace bien Google Maps con el destino en texto.
+    waze: "https://waze.com/ul?q=" + q(place) + "&navigate=yes",
     maps: "https://www.google.com/maps/dir/?api=1&destination=" + q(place) + "&travelmode=driving",
     appleMaps: "https://maps.apple.com/?q=" + q(c.n) + "&daddr=" + coords,
     photos: "https://www.google.com/search?tbm=isch&q=" + q(place),
