@@ -121,8 +121,12 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
 
 /* leaflet controls a juego con la paleta */
-.leaflet-control-zoom a, .leaflet-control-layers-toggle{background:var(--card) !important;color:var(--ink) !important;}
+.leaflet-control-zoom a{background:var(--card) !important;color:var(--ink) !important;}
 .leaflet-control-layers{background:var(--card) !important;color:var(--ink) !important;border-radius:8px !important;}
+/* el icono de capas por defecto de Leaflet (background-image) se perdia al
+   forzar el fondo con "background"; se sustituye por un emoji propio */
+.leaflet-control-layers-toggle{background-color:var(--card) !important;background-image:none !important;width:34px !important;height:34px !important;display:flex;align-items:center;justify-content:center;}
+.leaflet-control-layers-toggle::before{content:"🗺️";font-size:17px;}
 
 /* mobile bottom-sheet */
 #mobileListToggle{display:none;}
