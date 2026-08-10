@@ -1,13 +1,21 @@
 const CAMPINGS = window.CAMPINGS;
 
 const TERRAIN = {
-  playa: {color:"#6ea6b3", key:"terrainPlaya"},
-  montana: {color:"#8ba178", key:"terrainMontana"},
-  rio: {color:"#5fa588", key:"terrainRio"},
-  ciudad: {color:"#bb8b72", key:"terrainCiudad"},
-  naturaleza: {color:"#7fae7a", key:"terrainNaturaleza"},
+  playa: {color:"#5f97a6", key:"terrainPlaya", glyph:"≈"},
+  montana: {color:"#7f9a6c", key:"terrainMontana", glyph:"▲"},
+  rio: {color:"#4f9a83", key:"terrainRio", glyph:"〜"},
+  ciudad: {color:"#b98561", key:"terrainCiudad", glyph:"■"},
+  naturaleza: {color:"#6ea468", key:"terrainNaturaleza", glyph:"✦"},
 };
 function terrainLabel(k){ return t(TERRAIN[k].key); }
+
+// Franja de precio calculada sobre el precio de parcela (pp), no hay datos
+// de valoracion/servicios reales en el dataset asi que no se inventan.
+function priceTier(c){
+  if (c.pp <= 6) return "eco";
+  if (c.pp <= 12) return "medio";
+  return "premium";
+}
 
 function q(s){ return encodeURIComponent(s); }
 function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
@@ -43,6 +51,27 @@ function onFavClick(ev, n){
   btn.classList.toggle('active', isFav(n));
   btn.textContent = isFav(n) ? "★" : "☆";
   render();
+}
+
+// ---------- Tema claro/oscuro ----------
+function currentTheme(){
+  return document.documentElement.getAttribute("data-theme")
+    || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+}
+function updateThemeToggle(){
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  btn.textContent = currentTheme() === "dark" ? "☀️" : "🌙";
+}
+function initThemeToggle(){
+  const btn = document.getElementById("themeToggle");
+  updateThemeToggle();
+  btn.addEventListener("click", () => {
+    const next = currentTheme() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("campingsTheme", next);
+    updateThemeToggle();
+  });
 }
 
 function buildLinks(c){
@@ -140,20 +169,38 @@ function renderLayerControl(){
 }
 renderLayerControl();
 
+// ---------- Marcadores propios (en vez de circulos genericos) ----------
+function markerIcon(c){
+  const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
+  return L.divIcon({
+    className: '',
+    html: `<div class="camp-marker" style="background:${meta.color}"><span>${meta.glyph}</span></div>`,
+    iconSize: [26, 26],
+    iconAnchor: [13, 24],
+    popupAnchor: [0, -22],
+  });
+}
 const markers = {};
 CAMPINGS.forEach(c => {
-  const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
-  // bindPopup con funcion: Leaflet la vuelve a invocar cada vez que se abre,
-  // asi el popup siempre refleja el idioma actual sin reconstruir marcadores.
-  const marker = L.circleMarker([c.lat, c.lon], {
-    radius: 6,
-    color: "#fff",
-    weight: 1.5,
-    fillColor: meta.color,
-    fillOpacity: 0.9
-  }).bindPopup(() => popupHTML(c), {maxWidth: 260});
+  const marker = L.marker([c.lat, c.lon], {icon: markerIcon(c)})
+    // bindPopup con funcion: Leaflet la vuelve a invocar cada vez que se abre,
+    // asi el popup siempre refleja el idioma actual sin reconstruir marcadores.
+    .bindPopup(() => popupHTML(c), {maxWidth: 260});
   markers[c.n] = marker;
 });
+
+// Agrupacion de marcadores (clusters) para que el mapa no se vea como un
+// enjambre de puntos con cientos de campings a la vez; al hacer zoom se
+// van desagrupando solos.
+function clusterIcon(cluster){
+  const count = cluster.getChildCount();
+  const size = count < 10 ? 32 : count < 50 ? 38 : 46;
+  return L.divIcon({
+    html: `<div class="marker-cluster-custom" style="width:${size}px;height:${size}px">${count}</div>`,
+    className: '',
+    iconSize: [size, size],
+  });
+}
 
 // legend
 const legend = L.control({position:'bottomleft'});
@@ -174,12 +221,17 @@ function renderLegend(){
 // filtros
 const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
+const priceSel = document.getElementById('price');
 const langSel = document.getElementById('lang');
 const locateBtn = document.getElementById('locateBtn');
 const favToggle = document.getElementById('favToggle');
 const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
+const flagsStatEl = document.getElementById('flagsStat');
+const chipsRowEl = document.getElementById('chipsRow');
+const mobileListToggle = document.getElementById('mobileListToggle');
+const sidebarEl = document.getElementById('sidebar');
 
 langSel.innerHTML = LANG_ORDER.map(l => `<option value="${l}">${esc(I18N[l].langName)}</option>`).join('');
 langSel.value = currentLang();
@@ -218,70 +270,126 @@ favToggle.addEventListener('click', () => {
   render();
 });
 
+if (mobileListToggle) {
+  mobileListToggle.addEventListener('click', () => sidebarEl.classList.toggle('open'));
+}
+
+initThemeToggle();
+
 // España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
 // regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
 // alfabeticamente con las CCAA espanolas en el mismo desplegable).
 const casEspana = [...new Set(CAMPINGS.filter(c => c.pais === "España").map(c => c.ca))].sort();
 const zonasPortugal = [...new Set(CAMPINGS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
+const countEspana = CAMPINGS.filter(c => c.pais === "España").length;
+const countPortugal = CAMPINGS.filter(c => c.pais === "Portugal").length;
+if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal}`;
+
+// Chips de accesos rapidos: reutilizan el buscador de texto (que ya mira
+// nombre/zona/comunidad/descripcion), asi no hace falta ningun dato nuevo.
+const QUICK_CHIPS = [
+  {key:"chipCercaDeMi", locate:true},
+  {key:"chipPirineos", query:"pirineo"},
+  {key:"chipCostaBrava", query:"costa brava"},
+  {key:"chipSierraGuadarrama", query:"guadarrama"},
+];
+function renderChips(){
+  if (!chipsRowEl) return;
+  chipsRowEl.innerHTML = QUICK_CHIPS.map(ch =>
+    `<button type="button" class="chip" data-query="${esc(ch.query || '')}" data-locate="${ch.locate ? '1' : ''}">${esc(t(ch.key))}</button>`
+  ).join('');
+  chipsRowEl.querySelectorAll('.chip').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.locate) { locateBtn.click(); return; }
+      qInput.value = btn.dataset.query;
+      chipsRowEl.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    });
+  });
+}
 
 function renderControls(){
   const prevCa = caSel.value || "Todas";
   const prevT = terrainSel.value || "Todos";
+  const prevP = priceSel.value || "Todos";
   qInput.placeholder = t("searchPlaceholder");
   caSel.innerHTML = `<option value="Todas">${esc(t("allZones"))}</option>`
     + `<optgroup label="${esc(t("groupSpain"))}">` + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
     + `<optgroup label="${esc(t("groupPortugal"))}">` + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
   terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>` + Object.keys(TERRAIN).map(k => `<option value="${k}">${esc(terrainLabel(k))}</option>`).join('');
+  priceSel.innerHTML = `<option value="Todos">${esc(t("priceAll"))}</option>`
+    + `<option value="eco">${esc(t("priceEco"))}</option>`
+    + `<option value="medio">${esc(t("priceMedio"))}</option>`
+    + `<option value="premium">${esc(t("pricePremium"))}</option>`;
   caSel.value = prevCa;
   terrainSel.value = prevT;
+  priceSel.value = prevP;
   renderLegend();
+  renderChips();
   updateLocateBtn();
   updateFavToggle();
 }
 
-let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
+let activeGroup = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 50});
+activeGroup.addLayers(Object.values(markers));
+map.addLayer(activeGroup);
 
 function render(){
   const query = qInput.value.trim().toLowerCase();
   const ca = caSel.value;
   const terrain = terrainSel.value;
+  const price = priceSel.value;
 
   const filtered = CAMPINGS.filter(c => {
-    const mQ = !query || c.n.toLowerCase().includes(query) || c.z.toLowerCase().includes(query);
+    const mQ = !query || c.n.toLowerCase().includes(query) || c.z.toLowerCase().includes(query)
+      || c.ca.toLowerCase().includes(query) || (c.d || "").toLowerCase().includes(query);
     let mCa = true;
     if (ca !== "Todas") {
       if (ca.startsWith("ES::")) mCa = c.pais === "España" && c.ca === ca.slice(4);
       else if (ca.startsWith("PT::")) mCa = c.pais === "Portugal" && c.z === ca.slice(4);
     }
     const mT = terrain === "Todos" || c.t === terrain;
+    const mP = price === "Todos" || priceTier(c) === price;
     const mFav = !showFavsOnly || isFav(c.n);
-    return mQ && mCa && mT && mFav;
+    return mQ && mCa && mT && mP && mFav;
   });
 
   // Siempre de mas cerca a mas lejos: desde tu ubicacion si la has activado,
   // si no, desde Torrejon de Ardoz (los km guardados en el dataset).
   filtered.sort((a, b) => distKmFor(a) - distKmFor(b));
 
-  map.removeLayer(activeGroup);
-  activeGroup = L.layerGroup(filtered.map(c => markers[c.n])).addTo(map);
+  activeGroup.clearLayers();
+  activeGroup.addLayers(filtered.map(c => markers[c.n]));
 
-  countEl.textContent = filtered.length + " " + t("countSuffix");
+  countEl.textContent = filtered.length === CAMPINGS.length
+    ? filtered.length + " " + t("countSuffix")
+    : filtered.length + " " + t("countSuffixFiltered");
 
   listEl.innerHTML = filtered.map(c => {
     const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
     return `<div class="item" data-name="${esc(c.n)}">
+      <div class="cover" style="background:${meta.color}22;color:${meta.color}">${meta.glyph}</div>
       <button class="fav-btn list-fav${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
-      <h3>${esc(c.n)}</h3>
-      <p>${esc(c.z)} · ${esc(c.ca)}</p>
-      <div class="row">
-        <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.t))}</span>
-        <span class="km">${Math.round(distKmFor(c))} ${esc(t("listKmDesde"))} ${c.pp}€</span>
+      <div class="body">
+        <h3>${esc(c.n)}</h3>
+        <p>${esc(c.z)} · ${esc(c.ca)}</p>
+        <div class="row">
+          <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.t))}</span>
+          <span class="km">📍 ${Math.round(distKmFor(c))} km</span>
+        </div>
+        <div class="row">
+          <span class="price-tag">${esc(t("listKmDesde"))} ${c.pp}€</span>
+          <span class="go">${esc(t("viewCamping"))} →</span>
+        </div>
       </div>
     </div>`;
   }).join('');
 
   if (filtered.length === 0 && showFavsOnly) {
-    listEl.innerHTML = `<p style="font-size:12px;color:var(--muted);padding:10px;">${esc(t("favEmpty"))}</p>`;
+    listEl.innerHTML = `<div class="fav-empty">${esc(t("favEmpty"))}<br><button id="favEmptyCta">${esc(t("favEmptyCta"))}</button></div>`;
+    const cta = document.getElementById('favEmptyCta');
+    if (cta) cta.addEventListener('click', () => { showFavsOnly = false; updateFavToggle(); render(); });
   }
 
   listEl.querySelectorAll('.item').forEach(el => {
@@ -303,6 +411,7 @@ function render(){
 qInput.addEventListener('input', render);
 caSel.addEventListener('change', render);
 terrainSel.addEventListener('change', render);
+priceSel.addEventListener('change', render);
 langSel.addEventListener('change', () => {
   setLang(langSel.value);
   renderControls();
