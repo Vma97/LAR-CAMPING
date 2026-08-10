@@ -26,6 +26,25 @@ function distKmFor(c){
   return userLoc ? haversineKm(userLoc.lat, userLoc.lon, c.lat, c.lon) : c.km;
 }
 
+// Favoritos: guardados en localStorage por nombre de camping.
+let favorites = new Set(JSON.parse(localStorage.getItem("campingsFavs") || "[]"));
+let showFavsOnly = false;
+function isFav(n){ return favorites.has(n); }
+function toggleFav(n){
+  if (favorites.has(n)) favorites.delete(n); else favorites.add(n);
+  localStorage.setItem("campingsFavs", JSON.stringify([...favorites]));
+}
+// Se llama desde el HTML del popup (onclick inline); actualiza el boton al
+// vuelo y refresca la lista/mapa para reflejar el filtro de favoritos si esta activo.
+function onFavClick(ev, n){
+  ev.stopPropagation();
+  toggleFav(n);
+  const btn = ev.currentTarget;
+  btn.classList.toggle('active', isFav(n));
+  btn.textContent = isFav(n) ? "★" : "☆";
+  render();
+}
+
 function buildLinks(c){
   const place = c.n + ", " + c.z;
   const coords = c.lat + "," + c.lon;
@@ -66,6 +85,7 @@ function popupHTML(c){
   ).join("");
   return `
     <div class="pop">
+      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
       <h3>${esc(c.n)}</h3>
       <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
       <div class="prices">
@@ -138,6 +158,7 @@ const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
 const langSel = document.getElementById('lang');
 const locateBtn = document.getElementById('locateBtn');
+const favToggle = document.getElementById('favToggle');
 const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
@@ -169,6 +190,16 @@ locateBtn.addEventListener('click', () => {
   );
 });
 
+function updateFavToggle(){
+  favToggle.textContent = showFavsOnly ? t("favToggleHide") : t("favToggleShow");
+  favToggle.classList.toggle('active', showFavsOnly);
+}
+favToggle.addEventListener('click', () => {
+  showFavsOnly = !showFavsOnly;
+  updateFavToggle();
+  render();
+});
+
 // España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
 // regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
 // alfabeticamente con las CCAA espanolas en el mismo desplegable).
@@ -187,6 +218,7 @@ function renderControls(){
   terrainSel.value = prevT;
   renderLegend();
   updateLocateBtn();
+  updateFavToggle();
 }
 
 let activeGroup = L.layerGroup(Object.values(markers)).addTo(map);
@@ -204,7 +236,8 @@ function render(){
       else if (ca.startsWith("PT::")) mCa = c.pais === "Portugal" && c.z === ca.slice(4);
     }
     const mT = terrain === "Todos" || c.t === terrain;
-    return mQ && mCa && mT;
+    const mFav = !showFavsOnly || isFav(c.n);
+    return mQ && mCa && mT && mFav;
   });
 
   // Siempre de mas cerca a mas lejos: desde tu ubicacion si la has activado,
@@ -219,6 +252,7 @@ function render(){
   listEl.innerHTML = filtered.map(c => {
     const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
     return `<div class="item" data-name="${esc(c.n)}">
+      <button class="fav-btn list-fav${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
       <h3>${esc(c.n)}</h3>
       <p>${esc(c.z)} · ${esc(c.ca)}</p>
       <div class="row">
@@ -228,11 +262,22 @@ function render(){
     </div>`;
   }).join('');
 
+  if (filtered.length === 0 && showFavsOnly) {
+    listEl.innerHTML = `<p style="font-size:12px;color:var(--muted);padding:10px;">${esc(t("favEmpty"))}</p>`;
+  }
+
   listEl.querySelectorAll('.item').forEach(el => {
     el.addEventListener('click', () => {
       const c = CAMPINGS.find(x => x.n === el.dataset.name);
       map.flyTo([c.lat, c.lon], 10, {duration:0.6});
       setTimeout(() => markers[c.n].openPopup(), 650);
+    });
+  });
+  listEl.querySelectorAll('.list-fav').forEach(btn => {
+    btn.addEventListener('click', (ev) => {
+      ev.stopPropagation();
+      toggleFav(btn.dataset.favName);
+      render();
     });
   });
 }

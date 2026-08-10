@@ -39,6 +39,10 @@ const I18N = {
     poiPlayas: "🏖 Playas",
     poiLagunas: "💧 Lagunas y embalses",
     listKmDesde: "km · desde",
+    favToggle: "Favorito",
+    favToggleShow: "⭐ Ver favoritos",
+    favToggleHide: "⭐ Ver todos",
+    favEmpty: "Aún no tienes favoritos. Toca la estrella ☆ en un camping para guardarlo.",
   },
   en: {
     langName: "English",
@@ -76,6 +80,10 @@ const I18N = {
     poiPlayas: "🏖 Beaches",
     poiLagunas: "💧 Lagoons & reservoirs",
     listKmDesde: "km · from",
+    favToggle: "Favorite",
+    favToggleShow: "⭐ Show favorites",
+    favToggleHide: "⭐ Show all",
+    favEmpty: "No favorites yet. Tap the ☆ star on a campsite to save it.",
   },
   fr: {
     langName: "Français",
@@ -113,6 +121,10 @@ const I18N = {
     poiPlayas: "🏖 Plages",
     poiLagunas: "💧 Lagunes et barrages",
     listKmDesde: "km · dès",
+    favToggle: "Favori",
+    favToggleShow: "⭐ Voir les favoris",
+    favToggleHide: "⭐ Voir tout",
+    favEmpty: "Pas encore de favoris. Touchez l'étoile ☆ d'un camping pour l'enregistrer.",
   },
   nl: {
     langName: "Nederlands",
@@ -150,6 +162,10 @@ const I18N = {
     poiPlayas: "🏖 Stranden",
     poiLagunas: "💧 Lagunes en stuwmeren",
     listKmDesde: "km · vanaf",
+    favToggle: "Favoriet",
+    favToggleShow: "⭐ Favorieten tonen",
+    favToggleHide: "⭐ Alles tonen",
+    favEmpty: "Nog geen favorieten. Tik op de ☆ ster bij een camping om te bewaren.",
   },
   de: {
     langName: "Deutsch",
@@ -187,6 +203,10 @@ const I18N = {
     poiPlayas: "🏖 Strände",
     poiLagunas: "💧 Lagunen & Stauseen",
     listKmDesde: "km · ab",
+    favToggle: "Favorit",
+    favToggleShow: "⭐ Favoriten anzeigen",
+    favToggleHide: "⭐ Alle anzeigen",
+    favEmpty: "Noch keine Favoriten. Tippe auf den ☆ Stern bei einem Campingplatz.",
   },
   zh: {
     langName: "中文",
@@ -224,6 +244,10 @@ const I18N = {
     poiPlayas: "🏖 海滩",
     poiLagunas: "💧 潟湖与水库",
     listKmDesde: "公里 · 起价",
+    favToggle: "收藏",
+    favToggleShow: "⭐ 查看收藏",
+    favToggleHide: "⭐ 查看全部",
+    favEmpty: "还没有收藏。点击营地旁的☆星标即可保存。",
   },
   ja: {
     langName: "日本語",
@@ -261,6 +285,10 @@ const I18N = {
     poiPlayas: "🏖 ビーチ",
     poiLagunas: "💧 湖沼・貯水池",
     listKmDesde: "km ・ 最安",
+    favToggle: "お気に入り",
+    favToggleShow: "⭐ お気に入りを表示",
+    favToggleHide: "⭐ すべて表示",
+    favEmpty: "お気に入りはまだありません。☆をタップして保存してください。",
   },
 };
 
