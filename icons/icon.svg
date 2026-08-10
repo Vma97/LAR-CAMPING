@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="96" fill="#57736a"/>
+
+  <!-- sol/luna detras de la tienda -->
+  <circle cx="185" cy="178" r="58" fill="#f3e9d8"/>
+
   <path d="M256 108 L400 368 L340 368 L256 208 L172 368 L112 368 Z" fill="#eef4f0"/>
   <path d="M256 208 L316 368 L196 368 Z" fill="#c99a83"/>
   <rect x="150" y="368" width="212" height="16" rx="4" fill="#3f4a43"/>
