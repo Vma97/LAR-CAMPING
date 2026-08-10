@@ -1,24 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <rect width="512" height="512" rx="96" fill="#57736a"/>
-  <path d="M256 108 L400 368 L340 368 L256 208 L172 368 L112 368 Z" fill="#eef4f0"/>
-  <path d="M256 208 L316 368 L196 368 Z" fill="#c99a83"/>
-  <rect x="150" y="368" width="212" height="16" rx="4" fill="#3f4a43"/>
+
+  <!-- sol/luna detras de la tienda -->
+  <circle cx="190" cy="175" r="58" fill="#f3e9d8"/>
+
+  <!-- tienda de campaña, contorno -->
+  <path d="M256 92 L112 372 M256 92 L400 372" fill="none" stroke="#f3e9d8"
+        stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M256 194 L190 372 L322 372 Z" fill="#c99a83"/>
+  <rect x="128" y="372" width="256" height="18" rx="8" fill="#3f4a43"/>
 
   <!-- bandera España, pequeña -->
-  <g transform="translate(148,406)">
-    <clipPath id="esClip"><rect width="66" height="44" rx="5"/></clipPath>
+  <g transform="translate(148,410)">
+    <clipPath id="esClip"><rect width="66" height="46" rx="6"/></clipPath>
     <g clip-path="url(#esClip)">
-      <rect width="66" height="44" fill="#aa151b"/>
-      <rect y="11" width="66" height="22" fill="#f1bf00"/>
+      <rect width="66" height="46" fill="#aa151b"/>
+      <rect y="11.5" width="66" height="23" fill="#f1bf00"/>
     </g>
   </g>
 
   <!-- bandera Portugal, pequeña -->
-  <g transform="translate(298,406)">
-    <clipPath id="ptClip"><rect width="66" height="44" rx="5"/></clipPath>
+  <g transform="translate(298,410)">
+    <clipPath id="ptClip"><rect width="66" height="46" rx="6"/></clipPath>
     <g clip-path="url(#ptClip)">
-      <rect width="26" height="44" fill="#006600"/>
-      <rect x="26" width="40" height="44" fill="#ff0000"/>
+      <rect width="26" height="46" fill="#006600"/>
+      <rect x="26" width="40" height="46" fill="#ff0000"/>
     </g>
   </g>
 </svg>
