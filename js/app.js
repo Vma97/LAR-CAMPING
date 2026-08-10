@@ -49,10 +49,11 @@ function buildLinks(c){
   const place = c.n + ", " + c.z;
   const coords = c.lat + "," + c.lon;
   const L = {
-    // Rutas con coordenadas exactas (mas fiable que buscar por texto/geocoding)
-    waze: "https://waze.com/ul?ll=" + coords + "&navigate=yes",
-    maps: "https://www.google.com/maps/dir/?api=1&destination=" + coords,
-    appleMaps: "https://maps.apple.com/?daddr=" + coords,
+    // Se guian por el nombre real del camping (mejor rotulo al llegar), pero
+    // llevan tambien las coordenadas exactas para que la ruta sea precisa.
+    waze: "https://waze.com/ul?q=" + q(c.n) + "&ll=" + coords + "&navigate=yes",
+    maps: "https://www.google.com/maps/dir/?api=1&destination=" + q(place) + "&travelmode=driving",
+    appleMaps: "https://maps.apple.com/?q=" + q(c.n) + "&daddr=" + coords,
     photos: "https://www.google.com/search?tbm=isch&q=" + q(place),
   };
   return L;
