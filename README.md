@@ -1,4 +1,4 @@
-# Campings España y Portugal — la Biblia del Camping
+# IBERICAMP — la Biblia del Camping (España y Portugal)
 
 App/mapa interactivo de campings pensados desde Torrejón de Ardoz (Madrid), con precios orientativos, filtros por comunidad autónoma y tipo de terreno, y enlaces directos a Waze/Maps/fotos/rutas/puntos de interés.
 
@@ -52,31 +52,25 @@ $js = "window.CAMPINGS = $json;`n"
 
 ## Estado actual
 
-- 290 campings: nombre real, web oficial (203 de 290) y ubicación verificados con investigación web dedicada (6 rondas de investigación en paralelo, una por región). Se eliminaron 27 entradas del dataset original que no correspondían a ningún negocio real (nombres genéricos tipo "Camping Teruel" o "Camping Bilbao" sin ningún camping real detrás) y se corrigieron varias ubicaciones que estaban en el pueblo equivocado (alguna hasta a 100km de donde debía).
-- 203 de los 290 campings tienen web oficial verificada, mostrada en el popup ("🌐 Web / reservas").
-- Todas las comunidades autónomas de España tienen al menos 10-11 campings (antes había 7 comunidades con solo 10: Murcia, Navarra, Asturias, La Rioja, Castilla La Mancha, Extremadura y País Vasco — ampliadas con ~26 campings reales más).
-- Cobertura insular completa revisada isla por isla: las 7 islas Canarias habitadas + La Graciosa, Mallorca/Menorca/Ibiza, Madeira + Porto Santo, y 8 de las 9 islas de Açores (São Miguel, Terceira, Pico, Faial, Santa Maria, Flores, São Jorge, Graciosa) tienen al menos un camping real y verificado.
-- Dos excepciones documentadas a propósito, no son huecos de datos: **Formentera** no tiene ningún camping legal (la acampada está prohibida por normativa balear, confirmado en varias fuentes) y **Corvo** (Açores, ~400 habitantes) no tiene ningún camping formal verificable — no se han inventado alternativas.
-- Portugal (3-5 estrellas, verificados con fuentes oficiales — roteiro-campista.pt, visitalentejo.pt, webs municipales, ACSI/Eurocampings): 14 Algarve, 10 Lisboa e Costa de Prata, 11 Centro, 11 Norte, 5 Alentejo. Se descartaron explícitamente los que resultaron tener menos de 3 estrellas (p. ej. Zambujeira do Mar) o estar cerrados (Orbitur Rio Alto).
-- Ampliada la densidad en Pirineos (aragonés, catalán, Val d'Aran) y Costa Brava con ~28 campings reales más.
-- Añadidas Islas Baleares (5) e Islas Canarias (6), antes ausentes del dataset. Ceuta y Melilla se comprobaron explícitamente y no tienen ningún camping real en funcionamiento (solo áreas de autocaravanas), así que se quedan fuera.
-- Corregidos los campings de interior que estaban mal etiquetados como `playa` (mostraban enlaces de playa sin sentido en Sierra Norte, Gredos, Pirineo, Sierra Nevada...).
-- Los "puntos de interés cerca" de cada popup están agrupados en un desplegable con subcategorías fijas (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
-- El desplegable de zona/filtro está agrupado en dos `optgroup`: **España** (por comunidad autónoma) y **Portugal** (por ciudad/pueblo concreto de cada camping) — antes se mezclaban alfabéticamente y confundía (p. ej. "Algarve" aparecía antes que "Andalucia").
-- **Geolocalización real**: botón "Usar mi ubicación" que pide permiso al navegador y reordena todo (lista y popups) de más cerca a más lejos desde donde estés de verdad, en vez de depender siempre de Torrejón de Ardoz como origen fijo (que sigue siendo el fallback si no se activa).
-- **Idiomas**: selector ES/EN/FR/NL/DE/ZH/JA que traduce toda la interfaz fija. Las descripciones de cada camping (`d_en`, `d_fr`, `d_nl`, `d_de`, `d_zh`, `d_ja` en `campings.json`) se van traduciendo por lotes — de momento solo Madrid (13/303), el resto cae automáticamente al español hasta que se traduzcan.
-- **Áreas de autocaravanas gratuitas** (`data/aparcamientos.json`, dataset separado): capa de marcadores rojos activable con el botón "Ver áreas de autocaravanas", oculta por defecto. De momento 20 áreas verificadas como gratuitas (Castilla y León, Castilla La Mancha, Aragón, C. Valenciana, Cataluña, Extremadura, Andalucía, Galicia, Navarra y Portugal) — solo se incluyen las confirmadas gratis, no las de pago ni las de estado ambiguo.
+- **339 campings** con nombre real, ubicación verificada y descripción, revisados en varias rondas de investigación web dedicadas región por región. Se eliminaron todas las entradas que no correspondían a ningún negocio real y se corrigieron ubicaciones erróneas (alguna hasta a 100km de donde debía, incluyendo un caso donde el marcador caía en el mar).
+- Todas las comunidades autónomas de España e islas (Canarias, Baleares, Açores, Madeira) tienen cobertura, incluyendo excepciones documentadas a propósito: **Formentera** (acampada prohibida por normativa balear) y **Corvo** (Açores, sin camping formal verificable).
+- Portugal cubierto de norte a sur (Algarve, Lisboa e Costa de Prata, Centro, Norte, Alentejo), solo campings de 3-5 estrellas verificados con fuentes oficiales.
+- Ampliada la densidad junto a agua (embalses, ríos, lagos, playas) en Galicia, Comunidad Valenciana, Murcia, Navarra y Aragón.
+- **100% de las descripciones traducidas** a los 7 idiomas soportados (ES/EN/FR/NL/DE/ZH/JA), con fallback automático al español si falta alguna.
+- Precios, teléfonos y webs oficiales verificados con investigación dedicada por camping (URL directa mostrada en el popup, "🌐 Web / reservas").
+- Los "puntos de interés cerca" de cada popup están agrupados por subcategorías (pueblos con encanto, rutas de senderismo, monumentos y patrimonio, naturaleza y miradores) más playas o lagunas/embalses según si el camping es costero o de interior.
+- El desplegable de zona/filtro está agrupado en dos `optgroup`: **España** (por comunidad autónoma) y **Portugal** (por ciudad/pueblo).
+- **Geolocalización real**: botón "Usar mi ubicación" que reordena la lista y los popups de más cerca a más lejos desde tu ubicación real, con Torrejón de Ardoz como fallback.
+- **Favoritos**: botón de estrella en cada camping (popup y lista), guardados en `localStorage`, con filtro para ver solo favoritos.
+- **PWA**: manifest (`manifest.json`), service worker (`sw.js`) e icono (`icons/icon.svg`) para poder instalar IBERICAMP en el móvil y usar el listado/popups sin conexión (los tiles del mapa sí necesitan internet).
+- Se retiró del todo la funcionalidad de "áreas de autocaravanas gratuitas" por dudas de calidad de datos (`data/aparcamientos.json` se mantiene en el repo sin usar, por si se retoma con más rigor en el futuro).
 
-## Pendiente (la "biblia del camping")
+## Pendiente
 
-- Traducir las ~290 descripciones de campings que faltan (`d_en/d_fr/d_nl/d_de/d_zh/d_ja`), se hace en lotes en commits sucesivos.
-- Ampliar áreas de autocaravanas gratuitas en Asturias, Cantabria, País Vasco, Murcia, Baleares, Canarias, La Rioja y más regiones de Portugal (todavía sin ninguna o con muy pocas).
-- Añadir teléfono/web al resto de campings (de momento solo cadenas Kampaoh y Orbitur).
-- Verificar/actualizar precios reales (muchos de Portugal y de las islas son orientativos por categoría, no tarifario oficial confirmado).
-- Fotos reales por camping.
-- Favoritos / marcados como "visitado" (localStorage).
-- PWA para uso en móvil sin conexión.
-- Los km de Baleares/Canarias/Açores/Madeira son distancia aproximada (no hay carretera), habría que aclararlo mejor en la UI (solo barco/avión) cuando no se usa la geolocalización real.
+- Retomar áreas de autocaravanas gratuitas con verificación más rigurosa, si se decide recuperar la funcionalidad.
+- Fotos reales por camping (de momento enlace a búsqueda de imágenes de Google).
+- Seguir puliendo precios/teléfonos en los campings más recientes por si cambian con el tiempo.
+- Los km de Baleares/Canarias/Açores/Madeira son distancia aproximada (no hay carretera); aclararlo mejor en la UI cuando no se usa la geolocalización real.
 
 ## Paleta
 

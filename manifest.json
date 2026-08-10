@@ -1,0 +1,16 @@
+{
+  "name": "IBERICAMP — Campings España y Portugal",
+  "short_name": "IBERICAMP",
+  "description": "Mapa interactivo de campings en España y Portugal con precios, rutas y puntos de interés",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#eef4f0",
+  "theme_color": "#57736a",
+  "lang": "es",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ]
+}

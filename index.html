@@ -3,14 +3,20 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Ruta de Campings — España y Portugal</title>
+<title>IBERICAMP — Campings España y Portugal</title>
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#57736a" />
+<link rel="icon" href="icons/icon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="icons/icon.svg" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 <div id="app">
   <div id="topbar">
-    <h1>🏕 Ruta de Campings — España y Portugal</h1>
+    <h1>🏕 IBERICAMP</h1>
     <p id="count">cargando…</p>
     <div id="controls">
       <input type="text" id="q" placeholder="Buscar nombre o zona..." />
@@ -31,5 +37,12 @@
 <script src="data/campings.js?v=10"></script>
 <script src="js/i18n.js?v=10"></script>
 <script src="js/app.js?v=10"></script>
+<script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
+</script>
 </body>
 </html>
