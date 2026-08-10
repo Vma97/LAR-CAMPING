@@ -43,6 +43,8 @@ const I18N = {
     favToggleShow: "⭐ Ver favoritos",
     favToggleHide: "⭐ Ver todos",
     favEmpty: "Aún no tienes favoritos. Toca la estrella ☆ en un camping para guardarlo.",
+    mapLayerStandard: "Mapa",
+    mapLayerSatellite: "Satélite",
   },
   en: {
     langName: "English",
@@ -84,6 +86,8 @@ const I18N = {
     favToggleShow: "⭐ Show favorites",
     favToggleHide: "⭐ Show all",
     favEmpty: "No favorites yet. Tap the ☆ star on a campsite to save it.",
+    mapLayerStandard: "Map",
+    mapLayerSatellite: "Satellite",
   },
   fr: {
     langName: "Français",
@@ -125,6 +129,8 @@ const I18N = {
     favToggleShow: "⭐ Voir les favoris",
     favToggleHide: "⭐ Voir tout",
     favEmpty: "Pas encore de favoris. Touchez l'étoile ☆ d'un camping pour l'enregistrer.",
+    mapLayerStandard: "Carte",
+    mapLayerSatellite: "Satellite",
   },
   nl: {
     langName: "Nederlands",
@@ -166,6 +172,8 @@ const I18N = {
     favToggleShow: "⭐ Favorieten tonen",
     favToggleHide: "⭐ Alles tonen",
     favEmpty: "Nog geen favorieten. Tik op de ☆ ster bij een camping om te bewaren.",
+    mapLayerStandard: "Kaart",
+    mapLayerSatellite: "Satelliet",
   },
   de: {
     langName: "Deutsch",
@@ -207,6 +215,8 @@ const I18N = {
     favToggleShow: "⭐ Favoriten anzeigen",
     favToggleHide: "⭐ Alle anzeigen",
     favEmpty: "Noch keine Favoriten. Tippe auf den ☆ Stern bei einem Campingplatz.",
+    mapLayerStandard: "Karte",
+    mapLayerSatellite: "Satellit",
   },
   zh: {
     langName: "中文",
@@ -248,6 +258,8 @@ const I18N = {
     favToggleShow: "⭐ 查看收藏",
     favToggleHide: "⭐ 查看全部",
     favEmpty: "还没有收藏。点击营地旁的☆星标即可保存。",
+    mapLayerStandard: "地图",
+    mapLayerSatellite: "卫星",
   },
   ja: {
     langName: "日本語",
@@ -289,6 +301,8 @@ const I18N = {
     favToggleShow: "⭐ お気に入りを表示",
     favToggleHide: "⭐ すべて表示",
     favEmpty: "お気に入りはまだありません。☆をタップして保存してください。",
+    mapLayerStandard: "地図",
+    mapLayerSatellite: "衛星写真",
   },
 };
 

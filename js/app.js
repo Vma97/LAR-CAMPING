@@ -117,10 +117,25 @@ function popupHTML(c){
 }
 
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 18,
   attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
+const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 18,
+  attribution: 'Tiles &copy; Esri'
+});
+let layerControl = null;
+function renderLayerControl(){
+  if (layerControl) map.removeControl(layerControl);
+  layerControl = L.control.layers(
+    {[t("mapLayerStandard")]: osmLayer, [t("mapLayerSatellite")]: satLayer},
+    null,
+    {position: 'topright'}
+  ).addTo(map);
+}
+renderLayerControl();
 
 const markers = {};
 CAMPINGS.forEach(c => {
@@ -288,6 +303,7 @@ terrainSel.addEventListener('change', render);
 langSel.addEventListener('change', () => {
   setLang(langSel.value);
   renderControls();
+  renderLayerControl();
   render();
   map.closePopup();
 });
