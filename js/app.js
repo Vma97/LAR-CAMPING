@@ -142,12 +142,15 @@ function popupHTML(c){
 
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 
-// Tiles CARTO Voyager: paleta ya suave y verdosa de base (sin API key), en
-// vez de los colores crudos de OSM estandar; encaja mucho mejor con LAR.
-const osmLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-  maxZoom: 18,
-  subdomains: 'abcd',
-  attribution: '&copy; OpenStreetMap contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
+// OpenTopoMap: relieve topografico verde/tierra con sombreado de montanas,
+// a juego con la estetica "outdoors" de LAR. Se probaron CARTO Voyager y
+// Esri World Topo pero ambas sirven las etiquetas en ingles en vez del
+// nombre local (Espana/Portugal en ingles); OpenTopoMap si respeta el
+// nombre local, igual que OSM estandar.
+const osmLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+  maxZoom: 17,
+  subdomains: 'abc',
+  attribution: '&copy; OpenStreetMap contributors, SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
 }).addTo(map);
 const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 18,

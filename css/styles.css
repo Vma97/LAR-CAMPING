@@ -115,10 +115,9 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 .camp-marker:hover{transform:scale(1.25);}
 .marker-cluster-custom{background:var(--forest);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:monospace;font-size:12px;border:2px solid var(--terracotta);box-shadow:0 1px 4px rgba(0,0,0,.3);}
 
-/* Retoque fino sobre CARTO Voyager (ya de base suave/verdosa) y sobre el
-   satelite, para que ninguno de los dos compita con la cabecera y ambos
-   se sientan parte del mismo producto LAR. */
-.leaflet-tile-pane{filter:saturate(.9) brightness(.98) sepia(.04);}
+/* OpenTopoMap ya tiene una paleta terrosa/verde suave de base; solo se
+   afina un poco para que combine con la cabecera y con el satelite. */
+.leaflet-tile-pane{filter:saturate(.92) brightness(.98) contrast(1.02);}
 
 .legend{position:absolute;bottom:14px;left:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:11px;z-index:500;box-shadow:var(--shadow-hover);}
 .legend div{display:flex;align-items:center;gap:6px;margin:2px 0;}
