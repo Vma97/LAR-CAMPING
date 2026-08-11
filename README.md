@@ -1,4 +1,4 @@
-# LAR — Tu lugar allá donde pares (campings de España y Portugal)
+# LAR — Tu lar, allá donde pares (campings de España y Portugal)
 
 App/mapa interactivo de campings pensados desde Torrejón de Ardoz (Madrid), con precios orientativos, filtros por comunidad autónoma y tipo de terreno, y enlaces directos a Waze/Maps/fotos/rutas/puntos de interés.
 

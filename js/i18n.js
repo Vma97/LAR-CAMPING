@@ -15,7 +15,7 @@ const I18N = {
     terrainRio: "Río / Lago",
     terrainCiudad: "Ciudad",
     terrainNaturaleza: "Naturaleza",
-    countSuffix: "campings · Tu lugar allá donde pares",
+    countSuffix: "campings · Tu lar, allá donde pares",
     kmFromTorrejon: "km desde Torrejón",
     kmFromYou: "km de ti",
     locateBtn: "📍 Usar mi ubicación",
