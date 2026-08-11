@@ -142,19 +142,17 @@ function popupHTML(c){
 
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 
-// OpenTopoMap: relieve topografico verde/tierra con sombreado de montanas,
-// a juego con la estetica "outdoors" de LAR. Se probaron CARTO Voyager y
-// Esri World Topo pero ambas sirven las etiquetas en ingles en vez del
-// nombre local (Espana/Portugal en ingles); OpenTopoMap si respeta el
-// nombre local, igual que OSM estandar.
+// Satelite (Esri) como capa por defecto, es la que mas gusta; se mantiene
+// el control para poder cambiar a OpenTopoMap (relieve/carreteras) cuando
+// alguien lo necesite.
+const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  maxZoom: 18,
+  attribution: 'Tiles &copy; Esri'
+}).addTo(map);
 const osmLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
   maxZoom: 17,
   subdomains: 'abc',
   attribution: '&copy; OpenStreetMap contributors, SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
-}).addTo(map);
-const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  maxZoom: 18,
-  attribution: 'Tiles &copy; Esri'
 });
 let layerControl = null;
 function renderLayerControl(){
