@@ -1,5 +1,5 @@
 :root{
-  --forest:#29453D; --forest-mid:#56766B; --sage:#E5EDE8; --cream:#F4F1E8;
+  --forest:#29453D; --forest-mid:#56766B; --sage:#E8F0EC; --cream:#F4F1E8;
   --terracotta:#C99578; --ink:#26352F; --muted:#6D7C75;
   --bg:var(--cream); --card:var(--sage); --border:#d6dfd8;
   --accent:var(--terracotta); --accent-dark:var(--forest);
@@ -10,6 +10,7 @@
   --naturaleza-c:#6ea468; --naturaleza-bg:#e2e9de;
   --shadow:0 1px 3px rgba(38,53,47,.08);
   --shadow-hover:0 6px 16px rgba(38,53,47,.14);
+  --search-bg:#eef3ee;
 }
 :root[data-theme="dark"]{
   --forest:#0f1b17; --forest-mid:#3d564d; --sage:#1c2925; --cream:#141d1a;
@@ -17,6 +18,7 @@
   --bg:var(--cream); --card:var(--sage); --border:#2c3b35;
   --shadow:0 1px 3px rgba(0,0,0,.35);
   --shadow-hover:0 8px 20px rgba(0,0,0,.45);
+  --search-bg:#24352e;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -25,6 +27,7 @@
     --border:#2c3b35;
     --shadow:0 1px 3px rgba(0,0,0,.35);
     --shadow-hover:0 8px 20px rgba(0,0,0,.45);
+    --search-bg:#24352e;
   }
 }
 *{box-sizing:border-box;}
@@ -35,31 +38,25 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 #topbar{
   position:relative;
   background-color:var(--forest);
-  background-image:linear-gradient(rgba(12,20,17,.62),rgba(12,20,17,.4) 55%,rgba(12,20,17,.68)),url("../icons/topbar-bg.webp");
+  background-image:linear-gradient(rgba(9,15,13,.78),rgba(9,15,13,.6) 55%,rgba(9,15,13,.82)),url("../icons/topbar-bg.webp");
   background-repeat:no-repeat;
   background-position:center 68%;
   background-size:cover;
   color:#eef4f0;padding:20px 16px 16px;border-bottom:4px solid var(--terracotta);flex-shrink:0;
 }
 #topbar h1{margin:0;font-size:19px;font-weight:800;letter-spacing:0;display:flex;align-items:center;gap:8px;}
-.logo-img{width:46px;height:46px;border-radius:11px;flex-shrink:0;object-fit:cover;}
+.logo-img{width:52px;height:52px;border-radius:12px;flex-shrink:0;object-fit:cover;}
 #topbar .subrow{display:flex;align-items:center;gap:8px;margin:3px 0 10px;flex-wrap:wrap;}
 #topbar p#count{margin:0;font-size:11px;color:#c7d6cd;font-family:monospace;}
 .flags-stat{font-size:11px;color:#c7d6cd;font-family:monospace;}
 #controls{display:flex;gap:6px;flex-wrap:wrap;align-items:center;}
-#controls input[type=text]{flex:1;min-width:140px;padding:8px 10px;border-radius:8px;border:none;font-size:13px;background:var(--cream);color:var(--ink);}
+#controls input[type=text]{flex:1;min-width:140px;padding:8px 10px;border-radius:8px;border:none;font-size:13px;background:var(--search-bg);color:var(--ink);}
 #controls select{padding:7px 8px;border-radius:20px;border:1px solid #7fa294;background:var(--forest-mid);color:#eef4f0;font-size:12px;}
 #controls button{padding:7px 10px;border-radius:20px;border:1px solid #7fa294;background:var(--forest-mid);color:#eef4f0;font-size:12px;cursor:pointer;white-space:nowrap;transition:transform .12s,background .15s;}
 #controls button:hover{transform:translateY(-1px);}
 #controls button#locateBtn.active{background:var(--terracotta);border-color:var(--terracotta);color:#26352f;font-weight:700;}
 #controls button#favToggle.active{background:var(--terracotta);border-color:var(--terracotta);color:#26352f;font-weight:700;}
 #controls button#themeToggle{padding:7px 9px;}
-
-/* chips: accesos rapidos + entorno */
-.chips-row{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 0;}
-.chip{padding:5px 11px;border-radius:20px;border:1px solid rgba(238,244,240,.35);background:rgba(238,244,240,.12);color:#eef4f0;font-size:11.5px;cursor:pointer;white-space:nowrap;transition:background .15s,transform .12s;}
-.chip:hover{background:rgba(238,244,240,.25);transform:translateY(-1px);}
-.chip.active{background:var(--terracotta);border-color:var(--terracotta);color:#26352f;font-weight:700;}
 
 #main{flex:1;display:flex;min-height:0;position:relative;}
 #map{flex:1;min-width:0;}
@@ -111,10 +108,17 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 .fav-empty button{margin-top:10px;padding:7px 14px;border-radius:20px;border:1px solid var(--forest-mid);background:var(--forest-mid);color:#fff;font-size:12px;cursor:pointer;}
 
 /* ---------- Marcadores propios ---------- */
-.camp-marker{display:flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .12s;}
-.camp-marker span{transform:rotate(45deg);font-size:12px;}
-.camp-marker:hover{transform:rotate(-45deg) scale(1.18);}
+/* Punto de color simple en vez de chincheta clasica: se distingue por color +
+   icono de terreno sin parecer un pin generico de mapa. */
+.camp-marker{display:flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35);transition:transform .12s;}
+.camp-marker span{font-size:11px;}
+.camp-marker:hover{transform:scale(1.25);}
 .marker-cluster-custom{background:var(--forest);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:monospace;font-size:12px;border:2px solid var(--terracotta);box-shadow:0 1px 4px rgba(0,0,0,.3);}
+
+/* Paleta del mapa acorde con LAR: se atenua saturacion/brillo de los tiles
+   (tanto el mapa estandar como el satelite) para que no compitan con la
+   cabecera y se sientan parte del mismo producto. */
+.leaflet-tile-pane{filter:saturate(.75) brightness(.97) contrast(1.03) sepia(.06);}
 
 .legend{position:absolute;bottom:14px;left:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:11px;z-index:500;box-shadow:var(--shadow-hover);}
 .legend div{display:flex;align-items:center;gap:6px;margin:2px 0;}

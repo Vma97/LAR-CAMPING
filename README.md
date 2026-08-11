@@ -1,4 +1,4 @@
-# IBERICAMP — la Biblia del Camping (España y Portugal)
+# LAR — Tu lugar allá donde pares (campings de España y Portugal)
 
 App/mapa interactivo de campings pensados desde Torrejón de Ardoz (Madrid), con precios orientativos, filtros por comunidad autónoma y tipo de terreno, y enlaces directos a Waze/Maps/fotos/rutas/puntos de interés.
 
@@ -63,7 +63,7 @@ $js = "window.CAMPINGS = $json;`n"
 - El desplegable de zona/filtro está agrupado en dos `optgroup`: **España** (por comunidad autónoma) y **Portugal** (por ciudad/pueblo).
 - **Geolocalización real**: botón "Usar mi ubicación" que reordena la lista y los popups de más cerca a más lejos desde tu ubicación real, con Torrejón de Ardoz como fallback.
 - **Favoritos**: botón de estrella en cada camping (popup y lista), guardados en `localStorage`, con filtro para ver solo favoritos.
-- **PWA**: manifest (`manifest.json`), service worker (`sw.js`) e icono (`icons/icon.svg`) para poder instalar IBERICAMP en el móvil y usar el listado/popups sin conexión (los tiles del mapa sí necesitan internet).
+- **PWA**: manifest (`manifest.json`), service worker (`sw.js`) e icono (`icons/logo.png`) para poder instalar LAR en el móvil y usar el listado/popups sin conexión (los tiles del mapa sí necesitan internet).
 - Se retiró del todo la funcionalidad de "áreas de autocaravanas gratuitas" por dudas de calidad de datos (`data/aparcamientos.json` se mantiene en el repo sin usar, por si se retoma con más rigor en el futuro).
 
 ## Pendiente

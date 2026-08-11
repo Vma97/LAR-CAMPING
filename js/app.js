@@ -167,9 +167,9 @@ function markerIcon(c){
   return L.divIcon({
     className: '',
     html: `<div class="camp-marker" style="background:${meta.color}"><span>${meta.glyph}</span></div>`,
-    iconSize: [26, 26],
-    iconAnchor: [13, 24],
-    popupAnchor: [0, -22],
+    iconSize: [22, 22],
+    iconAnchor: [11, 11],
+    popupAnchor: [0, -14],
   });
 }
 const markers = {};
@@ -220,7 +220,6 @@ const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const flagsStatEl = document.getElementById('flagsStat');
-const chipsRowEl = document.getElementById('chipsRow');
 const mobileListToggle = document.getElementById('mobileListToggle');
 const sidebarEl = document.getElementById('sidebar');
 
@@ -276,27 +275,6 @@ const countEspana = CAMPINGS.filter(c => c.pais === "España").length;
 const countPortugal = CAMPINGS.filter(c => c.pais === "Portugal").length;
 if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal}`;
 
-// Chips de accesos rapidos: reutilizan el buscador de texto (que ya mira
-// nombre/zona/comunidad/descripcion), asi no hace falta ningun dato nuevo.
-const QUICK_CHIPS = [
-  {key:"chipCercaDeMi", locate:true},
-];
-function renderChips(){
-  if (!chipsRowEl) return;
-  chipsRowEl.innerHTML = QUICK_CHIPS.map(ch =>
-    `<button type="button" class="chip" data-query="${esc(ch.query || '')}" data-locate="${ch.locate ? '1' : ''}">${esc(t(ch.key))}</button>`
-  ).join('');
-  chipsRowEl.querySelectorAll('.chip').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (btn.dataset.locate) { locateBtn.click(); return; }
-      qInput.value = btn.dataset.query;
-      chipsRowEl.querySelectorAll('.chip').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      render();
-    });
-  });
-}
-
 function renderControls(){
   const prevCa = caSel.value || "Todas";
   const prevT = terrainSel.value || "Todos";
@@ -308,7 +286,6 @@ function renderControls(){
   caSel.value = prevCa;
   terrainSel.value = prevT;
   renderLegend();
-  renderChips();
   updateLocateBtn();
   updateFavToggle();
 }
