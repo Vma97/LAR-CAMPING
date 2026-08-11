@@ -197,21 +197,6 @@ function clusterIcon(cluster){
   });
 }
 
-// legend
-const legend = L.control({position:'bottomleft'});
-let legendDiv = null;
-legend.onAdd = function(){
-  legendDiv = L.DomUtil.create('div','legend');
-  renderLegend();
-  return legendDiv;
-};
-legend.addTo(map);
-function renderLegend(){
-  if (!legendDiv) return;
-  legendDiv.innerHTML = Object.entries(TERRAIN).map(([k,v]) =>
-    `<div><span class="dot" style="background:${v.color}"></span>${esc(terrainLabel(k))}</div>`
-  ).join('');
-}
 
 // filtros
 const caSel = document.getElementById('ca');
@@ -288,7 +273,6 @@ function renderControls(){
   terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>` + Object.keys(TERRAIN).map(k => `<option value="${k}">${esc(terrainLabel(k))}</option>`).join('');
   caSel.value = prevCa;
   terrainSel.value = prevT;
-  renderLegend();
   updateLocateBtn();
   updateFavToggle();
 }

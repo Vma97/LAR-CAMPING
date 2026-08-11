@@ -119,9 +119,6 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
    ninguno de los dos compita con la cabecera y se sientan parte de LAR. */
 .leaflet-tile-pane{filter:saturate(.8) brightness(.97) contrast(1.02) sepia(.05);}
 
-.legend{position:absolute;bottom:14px;left:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:11px;z-index:500;box-shadow:var(--shadow-hover);}
-.legend div{display:flex;align-items:center;gap:6px;margin:2px 0;}
-.dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
 
 /* leaflet controls a juego con la paleta */
 .leaflet-control-zoom a{background:var(--card) !important;color:var(--ink) !important;}
