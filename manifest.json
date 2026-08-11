@@ -1,6 +1,6 @@
 {
-  "name": "IBERICAMP — Campings España y Portugal",
-  "short_name": "IBERICAMP",
+  "name": "LAR — Campings España y Portugal",
+  "short_name": "LAR",
   "description": "Mapa interactivo de campings en España y Portugal con precios, rutas y puntos de interés",
   "start_url": "./index.html",
   "scope": "./",
@@ -10,7 +10,7 @@
   "theme_color": "#29453D",
   "lang": "es",
   "icons": [
-    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
-    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+    { "src": "icons/logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "any" },
+    { "src": "icons/logo.png", "sizes": "1254x1254", "type": "image/png", "purpose": "maskable" }
   ]
 }

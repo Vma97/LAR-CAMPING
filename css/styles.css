@@ -42,7 +42,7 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
   color:#eef4f0;padding:20px 16px 16px;border-bottom:4px solid var(--terracotta);flex-shrink:0;
 }
 #topbar h1{margin:0;font-size:19px;font-weight:800;letter-spacing:0;display:flex;align-items:center;gap:8px;}
-.logo-img{width:26px;height:auto;flex-shrink:0;}
+.logo-img{width:46px;height:46px;border-radius:11px;flex-shrink:0;object-fit:cover;}
 #topbar .subrow{display:flex;align-items:center;gap:8px;margin:3px 0 10px;flex-wrap:wrap;}
 #topbar p#count{margin:0;font-size:11px;color:#c7d6cd;font-family:monospace;}
 .flags-stat{font-size:11px;color:#c7d6cd;font-family:monospace;}

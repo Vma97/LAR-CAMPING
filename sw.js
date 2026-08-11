@@ -1,7 +1,7 @@
 // Service worker: cachea el shell de la app (HTML/CSS/JS/datos) para que
 // funcione sin conexion. Los tiles del mapa (OpenStreetMap) necesitan
 // internet siempre, pero la lista de campings y los popups funcionan offline.
-const CACHE = "campings-shell-v3";
+const CACHE = "campings-shell-v4";
 const SHELL = [
   "./",
   "./index.html",
@@ -10,7 +10,7 @@ const SHELL = [
   "./js/app.js",
   "./js/i18n.js",
   "./data/campings.js",
-  "./icons/icon.svg",
+  "./icons/logo.png",
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js",
   "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css",
 ];
