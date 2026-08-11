@@ -143,16 +143,15 @@ function popupHTML(c){
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 
 // Satelite (Esri) como capa por defecto, es la que mas gusta; se mantiene
-// el control para poder cambiar a OpenTopoMap (relieve/carreteras) cuando
-// alguien lo necesite.
+// el control para poder cambiar al mapa de carreteras de siempre (OSM
+// estandar) cuando alguien lo necesite.
 const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 18,
   attribution: 'Tiles &copy; Esri'
 }).addTo(map);
-const osmLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-  maxZoom: 17,
-  subdomains: 'abc',
-  attribution: '&copy; OpenStreetMap contributors, SRTM | &copy; <a href="https://opentopomap.org">OpenTopoMap</a>'
+const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+  attribution: '&copy; OpenStreetMap contributors'
 });
 let layerControl = null;
 function renderLayerControl(){
