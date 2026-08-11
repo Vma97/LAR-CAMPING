@@ -115,10 +115,10 @@ body{margin:0;font-family:'Inter',system-ui,sans-serif;background:var(--bg);colo
 .camp-marker:hover{transform:scale(1.25);}
 .marker-cluster-custom{background:var(--forest);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:monospace;font-size:12px;border:2px solid var(--terracotta);box-shadow:0 1px 4px rgba(0,0,0,.3);}
 
-/* Paleta del mapa acorde con LAR: se atenua saturacion/brillo de los tiles
-   (tanto el mapa estandar como el satelite) para que no compitan con la
-   cabecera y se sientan parte del mismo producto. */
-.leaflet-tile-pane{filter:saturate(.75) brightness(.97) contrast(1.03) sepia(.06);}
+/* Retoque fino sobre CARTO Voyager (ya de base suave/verdosa) y sobre el
+   satelite, para que ninguno de los dos compita con la cabecera y ambos
+   se sientan parte del mismo producto LAR. */
+.leaflet-tile-pane{filter:saturate(.9) brightness(.98) sepia(.04);}
 
 .legend{position:absolute;bottom:14px;left:14px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:8px 10px;font-size:11px;z-index:500;box-shadow:var(--shadow-hover);}
 .legend div{display:flex;align-items:center;gap:6px;margin:2px 0;}

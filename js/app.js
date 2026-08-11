@@ -142,9 +142,12 @@ function popupHTML(c){
 
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 
-const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+// Tiles CARTO Voyager: paleta ya suave y verdosa de base (sin API key), en
+// vez de los colores crudos de OSM estandar; encaja mucho mejor con LAR.
+const osmLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
   maxZoom: 18,
-  attribution: '&copy; OpenStreetMap contributors'
+  subdomains: 'abcd',
+  attribution: '&copy; OpenStreetMap contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
 }).addTo(map);
 const satLayer = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
   maxZoom: 18,

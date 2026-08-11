@@ -1,7 +1,7 @@
 {
   "name": "LAR — Campings España y Portugal",
   "short_name": "LAR",
-  "description": "Mapa interactivo de campings en España y Portugal con precios, rutas y puntos de interés",
+  "description": "LAR — Tu lugar allá donde pares. Mapa interactivo de campings en España y Portugal con precios, rutas y puntos de interés",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
