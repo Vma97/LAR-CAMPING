@@ -142,6 +142,18 @@ function popupHTML(c){
 
 const map = L.map('map', {zoomControl:true}).setView([40.0, -4.5], 6);
 
+// En movil, al abrir el teclado (p.ej. para buscar) el navegador cambia la
+// altura visible de la pantalla y el mapa se queda descuadrado si no se le
+// avisa. visualViewport da la altura real visible en cada momento.
+if (window.visualViewport) {
+  const appEl = document.getElementById('app');
+  const syncViewportHeight = () => {
+    appEl.style.height = window.visualViewport.height + 'px';
+    map.invalidateSize();
+  };
+  window.visualViewport.addEventListener('resize', syncViewportHeight);
+}
+
 // Satelite (Esri) como capa por defecto, es la que mas gusta; se mantiene
 // el control para poder cambiar al mapa de carreteras de siempre (OSM
 // estandar) cuando alguien lo necesite.
@@ -175,12 +187,30 @@ function markerIcon(c){
     popupAnchor: [0, -14],
   });
 }
+// En movil no se usan los popups flotantes de Leaflet: con la lista de abajo
+// ya ocupando la pantalla, un popup superpuesto acaba chocando con ella (como
+// hacen apps como Google Maps o Airbnb, ahi solo hay un panel inferior que
+// cambia de "lista" a "detalle", nunca dos capas compitiendo por sitio).
+function isMobile(){ return window.matchMedia('(max-width:720px)').matches; }
+function openSpot(c){
+  if (isMobile()) { showMobileDetail(c); return; }
+  L.popup({maxWidth: 260})
+    .setLatLng([c.lat, c.lon])
+    .setContent(popupHTML(c))
+    .openOn(map);
+}
+function showMobileDetail(c){
+  listEl.innerHTML = `<button type="button" class="back-to-list">${esc(t("closeDetail"))}</button>` + popupHTML(c);
+  sidebarEl.classList.add('detail-mode');
+  listEl.querySelector('.back-to-list').addEventListener('click', () => {
+    sidebarEl.classList.remove('detail-mode');
+  });
+}
+
 const markers = {};
 CAMPINGS.forEach(c => {
-  const marker = L.marker([c.lat, c.lon], {icon: markerIcon(c)})
-    // bindPopup con funcion: Leaflet la vuelve a invocar cada vez que se abre,
-    // asi el popup siempre refleja el idioma actual sin reconstruir marcadores.
-    .bindPopup(() => popupHTML(c), {maxWidth: 260});
+  const marker = L.marker([c.lat, c.lon], {icon: markerIcon(c)});
+  marker.on('click', () => openSpot(c));
   markers[c.n] = marker;
 });
 
@@ -208,7 +238,6 @@ const qInput = document.getElementById('q');
 const listEl = document.getElementById('list');
 const countEl = document.getElementById('count');
 const flagsStatEl = document.getElementById('flagsStat');
-const mobileListToggle = document.getElementById('mobileListToggle');
 const sidebarEl = document.getElementById('sidebar');
 
 langSel.innerHTML = LANG_ORDER.map(l => `<option value="${l}">${esc(I18N[l].langName)}</option>`).join('');
@@ -247,10 +276,6 @@ favToggle.addEventListener('click', () => {
   updateFavToggle();
   render();
 });
-
-if (mobileListToggle) {
-  mobileListToggle.addEventListener('click', () => sidebarEl.classList.toggle('open'));
-}
 
 initThemeToggle();
 
@@ -347,7 +372,8 @@ function render(){
     el.addEventListener('click', () => {
       const c = CAMPINGS.find(x => x.n === el.dataset.name);
       map.flyTo([c.lat, c.lon], 10, {duration:0.6});
-      setTimeout(() => markers[c.n].openPopup(), 650);
+      if (isMobile()) { showMobileDetail(c); return; }
+      setTimeout(() => openSpot(c), 650);
     });
   });
   listEl.querySelectorAll('.list-fav').forEach(btn => {
