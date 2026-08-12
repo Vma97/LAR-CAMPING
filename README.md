@@ -42,8 +42,7 @@ $js = "window.CAMPINGS = $json;`n"
 | `pais` | España / Portugal |
 | `n` | nombre |
 | `ca` | comunidad autónoma / región |
-| `z` | zona / municipio |
-| `km` | km aproximados desde Torrejón de Ardoz |
+| `z` | zona / municipio ||
 | `pp`, `pa`, `pc`, `pl` | precio parcela, adulto, coche, luz (€) |
 | `d` | descripción corta |
 | `t` | tipo de terreno: `playa`, `montana`, `rio`, `ciudad`, `naturaleza` — determina qué enlaces de "puntos de interés cerca" se muestran (importante: no tiene sentido poner `playa` en un camping de interior) |
