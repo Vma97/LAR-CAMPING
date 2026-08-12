@@ -202,8 +202,10 @@ function openSpot(c){
 function showMobileDetail(c){
   listEl.innerHTML = `<button type="button" class="back-to-list">${esc(t("closeDetail"))}</button>` + popupHTML(c);
   sidebarEl.classList.add('detail-mode');
+  map.zoomControl.remove();
   listEl.querySelector('.back-to-list').addEventListener('click', () => {
     sidebarEl.classList.remove('detail-mode');
+    map.zoomControl.addTo(map);
   });
 }
 
