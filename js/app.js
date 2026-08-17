@@ -1,13 +1,33 @@
 const CAMPINGS = window.CAMPINGS;
+const SPOTS = window.SPOTS || [];
 
-const TERRAIN = {
+// La app unifica dos categorias de puntos (campings y zonas de bano) en un
+// solo mapa/lista, marcadas con "cat" para poder filtrar y renderizar cada
+// una a su manera (precios+POI para campings, servicios/acceso para agua).
+const POIS = [
+  ...CAMPINGS.map(c => ({...c, cat: "camping"})),
+  ...SPOTS.map(c => ({...c, cat: "agua"})),
+];
+
+const TERRAIN_CAMPING = {
   playa: {color:"#5f97a6", key:"terrainPlaya", glyph:"🏖️"},
   montana: {color:"#7f9a6c", key:"terrainMontana", glyph:"🏔️"},
   rio: {color:"#4f9a83", key:"terrainRio", glyph:"💧"},
   ciudad: {color:"#b98561", key:"terrainCiudad", glyph:"🏙️"},
   naturaleza: {color:"#6ea468", key:"terrainNaturaleza", glyph:"🌲"},
 };
-function terrainLabel(k){ return t(TERRAIN[k].key); }
+const TERRAIN_AGUA = {
+  rio: {color:"#4f9ac9", key:"terrainAguaRio", glyph:"💧"},
+  pantano: {color:"#3e8e7e", key:"terrainAguaPantano", glyph:"🏞️"},
+  cala: {color:"#2fb6a3", key:"terrainAguaCala", glyph:"🏖️"},
+  piscina_natural: {color:"#5aa9d6", key:"terrainAguaPiscina", glyph:"🏊"},
+};
+function terrainMapFor(cat){ return cat === "agua" ? TERRAIN_AGUA : TERRAIN_CAMPING; }
+function terrainMetaFor(c){
+  const map = terrainMapFor(c.cat);
+  return map[c.t] || (c.cat === "agua" ? TERRAIN_AGUA.rio : TERRAIN_CAMPING.naturaleza);
+}
+function terrainLabel(cat, k){ return t(terrainMapFor(cat)[k].key); }
 
 function q(s){ return encodeURIComponent(s); }
 function esc(s){ return s.replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
@@ -26,7 +46,7 @@ function distKmFor(c){
   return userLoc ? haversineKm(userLoc.lat, userLoc.lon, c.lat, c.lon) : c.km;
 }
 
-// Favoritos: guardados en localStorage por nombre de camping.
+// Favoritos: guardados en localStorage por nombre (unico entre campings y agua).
 let favorites = new Set(JSON.parse(localStorage.getItem("campingsFavs") || "[]"));
 let showFavsOnly = false;
 function isFav(n){ return favorites.has(n); }
@@ -104,6 +124,8 @@ function buildPOI(c){
 
 function popupHTML(c){
   const L = buildLinks(c);
+  if (c.cat === "agua") return popupHTMLAgua(c, L);
+
   const poiHTML = buildPOI(c).map(p =>
     `<a href="${p.url}" target="_blank">${esc(t(p.labelKey))}</a>`
   ).join("");
@@ -135,6 +157,34 @@ function popupHTML(c){
           <summary>${esc(t("poiTitle"))}</summary>
           <div class="poi-links">${poiHTML}</div>
         </details>
+      </div>
+    </div>
+  `;
+}
+
+// Ficha de zona de bano: sin precios ni POI de campings, con servicios/acceso
+// y la insignia de "final de ruta de senderismo / garganta" si aplica.
+function popupHTMLAgua(c, L){
+  return `
+    <div class="pop">
+      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
+      <h3>${esc(c.n)}</h3>
+      <p class="zone">${esc(c.z)} · ${esc(c.ca)} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
+      ${c.hike ? `<p class="hike-badge">🥾 ${esc(t("hikeBadge"))}</p>` : ""}
+      ${c.d ? `<p class="info">${esc(c.d)}</p>` : ""}
+      ${c.servicios ? `<p class="info"><b>${esc(t("aguaServicios"))}:</b> ${esc(c.servicios)}</p>` : ""}
+      ${c.acceso ? `<p class="info"><b>${esc(t("aguaAcceso"))}:</b> ${esc(c.acceso)}</p>` : ""}
+      <div class="links">
+        <details class="poi-group route-group" open>
+          <summary>${esc(t("routeStart"))}</summary>
+          <div class="poi-links">
+            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
+            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
+            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
+          </div>
+        </details>
+        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
+        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
       </div>
     </div>
   `;
@@ -178,7 +228,7 @@ renderLayerControl();
 
 // ---------- Marcadores propios (en vez de circulos genericos) ----------
 function markerIcon(c){
-  const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
+  const meta = terrainMetaFor(c);
   return L.divIcon({
     className: '',
     html: `<div class="camp-marker" style="background:${meta.color}"><span>${meta.glyph}</span></div>`,
@@ -210,7 +260,7 @@ function showMobileDetail(c){
 }
 
 const markers = {};
-CAMPINGS.forEach(c => {
+POIS.forEach(c => {
   const marker = L.marker([c.lat, c.lon], {icon: markerIcon(c)});
   marker.on('click', () => openSpot(c));
   markers[c.n] = marker;
@@ -231,6 +281,7 @@ function clusterIcon(cluster){
 
 
 // filtros
+const catSel = document.getElementById('cat');
 const caSel = document.getElementById('ca');
 const terrainSel = document.getElementById('terrain');
 const langSel = document.getElementById('lang');
@@ -283,23 +334,45 @@ initThemeToggle();
 
 // España se filtra por comunidad autonoma; Portugal por ciudad/pueblo (sus
 // regiones turisticas son demasiado amplias y no tiene sentido mezclarlas
-// alfabeticamente con las CCAA espanolas en el mismo desplegable).
-const casEspana = [...new Set(CAMPINGS.filter(c => c.pais === "España").map(c => c.ca))].sort();
-const zonasPortugal = [...new Set(CAMPINGS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
+// alfabeticamente con las CCAA espanolas en el mismo desplegable). Las zonas
+// de agua son todas de España, asi que entran en el mismo union de CCAA.
+const casEspana = [...new Set(POIS.filter(c => c.pais === "España").map(c => c.ca))].sort();
+const zonasPortugal = [...new Set(POIS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
 const countEspana = CAMPINGS.filter(c => c.pais === "España").length;
 const countPortugal = CAMPINGS.filter(c => c.pais === "Portugal").length;
-if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal}`;
+if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal} · 💧 ${SPOTS.length}`;
+
+// El tipo de terreno depende de la categoria elegida (campings y zonas de
+// agua usan vocabularios distintos); los valores del desplegable van
+// namespaced como "camping::playa" / "agua::rio" para no mezclarlos.
+function renderTerrainOptions(){
+  const cat = catSel.value;
+  const prevT = terrainSel.value || "Todos";
+  if (cat === "camping") {
+    terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`
+      + Object.keys(TERRAIN_CAMPING).map(k => `<option value="camping::${k}">${esc(terrainLabel("camping", k))}</option>`).join('');
+  } else if (cat === "agua") {
+    terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`
+      + Object.keys(TERRAIN_AGUA).map(k => `<option value="agua::${k}">${esc(terrainLabel("agua", k))}</option>`).join('');
+  } else {
+    terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`;
+  }
+  terrainSel.value = [...terrainSel.options].some(o => o.value === prevT) ? prevT : "Todos";
+}
 
 function renderControls(){
   const prevCa = caSel.value || "Todas";
-  const prevT = terrainSel.value || "Todos";
+  const prevCat = catSel.value || "Todas";
   qInput.placeholder = t("searchPlaceholder");
   caSel.innerHTML = `<option value="Todas">${esc(t("allZones"))}</option>`
     + `<optgroup label="${esc(t("groupSpain"))}">` + casEspana.map(c => `<option value="ES::${esc(c)}">${esc(c)}</option>`).join('') + '</optgroup>'
     + `<optgroup label="${esc(t("groupPortugal"))}">` + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
-  terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>` + Object.keys(TERRAIN).map(k => `<option value="${k}">${esc(terrainLabel(k))}</option>`).join('');
+  catSel.innerHTML = `<option value="Todas">${esc(t("catAll"))}</option>`
+    + `<option value="camping">${esc(t("catCamping"))}</option>`
+    + `<option value="agua">${esc(t("catAgua"))}</option>`;
   caSel.value = prevCa;
-  terrainSel.value = prevT;
+  catSel.value = prevCat;
+  renderTerrainOptions();
   updateLocateBtn();
   updateFavToggle();
 }
@@ -307,7 +380,7 @@ function renderControls(){
 // Un grupo de clusters por comunidad autonoma / region (en vez de uno solo
 // global), asi los clusters nunca mezclan campings de zonas distintas aunque
 // esten geograficamente cerca en el mapa a poco zoom.
-const uniqueCAs = [...new Set(CAMPINGS.map(c => c.ca))];
+const uniqueCAs = [...new Set(POIS.map(c => c.ca))];
 const caGroups = {};
 uniqueCAs.forEach(ca => {
   const group = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 50});
@@ -318,9 +391,10 @@ uniqueCAs.forEach(ca => {
 function render(){
   const query = qInput.value.trim().toLowerCase();
   const ca = caSel.value;
+  const cat = catSel.value;
   const terrain = terrainSel.value;
 
-  const filtered = CAMPINGS.filter(c => {
+  const filtered = POIS.filter(c => {
     const mQ = !query || c.n.toLowerCase().includes(query) || c.z.toLowerCase().includes(query)
       || c.ca.toLowerCase().includes(query) || (c.d || "").toLowerCase().includes(query);
     let mCa = true;
@@ -328,9 +402,10 @@ function render(){
       if (ca.startsWith("ES::")) mCa = c.pais === "España" && c.ca === ca.slice(4);
       else if (ca.startsWith("PT::")) mCa = c.pais === "Portugal" && c.z === ca.slice(4);
     }
-    const mT = terrain === "Todos" || c.t === terrain;
+    const mCat = cat === "Todas" || c.cat === cat;
+    const mT = terrain === "Todos" || terrain === `${c.cat}::${c.t}`;
     const mFav = !showFavsOnly || isFav(c.n);
-    return mQ && mCa && mT && mFav;
+    return mQ && mCa && mCat && mT && mFav;
   });
 
   // Siempre de mas cerca a mas lejos: desde tu ubicacion si la has activado,
@@ -340,12 +415,13 @@ function render(){
   Object.values(caGroups).forEach(g => g.clearLayers());
   filtered.forEach(c => caGroups[c.ca].addLayer(markers[c.n]));
 
-  countEl.textContent = filtered.length === CAMPINGS.length
-    ? filtered.length + " " + t("countSuffix")
+  countEl.textContent = filtered.length === POIS.length
+    ? filtered.length + " " + t("countSuffixMixed")
     : filtered.length + " " + t("countSuffixFiltered");
 
   listEl.innerHTML = filtered.map(c => {
-    const meta = TERRAIN[c.t] || TERRAIN.naturaleza;
+    const meta = terrainMetaFor(c);
+    const isCamping = c.cat !== "agua";
     return `<div class="item" data-name="${esc(c.n)}">
       <div class="cover" style="background:${meta.color}22;color:${meta.color}">${meta.glyph}</div>
       <button class="fav-btn list-fav${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
@@ -353,12 +429,13 @@ function render(){
         <h3>${esc(c.n)}</h3>
         <p>${esc(c.z)} · ${esc(c.ca)}</p>
         <div class="row">
-          <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.t))}</span>
+          <span class="badge" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.cat, c.t))}</span>
+          ${c.hike ? `<span class="badge hike-badge-sm">🥾</span>` : ""}
           <span class="km">📍 ${Math.round(distKmFor(c))} km</span>
         </div>
         <div class="row">
-          <span class="price-tag">${esc(t("listKmDesde"))} ${c.pp}€</span>
-          <span class="go">${esc(t("viewCamping"))} →</span>
+          ${isCamping ? `<span class="price-tag">${esc(t("listKmDesde"))} ${c.pp}€</span>` : `<span class="price-tag">${esc(t("catAgua"))}</span>`}
+          <span class="go">${esc(isCamping ? t("viewCamping") : t("viewAgua"))} →</span>
         </div>
       </div>
     </div>`;
@@ -372,7 +449,7 @@ function render(){
 
   listEl.querySelectorAll('.item').forEach(el => {
     el.addEventListener('click', () => {
-      const c = CAMPINGS.find(x => x.n === el.dataset.name);
+      const c = POIS.find(x => x.n === el.dataset.name);
       map.flyTo([c.lat, c.lon], 10, {duration:0.6});
       if (isMobile()) { showMobileDetail(c); return; }
       setTimeout(() => openSpot(c), 650);
@@ -389,6 +466,7 @@ function render(){
 
 qInput.addEventListener('input', render);
 caSel.addEventListener('change', render);
+catSel.addEventListener('change', () => { renderTerrainOptions(); render(); });
 terrainSel.addEventListener('change', render);
 langSel.addEventListener('change', () => {
   setLang(langSel.value);

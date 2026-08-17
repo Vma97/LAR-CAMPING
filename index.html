@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.min.css" />
-<link rel="stylesheet" href="css/styles.css?v=39" />
+<link rel="stylesheet" href="css/styles.css?v=40" />
 <script>
   // Aplicar el tema guardado antes de pintar, para evitar parpadeo claro/oscuro.
   (function(){
@@ -33,6 +33,7 @@
     </div>
     <div id="controls">
       <input type="text" id="q" placeholder="Buscar nombre o zona..." />
+      <select id="cat"></select>
       <select id="ca"></select>
       <select id="terrain"></select>
       <button id="locateBtn" type="button"></button>
@@ -51,9 +52,10 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
-<script src="data/campings.js?v=39"></script>
-<script src="js/i18n.js?v=39"></script>
-<script src="js/app.js?v=39"></script>
+<script src="data/campings.js?v=40"></script>
+<script src="data/spots.js?v=1"></script>
+<script src="js/i18n.js?v=40"></script>
+<script src="js/app.js?v=40"></script>
 <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
