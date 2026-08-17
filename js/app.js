@@ -387,7 +387,7 @@ const casEspana = [...new Set(POIS.filter(c => c.pais === "España").map(c => c.
 const zonasPortugal = [...new Set(POIS.filter(c => c.pais === "Portugal").map(c => c.z))].sort();
 const countEspana = CAMPINGS.filter(c => c.pais === "España").length;
 const countPortugal = CAMPINGS.filter(c => c.pais === "Portugal").length;
-if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal} · 💧 ${SPOTS.length}`;
+if (flagsStatEl) flagsStatEl.textContent = `🇪🇸 ${countEspana} · 🇵🇹 ${countPortugal} · 💧 ${SPOTS.length} · 🏛 ${PATRIMONIO.length}`;
 
 // El tipo de terreno depende de la categoria elegida (campings y zonas de
 // agua usan vocabularios distintos); los valores del desplegable van
