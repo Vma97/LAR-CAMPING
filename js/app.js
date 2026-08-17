@@ -1,12 +1,14 @@
 const CAMPINGS = window.CAMPINGS;
 const SPOTS = window.SPOTS || [];
+const PATRIMONIO = window.PATRIMONIO || [];
 
-// La app unifica dos categorias de puntos (campings y zonas de bano) en un
-// solo mapa/lista, marcadas con "cat" para poder filtrar y renderizar cada
-// una a su manera (precios+POI para campings, servicios/acceso para agua).
+// La app unifica tres categorias de puntos (campings, zonas de bano y
+// patrimonio cultural) en un solo mapa/lista, marcadas con "cat" para poder
+// filtrar y renderizar cada una a su manera.
 const POIS = [
   ...CAMPINGS.map(c => ({...c, cat: "camping"})),
   ...SPOTS.map(c => ({...c, cat: "agua"})),
+  ...PATRIMONIO.map(c => ({...c, cat: "patrimonio"})),
 ];
 
 const TERRAIN_CAMPING = {
@@ -22,10 +24,29 @@ const TERRAIN_AGUA = {
   cala: {color:"#2fb6a3", key:"terrainAguaCala", glyph:"🏖️"},
   piscina_natural: {color:"#5aa9d6", key:"terrainAguaPiscina", glyph:"🏊"},
 };
-function terrainMapFor(cat){ return cat === "agua" ? TERRAIN_AGUA : TERRAIN_CAMPING; }
+const TERRAIN_PATRIMONIO = {
+  castillo: {color:"#8b5e3c", key:"terrainPatCastillo", glyph:"🏰"},
+  catedral: {color:"#6b4c9a", key:"terrainPatCatedral", glyph:"⛪"},
+  iglesia: {color:"#7a5c9e", key:"terrainPatIglesia", glyph:"⛪"},
+  monasterio: {color:"#5c4a7a", key:"terrainPatMonasterio", glyph:"⛪"},
+  ruinas: {color:"#a67c52", key:"terrainPatRuinas", glyph:"🏛️"},
+  yacimiento: {color:"#9c7b4f", key:"terrainPatYacimiento", glyph:"⛏️"},
+  muralla: {color:"#7d6a4f", key:"terrainPatMuralla", glyph:"🧱"},
+  palacio: {color:"#b8860b", key:"terrainPatPalacio", glyph:"🏛️"},
+  pueblo_historico: {color:"#c2703d", key:"terrainPatPueblo", glyph:"🏘️"},
+  puente: {color:"#4f7a8b", key:"terrainPatPuente", glyph:"🌉"},
+  ermita: {color:"#8a6a9e", key:"terrainPatErmita", glyph:"⛪"},
+  museo: {color:"#b03a5b", key:"terrainPatMuseo", glyph:"🖼️"},
+  patrimonio_industrial: {color:"#5a6b7a", key:"terrainPatIndustrial", glyph:"⚙️"},
+};
+function terrainMapFor(cat){
+  if (cat === "agua") return TERRAIN_AGUA;
+  if (cat === "patrimonio") return TERRAIN_PATRIMONIO;
+  return TERRAIN_CAMPING;
+}
 function terrainMetaFor(c){
   const map = terrainMapFor(c.cat);
-  return map[c.t] || (c.cat === "agua" ? TERRAIN_AGUA.rio : TERRAIN_CAMPING.naturaleza);
+  return map[c.t] || map[Object.keys(map)[0]];
 }
 function terrainLabel(cat, k){ return t(terrainMapFor(cat)[k].key); }
 
@@ -125,6 +146,7 @@ function buildPOI(c){
 function popupHTML(c){
   const L = buildLinks(c);
   if (c.cat === "agua") return popupHTMLAgua(c, L);
+  if (c.cat === "patrimonio") return popupHTMLPatrimonio(c, L);
 
   const poiHTML = buildPOI(c).map(p =>
     `<a href="${p.url}" target="_blank">${esc(t(p.labelKey))}</a>`
@@ -174,6 +196,31 @@ function popupHTMLAgua(c, L){
       ${c.d ? `<p class="info">${esc(c.d)}</p>` : ""}
       ${c.servicios ? `<p class="info"><b>${esc(t("aguaServicios"))}:</b> ${esc(c.servicios)}</p>` : ""}
       ${c.acceso ? `<p class="info"><b>${esc(t("aguaAcceso"))}:</b> ${esc(c.acceso)}</p>` : ""}
+      <div class="links">
+        <details class="poi-group route-group" open>
+          <summary>${esc(t("routeStart"))}</summary>
+          <div class="poi-links">
+            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
+            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
+            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
+          </div>
+        </details>
+        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
+        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
+      </div>
+    </div>
+  `;
+}
+
+// Ficha de patrimonio cultural: epoca/tipo en vez de precios o servicios.
+function popupHTMLPatrimonio(c, L){
+  return `
+    <div class="pop">
+      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
+      <h3>${esc(c.n)}</h3>
+      <p class="zone">${esc(c.z)} · ${esc(c.ca)} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
+      ${c.epoca ? `<p class="info"><b>${esc(t("patEpoca"))}:</b> ${esc(c.epoca)}</p>` : ""}
+      ${c.d ? `<p class="info">${esc(c.d)}</p>` : ""}
       <div class="links">
         <details class="poi-group route-group" open>
           <summary>${esc(t("routeStart"))}</summary>
@@ -354,6 +401,9 @@ function renderTerrainOptions(){
   } else if (cat === "agua") {
     terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`
       + Object.keys(TERRAIN_AGUA).map(k => `<option value="agua::${k}">${esc(terrainLabel("agua", k))}</option>`).join('');
+  } else if (cat === "patrimonio") {
+    terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`
+      + Object.keys(TERRAIN_PATRIMONIO).map(k => `<option value="patrimonio::${k}">${esc(terrainLabel("patrimonio", k))}</option>`).join('');
   } else {
     terrainSel.innerHTML = `<option value="Todos">${esc(t("allTypes"))}</option>`;
   }
@@ -369,7 +419,8 @@ function renderControls(){
     + `<optgroup label="${esc(t("groupPortugal"))}">` + zonasPortugal.map(z => `<option value="PT::${esc(z)}">${esc(z)}</option>`).join('') + '</optgroup>';
   catSel.innerHTML = `<option value="Todas">${esc(t("catAll"))}</option>`
     + `<option value="camping">${esc(t("catCamping"))}</option>`
-    + `<option value="agua">${esc(t("catAgua"))}</option>`;
+    + `<option value="agua">${esc(t("catAgua"))}</option>`
+    + `<option value="patrimonio">${esc(t("catPatrimonio"))}</option>`;
   caSel.value = prevCa;
   catSel.value = prevCat;
   renderTerrainOptions();
@@ -421,7 +472,10 @@ function render(){
 
   listEl.innerHTML = filtered.map(c => {
     const meta = terrainMetaFor(c);
-    const isCamping = c.cat !== "agua";
+    let bottomLeft, goLabel;
+    if (c.cat === "camping") { bottomLeft = `${esc(t("listKmDesde"))} ${c.pp}€`; goLabel = t("viewCamping"); }
+    else if (c.cat === "patrimonio") { bottomLeft = esc(c.epoca || t("catPatrimonio")); goLabel = t("viewPatrimonio"); }
+    else { bottomLeft = esc(t("catAgua")); goLabel = t("viewAgua"); }
     return `<div class="item" data-name="${esc(c.n)}">
       <div class="cover" style="background:${meta.color}22;color:${meta.color}">${meta.glyph}</div>
       <button class="fav-btn list-fav${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
@@ -434,8 +488,8 @@ function render(){
           <span class="km">📍 ${Math.round(distKmFor(c))} km</span>
         </div>
         <div class="row">
-          ${isCamping ? `<span class="price-tag">${esc(t("listKmDesde"))} ${c.pp}€</span>` : `<span class="price-tag">${esc(t("catAgua"))}</span>`}
-          <span class="go">${esc(isCamping ? t("viewCamping") : t("viewAgua"))} →</span>
+          <span class="price-tag">${bottomLeft}</span>
+          <span class="go">${esc(goLabel)} →</span>
         </div>
       </div>
     </div>`;
