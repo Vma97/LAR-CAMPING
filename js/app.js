@@ -205,7 +205,7 @@ function popupHTMLAgua(c, L){
             <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
           </div>
         </details>
-        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
+        <a href="${L.photos}" target="_blank">${esc(t("photosLinkGeneric"))}</a>
         ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
       </div>
     </div>
@@ -230,7 +230,7 @@ function popupHTMLPatrimonio(c, L){
             <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
           </div>
         </details>
-        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
+        <a href="${L.photos}" target="_blank">${esc(t("photosLinkGeneric"))}</a>
         ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
       </div>
     </div>
