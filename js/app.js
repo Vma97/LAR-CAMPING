@@ -87,17 +87,6 @@ function toggleFav(n){
   if (favorites.has(n)) favorites.delete(n); else favorites.add(n);
   localStorage.setItem("campingsFavs", JSON.stringify([...favorites]));
 }
-// Se llama desde el HTML del popup (onclick inline); actualiza el boton al
-// vuelo y refresca la lista/mapa para reflejar el filtro de favoritos si esta activo.
-function onFavClick(ev, n){
-  ev.stopPropagation();
-  toggleFav(n);
-  const btn = ev.currentTarget;
-  btn.classList.toggle('active', isFav(n));
-  btn.textContent = isFav(n) ? "★" : "☆";
-  render();
-}
-
 // ---------- Tema claro/oscuro ----------
 function currentTheme(){
   return document.documentElement.getAttribute("data-theme")
@@ -155,6 +144,40 @@ function buildPOI(c){
   return poi.map(p => ({...p, url: "https://www.google.com/maps/search/" + q(p.query)}));
 }
 
+// Cabecera comun a las tres fichas: icono, nombre, ubicacion y chips (tipo +
+// distancia + insignias). El contenido especifico de cada categoria
+// (precio/epoca/servicios, descripcion, acciones) va debajo de esto.
+function popHeader(c){
+  const meta = terrainMetaFor(c);
+  return `
+    <button class="fav-btn pop-fav-btn${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
+    <div class="pop-hero" style="background:${catColorFor(c)}22">${meta.glyph}</div>
+    <h3>${esc(c.n)}</h3>
+    <p class="pop-loc">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""}</p>
+    <div class="pop-chips">
+      <span class="chip" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.cat, c.t))}</span>
+      ${c.hike ? `<span class="chip" style="background:var(--terracotta)22;color:var(--terracotta)">🥾 ${esc(t("hikeBadge"))}</span>` : ""}
+      <span class="chip">📍 ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</span>
+    </div>
+  `;
+}
+
+// Fila de acciones comun: un CTA grande (Waze) + iconos pequenos para el
+// resto de enlaces (mapas, fotos, web, telefono), nunca mas de un nivel de
+// jerarquia visible a la vez.
+function popActions(c, L, extraIconsHTML){
+  return `
+    <a class="pop-cta" href="${L.waze}" target="_blank">🧭 ${esc(t("routeWaze"))}</a>
+    <div class="pop-more">
+      <a href="${L.maps}" target="_blank" title="${esc(t("routeGoogle"))}">📍</a>
+      <a href="${L.appleMaps}" target="_blank" title="${esc(t("routeApple"))}">🍎</a>
+      <a href="${L.photos}" target="_blank" title="${esc(t("photosLinkGeneric"))}">🖼️</a>
+      ${c.web ? `<a href="${esc(c.web)}" target="_blank" title="${esc(t("webLink"))}">🌐</a>` : ""}
+      ${extraIconsHTML || ""}
+    </div>
+  `;
+}
+
 function popupHTML(c){
   const L = buildLinks(c);
   if (c.cat === "agua") return popupHTMLAgua(c, L);
@@ -163,35 +186,16 @@ function popupHTML(c){
   const poiHTML = buildPOI(c).map(p =>
     `<a href="${p.url}" target="_blank">${esc(t(p.labelKey))}</a>`
   ).join("");
+  const telIcon = c.tel ? `<a href="tel:${esc(c.tel.replace(/\s+/g,""))}" title="${esc(c.tel)}">📞</a>` : "";
   return `
     <div class="pop">
-      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
-      <h3>${esc(c.n)}</h3>
-      <p class="zone">${esc(c.z)} · ${esc(c.ca)}${c.pais && c.pais !== "España" ? " · " + esc(c.pais) : ""} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
-      <div class="prices">
-        <div class="price">${esc(t("priceParcela"))}<b>${c.pp}€</b></div>
-        <div class="price">${esc(t("priceAdulto"))}<b>${c.pa}€</b></div>
-        <div class="price">${esc(t("priceCoche"))}<b>${c.pc}€</b></div>
-        <div class="price">${esc(t("priceLuz"))}<b>${c.pl}€</b></div>
-      </div>
-      <p style="font-size:12px;margin:6px 0 0;">${esc(descFor(c))}</p>
-      <div class="links">
-        <details class="poi-group route-group" open>
-          <summary>${esc(t("routeStart"))}</summary>
-          <div class="poi-links">
-            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
-            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
-            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
-          </div>
-        </details>
-        <a href="${L.photos}" target="_blank">${esc(t("photosLink"))}</a>
-        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
-        ${c.tel ? `<a href="tel:${esc(c.tel.replace(/\s+/g,""))}">📞 ${esc(c.tel)}</a>` : ""}
-        <details class="poi-group">
-          <summary>${esc(t("poiTitle"))}</summary>
-          <div class="poi-links">${poiHTML}</div>
-        </details>
-      </div>
+      ${popHeader(c)}
+      <p class="pop-desc">${esc(descFor(c))}</p>
+      ${popActions(c, L, telIcon)}
+      <details class="pop-extra">
+        <summary>${esc(t("poiTitle"))}</summary>
+        <div class="poi-links">${poiHTML}</div>
+      </details>
     </div>
   `;
 }
@@ -201,25 +205,11 @@ function popupHTML(c){
 function popupHTMLAgua(c, L){
   return `
     <div class="pop">
-      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
-      <h3>${esc(c.n)}</h3>
-      <p class="zone">${esc(c.z)} · ${esc(c.ca)} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
-      ${c.hike ? `<p class="hike-badge">🥾 ${esc(t("hikeBadge"))}</p>` : ""}
-      ${c.d ? `<p class="info">${esc(c.d)}</p>` : ""}
-      ${c.servicios ? `<p class="info"><b>${esc(t("aguaServicios"))}:</b> ${esc(c.servicios)}</p>` : ""}
-      ${c.acceso ? `<p class="info"><b>${esc(t("aguaAcceso"))}:</b> ${esc(c.acceso)}</p>` : ""}
-      <div class="links">
-        <details class="poi-group route-group" open>
-          <summary>${esc(t("routeStart"))}</summary>
-          <div class="poi-links">
-            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
-            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
-            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
-          </div>
-        </details>
-        <a href="${L.photos}" target="_blank">${esc(t("photosLinkGeneric"))}</a>
-        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
-      </div>
+      ${popHeader(c)}
+      ${c.servicios ? `<p class="pop-highlight">${esc(c.servicios)}</p>` : ""}
+      ${c.d ? `<p class="pop-desc">${esc(c.d)}</p>` : ""}
+      ${c.acceso ? `<p class="pop-desc"><b>${esc(t("aguaAcceso"))}:</b> ${esc(c.acceso)}</p>` : ""}
+      ${popActions(c, L)}
     </div>
   `;
 }
@@ -228,23 +218,10 @@ function popupHTMLAgua(c, L){
 function popupHTMLPatrimonio(c, L){
   return `
     <div class="pop">
-      <button class="fav-btn${isFav(c.n) ? " active" : ""}" onclick="onFavClick(event, ${JSON.stringify(c.n)})" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
-      <h3>${esc(c.n)}</h3>
-      <p class="zone">${esc(c.z)} · ${esc(c.ca)} · ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</p>
-      ${c.epoca ? `<p class="info"><b>${esc(t("patEpoca"))}:</b> ${esc(c.epoca)}</p>` : ""}
-      ${c.d ? `<p class="info">${esc(c.d)}</p>` : ""}
-      <div class="links">
-        <details class="poi-group route-group" open>
-          <summary>${esc(t("routeStart"))}</summary>
-          <div class="poi-links">
-            <a href="${L.waze}" target="_blank">${esc(t("routeWaze"))}</a>
-            <a href="${L.maps}" target="_blank">${esc(t("routeGoogle"))}</a>
-            <a href="${L.appleMaps}" target="_blank">${esc(t("routeApple"))}</a>
-          </div>
-        </details>
-        <a href="${L.photos}" target="_blank">${esc(t("photosLinkGeneric"))}</a>
-        ${c.web ? `<a href="${esc(c.web)}" target="_blank">${esc(t("webLink"))}</a>` : ""}
-      </div>
+      ${popHeader(c)}
+      ${c.epoca ? `<p class="pop-highlight">${esc(c.epoca)}</p>` : ""}
+      ${c.d ? `<p class="pop-desc">${esc(c.d)}</p>` : ""}
+      ${popActions(c, L)}
     </div>
   `;
 }
@@ -311,6 +288,13 @@ function openSpot(c){
     map.zoomControl.addTo(map);
     panelDismissed = false;
     render();
+  });
+  const favBtn = listEl.querySelector('.pop-fav-btn');
+  if (favBtn) favBtn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    toggleFav(c.n);
+    favBtn.classList.toggle('active', isFav(c.n));
+    favBtn.textContent = isFav(c.n) ? "★" : "☆";
   });
 }
 
@@ -481,9 +465,9 @@ function render(){
   listEl.innerHTML = `<div class="panel-close"><span>${filtered.length} ${esc(t("countSuffixFiltered"))}</span><button id="panelCloseBtn" title="${esc(t("closeDetail"))}">✕</button></div>` + filtered.map(c => {
     const meta = terrainMetaFor(c);
     let bottomLeft, goLabel;
-    if (c.cat === "camping") { bottomLeft = `${esc(t("listKmDesde"))} ${c.pp}€`; goLabel = t("viewCamping"); }
-    else if (c.cat === "patrimonio") { bottomLeft = esc(c.epoca || t("catPatrimonio")); goLabel = t("viewPatrimonio"); }
-    else { bottomLeft = esc(t("catAgua")); goLabel = t("viewAgua"); }
+    if (c.cat === "camping") { bottomLeft = ""; goLabel = t("viewCamping"); }
+    else if (c.cat === "patrimonio") { bottomLeft = esc(c.epoca || ""); goLabel = t("viewPatrimonio"); }
+    else { bottomLeft = ""; goLabel = t("viewAgua"); }
     return `<div class="item" data-name="${esc(c.n)}">
       <div class="cover" style="background:${meta.color}22;color:${meta.color}">${meta.glyph}</div>
       <button class="fav-btn list-fav${isFav(c.n) ? " active" : ""}" data-fav-name="${esc(c.n)}" title="${esc(t("favToggle"))}">${isFav(c.n) ? "★" : "☆"}</button>
