@@ -48,6 +48,12 @@ function terrainMetaFor(c){
   const map = terrainMapFor(c.cat);
   return map[c.t] || map[Object.keys(map)[0]];
 }
+
+// Color del marcador en el MAPA: siempre por categoria (3 colores), nunca
+// por tipo concreto. El tipo se sigue viendo como badge en tarjetas/fichas,
+// pero en el mapa la senal visual principal es "que clase de sitio es esto".
+const CAT_COLOR = {camping:"#4f7a5e", agua:"#3f7fa6", patrimonio:"#a67c3d"};
+function catColorFor(c){ return CAT_COLOR[c.cat] || CAT_COLOR.camping; }
 function terrainLabel(cat, k){ return t(terrainMapFor(cat)[k].key); }
 
 function q(s){ return encodeURIComponent(s); }
@@ -70,6 +76,12 @@ function distKmFor(c){
 // Favoritos: guardados en localStorage por nombre (unico entre campings y agua).
 let favorites = new Set(JSON.parse(localStorage.getItem("campingsFavs") || "[]"));
 let showFavsOnly = false;
+// El panel de resultados aparece solo mientras hay un filtro/busqueda activo.
+// panelDismissed = el usuario lo cerro a mano para el filtro actual; en
+// cuanto ese filtro cambia (nueva busqueda, nueva categoria...) se resetea
+// para que el panel pueda volver a aparecer automaticamente.
+let panelDismissed = false;
+let lastFilterKey = "";
 function isFav(n){ return favorites.has(n); }
 function toggleFav(n){
   if (favorites.has(n)) favorites.delete(n); else favorites.add(n);
@@ -278,31 +290,27 @@ function markerIcon(c){
   const meta = terrainMetaFor(c);
   return L.divIcon({
     className: '',
-    html: `<div class="camp-marker" style="background:${meta.color}"><span>${meta.glyph}</span></div>`,
-    iconSize: [22, 22],
-    iconAnchor: [11, 11],
-    popupAnchor: [0, -14],
+    html: `<div class="camp-marker" style="background:${catColorFor(c)}"><span>${meta.glyph}</span></div>`,
+    iconSize: [20, 20],
+    iconAnchor: [10, 10],
+    popupAnchor: [0, -12],
   });
 }
-// En movil no se usan los popups flotantes de Leaflet: con la lista de abajo
-// ya ocupando la pantalla, un popup superpuesto acaba chocando con ella (como
-// hacen apps como Google Maps o Airbnb, ahi solo hay un panel inferior que
-// cambia de "lista" a "detalle", nunca dos capas compitiendo por sitio).
-function isMobile(){ return window.matchMedia('(max-width:720px)').matches; }
+// Nunca se usan los popups flotantes clasicos de Leaflet (globo con rabito
+// GIS): en su lugar hay un unico panel flotante que hace de bottom sheet en
+// movil y de tarjeta flotante en escritorio, y cambia de "lista" a "detalle"
+// segun lo que se seleccione, nunca dos capas compitiendo por sitio.
+let inDetail = false;
 function openSpot(c){
-  if (isMobile()) { showMobileDetail(c); return; }
-  L.popup({maxWidth: 260})
-    .setLatLng([c.lat, c.lon])
-    .setContent(popupHTML(c))
-    .openOn(map);
-}
-function showMobileDetail(c){
+  inDetail = true;
   listEl.innerHTML = `<button type="button" class="back-to-list">${esc(t("closeDetail"))}</button>` + popupHTML(c);
-  sidebarEl.classList.add('detail-mode');
+  sidebarEl.classList.add('panel-open');
   map.zoomControl.remove();
   listEl.querySelector('.back-to-list').addEventListener('click', () => {
-    sidebarEl.classList.remove('detail-mode');
+    inDetail = false;
     map.zoomControl.addTo(map);
+    panelDismissed = false;
+    render();
   });
 }
 
@@ -313,18 +321,20 @@ POIS.forEach(c => {
   markers[c.n] = marker;
 });
 
-// Agrupacion de marcadores (clusters) para que el mapa no se vea como un
-// enjambre de puntos con cientos de campings a la vez; al hacer zoom se
-// van desagrupando solos.
+// Un unico grupo de clusters para todo el mapa (en vez de uno por comunidad
+// autonoma): el objetivo es que a poco zoom se vea un cluster limpio por
+// zona geografica real, no varios clusters pequenos superpuestos.
 function clusterIcon(cluster){
   const count = cluster.getChildCount();
-  const size = count < 10 ? 32 : count < 50 ? 38 : 46;
+  const size = count < 10 ? 30 : count < 50 ? 38 : count < 200 ? 46 : 54;
   return L.divIcon({
     html: `<div class="marker-cluster-custom" style="width:${size}px;height:${size}px">${count}</div>`,
     className: '',
     iconSize: [size, size],
   });
 }
+const clusterGroup = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 55});
+map.addLayer(clusterGroup);
 
 
 // filtros
@@ -428,17 +438,6 @@ function renderControls(){
   updateFavToggle();
 }
 
-// Un grupo de clusters por comunidad autonoma / region (en vez de uno solo
-// global), asi los clusters nunca mezclan campings de zonas distintas aunque
-// esten geograficamente cerca en el mapa a poco zoom.
-const uniqueCAs = [...new Set(POIS.map(c => c.ca))];
-const caGroups = {};
-uniqueCAs.forEach(ca => {
-  const group = L.markerClusterGroup({iconCreateFunction: clusterIcon, maxClusterRadius: 50});
-  caGroups[ca] = group;
-  map.addLayer(group);
-});
-
 function render(){
   const query = qInput.value.trim().toLowerCase();
   const ca = caSel.value;
@@ -463,14 +462,23 @@ function render(){
   // si no, desde Torrejon de Ardoz (los km guardados en el dataset).
   filtered.sort((a, b) => distKmFor(a) - distKmFor(b));
 
-  Object.values(caGroups).forEach(g => g.clearLayers());
-  filtered.forEach(c => caGroups[c.ca].addLayer(markers[c.n]));
+  clusterGroup.clearLayers();
+  filtered.forEach(c => clusterGroup.addLayer(markers[c.n]));
 
   countEl.textContent = filtered.length === POIS.length
     ? filtered.length + " " + t("countSuffixMixed")
     : filtered.length + " " + t("countSuffixFiltered");
 
-  listEl.innerHTML = filtered.map(c => {
+  // El panel de lista solo se muestra automaticamente si hay un filtro/
+  // busqueda activo; si el filtro cambia respecto a la ultima vez, se
+  // olvida que el usuario lo hubiera cerrado a mano (vuelve a poder aparecer).
+  const hasActiveFilter = !!query || ca !== "Todas" || cat !== "Todas" || terrain !== "Todos" || showFavsOnly;
+  const filterKey = JSON.stringify([query, ca, cat, terrain, showFavsOnly]);
+  if (filterKey !== lastFilterKey) { panelDismissed = false; lastFilterKey = filterKey; }
+
+  if (inDetail) return;
+
+  listEl.innerHTML = `<div class="panel-close"><span>${filtered.length} ${esc(t("countSuffixFiltered"))}</span><button id="panelCloseBtn" title="${esc(t("closeDetail"))}">✕</button></div>` + filtered.map(c => {
     const meta = terrainMetaFor(c);
     let bottomLeft, goLabel;
     if (c.cat === "camping") { bottomLeft = `${esc(t("listKmDesde"))} ${c.pp}€`; goLabel = t("viewCamping"); }
@@ -501,12 +509,19 @@ function render(){
     if (cta) cta.addEventListener('click', () => { showFavsOnly = false; updateFavToggle(); render(); });
   }
 
+  const closeBtn = document.getElementById('panelCloseBtn');
+  if (closeBtn) closeBtn.addEventListener('click', () => {
+    panelDismissed = true;
+    sidebarEl.classList.remove('panel-open');
+  });
+
+  sidebarEl.classList.toggle('panel-open', hasActiveFilter && !panelDismissed && filtered.length > 0);
+
   listEl.querySelectorAll('.item').forEach(el => {
     el.addEventListener('click', () => {
       const c = POIS.find(x => x.n === el.dataset.name);
       map.flyTo([c.lat, c.lon], 10, {duration:0.6});
-      if (isMobile()) { showMobileDetail(c); return; }
-      setTimeout(() => openSpot(c), 650);
+      setTimeout(() => openSpot(c), 400);
     });
   });
   listEl.querySelectorAll('.list-fav').forEach(btn => {
@@ -527,7 +542,6 @@ langSel.addEventListener('change', () => {
   renderControls();
   renderLayerControl();
   render();
-  map.closePopup();
 });
 
 renderControls();
