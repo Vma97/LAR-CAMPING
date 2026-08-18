@@ -110,7 +110,6 @@ function initThemeToggle(){
 
 function buildLinks(c){
   const place = c.n + ", " + c.z;
-  const coords = c.lat + "," + c.lon;
   const L = {
     // Se guian por el nombre real del camping. Waze prioriza "ll" sobre "q"
     // si van juntos (acaba mostrando solo coordenadas), asi que aqui va solo
@@ -118,7 +117,6 @@ function buildLinks(c){
     // ya hace bien Google Maps con el destino en texto.
     waze: "https://waze.com/ul?q=" + q(place) + "&navigate=yes",
     maps: "https://www.google.com/maps/dir/?api=1&destination=" + q(place) + "&travelmode=driving",
-    appleMaps: "https://maps.apple.com/?q=" + q(c.n) + "&daddr=" + coords,
     photos: "https://www.google.com/search?tbm=isch&q=" + q(place),
   };
   return L;
@@ -157,7 +155,7 @@ function popHeader(c){
     <div class="pop-chips">
       <span class="chip" style="background:${meta.color}22;color:${meta.color}">${esc(terrainLabel(c.cat, c.t))}</span>
       ${c.hike ? `<span class="chip" style="background:var(--terracotta)22;color:var(--terracotta)">🥾 ${esc(t("hikeBadge"))}</span>` : ""}
-      <span class="chip">📍 ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmFromTorrejon"))}</span>
+      <span class="chip">📍 ${Math.round(distKmFor(c))} ${esc(userLoc ? t("kmFromYou") : t("kmGeneric"))}</span>
     </div>
   `;
 }
@@ -167,10 +165,14 @@ function popHeader(c){
 // jerarquia visible a la vez.
 function popActions(c, L, extraIconsHTML){
   return `
-    <a class="pop-cta" href="${L.waze}" target="_blank">🧭 ${esc(t("routeWaze"))}</a>
+    <details class="pop-route">
+      <summary class="pop-cta">${esc(t("routeStart"))}</summary>
+      <div class="pop-route-menu">
+        <a href="${L.waze}" target="_blank">📍 ${esc(t("routeWazePlain"))}</a>
+        <a href="${L.maps}" target="_blank">📍 ${esc(t("routeGooglePlain"))}</a>
+      </div>
+    </details>
     <div class="pop-more">
-      <a href="${L.maps}" target="_blank" title="${esc(t("routeGoogle"))}">📍</a>
-      <a href="${L.appleMaps}" target="_blank" title="${esc(t("routeApple"))}">🍎</a>
       <a href="${L.photos}" target="_blank" title="${esc(t("photosLinkGeneric"))}">🖼️</a>
       ${c.web ? `<a href="${esc(c.web)}" target="_blank" title="${esc(t("webLink"))}">🌐</a>` : ""}
       ${extraIconsHTML || ""}
